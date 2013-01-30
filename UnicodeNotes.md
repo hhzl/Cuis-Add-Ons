@@ -18,7 +18,7 @@ The rest is converted to numerical character entities when reading from a file o
 
 With the on-line converter http://rishida.net/tools/conversion/ example data may be constructed for tests.
 
-abc àè€ αβγ
+abc àè€ αβγ (abc the a with gravis, e with gravis, euro sign, alpha, beta, gamma) 
 
 
 Decimal NCRs
@@ -97,3 +97,9 @@ Reading it back
 
 
 The default encoding for files is ISO8859-15.    
+
+
+### Note about this file
+
+Some characters might appear wrongly in this UnicodeNotes.md file. Do a test in the image with the UTF8 code units 
+and the constructed ISO8859 file.
