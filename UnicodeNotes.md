@@ -39,3 +39,27 @@ UTF8 code units
 JavaScript escapes
 
     abc \u03B1\u03B2\u03B3
+
+
+
+Write the data above as a UTF8 encoded file in binary mode.  
+
+     | stream |
+
+     stream := (FileStream newFileNamed: 'UTF8abc-test.txt') binary.
+
+     stream nextPutAll: #[  16r61 16r62 16r63 16r20 16rCE 16rB1 16rCE 16rB2 16rCE 16rB3].
+
+     stream close.
+   
+
+Read it back
+
+      (FileStream fileNamed: 'UTF8abc-test.txt') contentsOfEntireFile utf8ToISO8859s15
+
+gives the result
+
+     'abc &#945;&#946;&#947;'
+
+
+Note: #utf8ToISO8859s15 is only used by the clipboard. 
