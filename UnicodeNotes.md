@@ -7,7 +7,7 @@ Cuis has limited Unicode support.
 
 Externally, this means for the clipboard UTF8 is used.
 
-Internally the 8 bit ISO8959-15 is used. This means less than 255 code points. 
+Internally the 8 bit ISO8959-15 is used (http://en.wikipedia.org/wiki/ISO/IEC_8859-15) . This means less than 255 code points. 
 The rest is converted to numerical character entities when reading from a file or when text is pasted through the clipboard.
 
 
