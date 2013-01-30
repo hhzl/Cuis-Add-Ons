@@ -26,10 +26,16 @@ Decimal NCRs
 
 
 Hexadecimal NCRs
+
     abc &#x03B1;&#x03B2;&#x03B3;
 
+
 UTF8 code units
+
     61 62 63 20 CE B1 CE B2 CE B3
 
+
+
 JavaScript escapes
+
     abc \u03B1\u03B2\u03B3
