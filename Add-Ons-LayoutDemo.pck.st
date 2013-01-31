@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1583] on 31 January 2013 at 6:43:36 am'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1583] on 31 January 2013 at 7:07:17 am'!
 'Description Add-Ons which show how Morphic works'!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
@@ -307,11 +307,12 @@ Changed from LayoutDemo4: method
 
     LayoutDemo4b new openInWorld!
 
-!LayoutDemo4c commentStamp: 'hjh 1/31/2013 05:08' prior: 0!
+!LayoutDemo4c commentStamp: 'hjh 1/31/2013 07:00' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
 The morphs which are added have a #name property set. This allows to call them and bring them to the front.
 
+The RectangleLikeMorph have been replace by DragAndDropAreaMorph. Morph instances dropped on them stay.
 
 
     LayoutDemo4c new openInWorld!
@@ -796,14 +797,14 @@ bringPageToFront: aPageName
 
 ! !
 
-!LayoutDemo4c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 06:33'!
+!LayoutDemo4c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:05'!
 buildMorphicWindow
 
 self setLabel: self className.
 
 
 self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
-self layoutMorph addMorphUseAll: self makePages.
+self layoutMorph addMorphUseAll: self makeContentArea.
 
 self openInWorld
 ! !
@@ -857,23 +858,26 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo4c methodsFor: 'pages' stamp: 'hjh 1/31/2013 06:36'!
-makePages
+!LayoutDemo4c methodsFor: 'pages' stamp: 'hjh 1/31/2013 07:06'!
+makeContentArea
 
- 	contentArea := RectangleLikeMorph new color: Color gray.
-	
+ 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
 
-      contentArea addMorph: ((RectangleLikeMorph new color: Color red;
+	"morphs are added on top of each other"
+
+      contentArea addMorph: ((DragAndDropAreaMorph new color: Color red;
 								setProperty: #name toValue: #red) morphExtent: 430@250).
 								
-	contentArea addMorph: ((RectangleLikeMorph new color: Color green;
+	contentArea addMorph: ((DragAndDropAreaMorph new color: Color green;
 								setProperty: #name toValue: #green)  morphExtent: 420@240).
 								
-	contentArea addMorph: ((RectangleLikeMorph new color: Color blue;
+	contentArea addMorph: ((DragAndDropAreaMorph new color: Color blue;
 								setProperty: #name toValue: #blue)  morphExtent: 410@230).
 	
-	contentArea addMorph: ((RectangleLikeMorph new color: Color yellow;
+	contentArea addMorph: ((DragAndDropAreaMorph new color: Color yellow;
 							     setProperty: #name toValue: #yellow)  morphExtent: 400@220).
+	
+	
 	
 	^ contentArea
 
