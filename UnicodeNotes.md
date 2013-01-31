@@ -7,7 +7,8 @@ Cuis has limited Unicode support.
 
 Externally, this means for the clipboard UTF8 is used. For files it is ISO8859-15.
 
-Internally the 8 bit ISO8959-15 is used (http://en.wikipedia.org/wiki/ISO/IEC_8859-15) . This means less than 255 code points. 
+
+Internally the 8 bit ISO8959-15 is used (http://en.wikipedia.org/wiki/ISO/IEC_8859-15) . This means less than 255 code points. 
 The rest is converted to numerical character entities when reading from a file or when text is pasted through the clipboard.
 
 
@@ -17,7 +18,7 @@ The rest is converted to numerical character entities when reading from a file o
 
 With the on-line converter http://rishida.net/tools/conversion/ example data may be constructed for tests.
 
-abc αβγ
+abc àè€ αβγ (abc the a with gravis, e with gravis, euro sign, alpha, beta, gamma) 
 
 
 Decimal NCRs
@@ -62,7 +63,7 @@ Read it back
 
 gives the result
 
-      'abc �� &#945;&#946;&#947;'
+      'abc �� &#945;&#946;&#947;'
 
 
 Whereas
@@ -96,3 +97,9 @@ Reading it back
 
 
 The default encoding for files is ISO8859-15.    
+
+
+### Note about this file
+
+Some characters might appear wrongly in this UnicodeNotes.md file. Do a test in the image with the UTF8 code units 
+and the constructed ISO8859 file.
