@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1583] on 29 January 2013 at 10:08:49 pm'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1583] on 31 January 2013 at 6:43:36 am'!
 'Description Add-Ons which show how Morphic works'!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
@@ -110,6 +110,16 @@ SystemWindow subclass: #LayoutDemo4b
 LayoutDemo4b class
 	instanceVariableNames: ''!
 
+!classDefinition: #LayoutDemo4c category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo4c
+	instanceVariableNames: 'contentArea'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo4c class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo4c class
+	instanceVariableNames: ''!
+
 !classDefinition: #LayoutDemo5 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo5
 	instanceVariableNames: 'contentArea currentPage pages'
@@ -213,7 +223,7 @@ This class shows how to do that.
 
     LayoutDemo1b new openInWorld!
 
-!LayoutDemo2 commentStamp: 'hjh 1/16/2013 07:03' prior: 0!
+!LayoutDemo2 commentStamp: '<historical>' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
 
 
@@ -223,11 +233,13 @@ Subclass of SystemWindow specialised to show how content has to be added.
 
     LayoutDemo2 new openInWorld!
 
-!LayoutDemo2b commentStamp: 'hjh 1/16/2013 07:03' prior: 0!
+!LayoutDemo2b commentStamp: 'hjh 1/31/2013 04:35' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
 
 
-   This class shows how to use the #addMorphUseAll: method to use all up the remaining space.
+    With #addMorph:fixedHeight:  a header/title or button bar area may be created.
+	
+    And with #addMorphUseAll: method all of the remaining space is used..
 
 
 
@@ -257,18 +269,23 @@ Subclass of SystemWindow specialised to show how content has to be added.
 
     LayoutDemo2d new openInWorld!
 
-!LayoutDemo2e commentStamp: 'hjh 1/16/2013 11:07' prior: 0!
+!LayoutDemo2e commentStamp: 'hjh 1/31/2013 04:41' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
 
 
    This class shows how to use the #addMorphUseAll: method to use all up the remaining space. It as well demonstrates the use of UpdatingStringMorph. They may be used to build a specialized expression watch window.
 
+Display of the date added.
+
 
 
     LayoutDemo2e new openInWorld!
 
-!LayoutDemo3 commentStamp: 'hjh 1/16/2013 09:35' prior: 0!
+!LayoutDemo3 commentStamp: 'hjh 1/31/2013 06:30' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
+add button bar with buttons which change the color of the contentArea morph.
+
+overriding #initialExtent sets the extent of the window.
 
     LayoutDemo3 new openInWorld!
 
@@ -277,11 +294,27 @@ Subclass of SystemWindows specialised to display layout examples
 
     LayoutDemo4 new openInWorld!
 
-!LayoutDemo4b commentStamp: 'hjh 1/16/2013 13:07' prior: 0!
+!LayoutDemo4b commentStamp: 'hjh 1/31/2013 05:07' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 Changed from LayoutDemo4: method 
     #makePages
+
+
+    Adding more morphs to the contentArea without going through the layout morph stacks them on top of each other.
+
+    The button bar changes still the background color of the contentArea morph.
+
+
     LayoutDemo4b new openInWorld!
+
+!LayoutDemo4c commentStamp: 'hjh 1/31/2013 05:08' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+
+The morphs which are added have a #name property set. This allows to call them and bring them to the front.
+
+
+
+    LayoutDemo4c new openInWorld!
 
 !LayoutDemo5 commentStamp: 'hjh 1/16/2013 14:04' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
@@ -356,7 +389,7 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo1b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 06:37'!
+!LayoutDemo1b methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:31'!
 buildMorphicWindow
 
 
@@ -367,13 +400,13 @@ buildMorphicWindow
       self beRow."
 
 	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color yellow) fixedHeight: 80.
+	   (RectangleLikeMorph new color: Color yellow).
 	
  	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color green) fixedHeight: 80.
+	   (DragAndDropAreaMorph new color: Color green).
  
 	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color red) fixedHeight: 80! !
+	   (RectangleLikeMorph new color: Color red).! !
 
 !LayoutDemo1b methodsFor: 'initialization' stamp: 'hjh 1/16/2013 06:20'!
 initialize
@@ -382,14 +415,17 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo2 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 06:57'!
+!LayoutDemo2 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 11:02'!
 buildMorphicWindow
 
 
      	self setLabel: self className.
 
-	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color yellow) fixedHeight: 80.
+	self layoutMorph  addMorphUseAll: 
+	   (RectangleLikeMorph new color: Color red).
+
+	self layoutMorph  addMorphUseAll: 
+	   (RectangleLikeMorph new color: Color yellow).
 	
  	self layoutMorph  addMorphUseAll: 
 	   (RectangleLikeMorph new color: Color green) 
@@ -403,17 +439,14 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo2b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 11:02'!
+!LayoutDemo2b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 06:57'!
 buildMorphicWindow
 
 
      	self setLabel: self className.
 
-	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color red).
-
-	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color yellow).
+	self layoutMorph  addMorph: 
+	   (RectangleLikeMorph new color: Color yellow) fixedHeight: 80.
 	
  	self layoutMorph  addMorphUseAll: 
 	   (RectangleLikeMorph new color: Color green) 
@@ -453,7 +486,7 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo2d methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 10:26'!
+!LayoutDemo2d methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:40'!
 buildMorphicWindow
 
 
@@ -466,28 +499,31 @@ buildMorphicWindow
 				            self runningWorld activeHand morphPosition asString
 				           ];
 		            getSelector: #value;
-     			      stepTime: 10) color: Color blue) 
-	 fixedHeight: 80.
+     			      stepTime: 10) color: Color blue).
 	
- 	self layoutMorph  addMorphUseAll: 
+	self layoutMorph  addMorphUseAll: 
+	   (RectangleLikeMorph new color: Color green). 
+ 
+	
+ 	self layoutMorph  addMorph: 
 	   (UpdatingStringMorph new
       			target: ['self morphBoundsInWorld ',
 				            self morphBoundsInWorld asString];
 		            getSelector: #value;
      			      stepTime: 10) 
+	fixedHeight: 60.
  
 	! !
 
-!LayoutDemo2d methodsFor: 'initialization' stamp: 'hjh 1/16/2013 09:51'!
+!LayoutDemo2d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 04:38'!
 initialize
 
 	super initialize.
 	
 	self buildMorphicWindow.
-	
-	self inspect! !
+	! !
 
-!LayoutDemo2e methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 11:11'!
+!LayoutDemo2e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:43'!
 buildMorphicWindow
 
 
@@ -503,7 +539,10 @@ buildMorphicWindow
      			      stepTime: 10) color: Color blue) 
 	 fixedHeight: 80.
 	
- 	self layoutMorph  addMorphUseAll: 
+	self layoutMorph  addMorphUseAll: 
+	   (RectangleLikeMorph new color: Color green). 
+	
+ 	self layoutMorph  addMorph: 
 	   (UpdatingStringMorph new
       			target: ['self morphBoundsInWorld ',
 				            self morphBoundsInWorld asString];
@@ -526,7 +565,7 @@ initialize
 	self buildMorphicWindow.
 	! !
 
-!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 12:41'!
+!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 06:32'!
 buildMorphicWindow
 
 self setLabel: self className.
@@ -534,7 +573,7 @@ self setLabel: self className.
 contentArea := RectangleLikeMorph new color: Color green.
 
 
-self layoutMorph addMorph:  self createButtonBar fixedHeight: 60.
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
 self layoutMorph addMorphUseAll: contentArea.
 
 self openInWorld
@@ -570,6 +609,12 @@ createButtonBar
 	fixedWidth: 70
 	! !
 
+!LayoutDemo3 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
 !LayoutDemo3 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
 initialize
 
@@ -591,14 +636,14 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo4 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 12:51'!
+!LayoutDemo4 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:49'!
 buildMorphicWindow
 
 self setLabel: self className.
 
 
 self layoutMorph addMorph:  self createButtonBar fixedHeight: 60.
-self layoutMorph addMorphUseAll: self makePages.
+self layoutMorph addMorphUseAll: self makeContentArea.
 
 self openInWorld
 ! !
@@ -625,6 +670,12 @@ addMorph: (PluggableButtonMorph
 			model: [ contentArea color: Color yellow] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
+!LayoutDemo4 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:32'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
 !LayoutDemo4 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
 initialize
 
@@ -646,19 +697,19 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo4 methodsFor: 'page creation' stamp: 'hjh 1/16/2013 12:58'!
-makePages
+!LayoutDemo4 methodsFor: 'page creation' stamp: 'hjh 1/31/2013 04:49'!
+makeContentArea
 
 
       ^contentArea := RectangleLikeMorph new color: Color green.! !
 
-!LayoutDemo4b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 12:51'!
+!LayoutDemo4b methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 06:33'!
 buildMorphicWindow
 
 self setLabel: self className.
 
 
-self layoutMorph addMorph:  self createButtonBar fixedHeight: 60.
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
 self layoutMorph addMorphUseAll: self makePages.
 
 self openInWorld
@@ -686,6 +737,12 @@ addMorph: (PluggableButtonMorph
 			model: [ contentArea color: Color yellow] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
+!LayoutDemo4b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:32'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
 !LayoutDemo4b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
 initialize
 
@@ -707,16 +764,116 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo4b methodsFor: 'page creation' stamp: 'hjh 1/16/2013 13:06'!
+!LayoutDemo4b methodsFor: 'page creation' stamp: 'hjh 1/31/2013 05:09'!
 makePages
 
  	contentArea := RectangleLikeMorph new color: Color gray.
 	
 
       contentArea addMorph: ((RectangleLikeMorph new color: Color red) morphExtent: 320@240).
+								
 	contentArea addMorph: ((RectangleLikeMorph new color: Color green)  morphExtent: 310@230).
+								
 	contentArea addMorph: ((RectangleLikeMorph new color: Color blue)  morphExtent: 305@225).
+	
 	contentArea addMorph: ((RectangleLikeMorph new color: Color yellow)  morphExtent: 300@220).
+	
+	^ contentArea
+
+
+    ! !
+
+!LayoutDemo4c methodsFor: 'pages' stamp: 'hjh 1/31/2013 05:20'!
+bringPageToFront: aPageName
+
+ 	| page |
+	
+	page := contentArea submorphs detect: [ :morph | (morph valueOfProperty: #name) = aPageName].
+	
+	contentArea addMorphFront: page. 
+	
+
+
+! !
+
+!LayoutDemo4c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 06:33'!
+buildMorphicWindow
+
+self setLabel: self className.
+
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorphUseAll: self makePages.
+
+self openInWorld
+! !
+
+!LayoutDemo4c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 05:17'!
+createButtonBar
+
+
+^ LayoutMorph newRow 
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #red] action: #value label: 'red') 
+	            fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self  bringPageToFront: #green] action: #value label: 'green') 
+	           fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #blue] action: #value label: 'blue') 
+	           fixedWidth: 70;
+
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #yellow] action: #value label: 'yellow') 
+	           fixedWidth: 70! !
+
+!LayoutDemo4c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo4c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo4c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo4c methodsFor: 'pages' stamp: 'hjh 1/31/2013 06:36'!
+makePages
+
+ 	contentArea := RectangleLikeMorph new color: Color gray.
+	
+
+      contentArea addMorph: ((RectangleLikeMorph new color: Color red;
+								setProperty: #name toValue: #red) morphExtent: 430@250).
+								
+	contentArea addMorph: ((RectangleLikeMorph new color: Color green;
+								setProperty: #name toValue: #green)  morphExtent: 420@240).
+								
+	contentArea addMorph: ((RectangleLikeMorph new color: Color blue;
+								setProperty: #name toValue: #blue)  morphExtent: 410@230).
+	
+	contentArea addMorph: ((RectangleLikeMorph new color: Color yellow;
+							     setProperty: #name toValue: #yellow)  morphExtent: 400@220).
 	
 	^ contentArea
 
@@ -877,6 +1034,12 @@ hideCurrentPage
       contentArea removeMorph: page.
 ! !
 
+!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
 !LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 18:21'!
 initialize
 
@@ -982,6 +1145,12 @@ hideCurrentPage
 	page := pages at: currentPage.
       contentArea removeMorph: page.
 ! !
+
+!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
 
 !LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
 initialize
@@ -1142,6 +1311,12 @@ hideCurrentPage
       contentArea removeMorph: page.
 ! !
 
+!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
 !LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
 initialize
 	super initialize.
@@ -1301,6 +1476,12 @@ hideCurrentPage
       contentArea removeMorph: page.
 ! !
 
+!LayoutDemo6d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
 !LayoutDemo6d methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
 initialize
 	super initialize.
@@ -1453,6 +1634,12 @@ hideCurrentPage
 	page := pages at: currentPage.
       contentArea removeMorph: page.
 ! !
+
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
 
 !LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
 initialize
