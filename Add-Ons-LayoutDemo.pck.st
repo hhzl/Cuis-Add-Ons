@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1583] on 31 January 2013 at 7:07:17 am'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1583] on 31 January 2013 at 9:41:16 am'!
 'Description Add-Ons which show how Morphic works'!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
@@ -88,6 +88,46 @@ SystemWindow subclass: #LayoutDemo3
 	category: 'Add-Ons-LayoutDemo'!
 !classDefinition: 'LayoutDemo3 class' category: #'Add-Ons-LayoutDemo'!
 LayoutDemo3 class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo3b category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo3b
+	instanceVariableNames: 'contentArea'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo3b class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3b class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo3c category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo3c
+	instanceVariableNames: 'contentArea'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo3c class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3c class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo3d category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo3d
+	instanceVariableNames: 'contentArea'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo3d class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3d class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo3e category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo3e
+	instanceVariableNames: 'contentArea currentContentStringSelector'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo3e class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3e class
 	instanceVariableNames: ''!
 
 !classDefinition: #LayoutDemo4 category: #'Add-Ons-LayoutDemo'!
@@ -288,6 +328,42 @@ add button bar with buttons which change the color of the contentArea morph.
 overriding #initialExtent sets the extent of the window.
 
     LayoutDemo3 new openInWorld!
+
+!LayoutDemo3b commentStamp: 'hjh 1/31/2013 07:13' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+Add a TextModelMorph as the content
+
+
+    LayoutDemo3b new openInWorld!
+
+!LayoutDemo3c commentStamp: 'hjh 1/31/2013 07:37' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+Add a TextModelMorph as the content. 
+
+Changed the behaviour of the buttons to change the text.
+
+Does not work because it uses methods of TextModel which need to be cleaned.
+
+
+    LayoutDemo3c new openInWorld!
+
+!LayoutDemo3d commentStamp: '<historical>' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+Add a TextModelMorph as the content. 
+
+Changed the behaviour of the buttons to change the text.
+
+
+    LayoutDemo3d new openInWorld!
+
+!LayoutDemo3e commentStamp: 'hjh 1/31/2013 09:37' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+Add a TextModelMorph as the content. 
+
+Changed the behaviour of the buttons to change the text and automatically save the string in methods.
+
+
+    LayoutDemo3e new openInWorld!
 
 !LayoutDemo4 commentStamp: 'hjh 1/16/2013 09:35' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
@@ -636,6 +712,382 @@ initializeLabelArea
 	box morphExtent: self boxExtent.
 
 ! !
+
+!LayoutDemo3b methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:14'!
+buildMorphicWindow
+
+self setLabel: self className.
+
+contentArea := TextModelMorph withText: 'abc...'.
+
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorphUseAll: contentArea.
+
+self openInWorld
+
+! !
+
+!LayoutDemo3b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 10:48'!
+createButtonBar
+
+^ LayoutMorph newRow 
+    addMorph: 
+        (PluggableButtonMorph 
+			model: [ contentArea color: Color red] action: #value label: 'red'
+	  ) 
+    fixedWidth: 70;
+	
+    addMorph: 
+      (PluggableButtonMorph 
+			model: [ contentArea color: Color green] action: #value label: 'green'
+	) 
+    fixedWidth: 70;
+	
+    addMorph: 
+       (PluggableButtonMorph 
+			model: [ contentArea color: Color blue] action: #value label: 'blue'
+	 ) 
+	 fixedWidth: 70;
+      
+    addMorph: 
+       (PluggableButtonMorph 
+			model: [ contentArea color: Color yellow] action: #value label: 'yellow'
+	 ) 
+	fixedWidth: 70
+	! !
+
+!LayoutDemo3b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo3b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo3b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:14'!
+buildMorphicWindow
+
+self setLabel: self className.
+
+contentArea := TextModelMorph withText: 'abc...'.
+
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorphUseAll: contentArea.
+
+self openInWorld
+
+! !
+
+!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:38'!
+createButtonBar
+
+^ LayoutMorph newRow 
+    addMorph: 
+        (PluggableButtonMorph 
+			model: [ contentArea model contents: 'red'] action: #value label: 'red'
+	  ) 
+    fixedWidth: 70;
+	
+    addMorph: 
+      (PluggableButtonMorph 
+			model: [ contentArea model contents: 'green'] action: #value label: 'green'
+	) 
+    fixedWidth: 70;
+	
+    addMorph: 
+       (PluggableButtonMorph 
+			model: [ contentArea model contents: 'blue'] action: #value label: 'blue'
+	 ) 
+	 fixedWidth: 70;
+      
+    addMorph: 
+       (PluggableButtonMorph 
+			model: [ contentArea color: Color yellow] action: #value label: 'yellow'
+	 ) 
+	fixedWidth: 70
+	! !
+
+!LayoutDemo3c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo3c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 08:40'!
+buildMorphicWindow
+
+self setLabel: self className.
+
+contentArea := self textModelMorphforSelector:  #contentString1.
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorphUseAll: contentArea.
+
+self openInWorld
+
+! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:31'!
+contentString1
+	^'hello1'! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:31'!
+contentString2
+	^'hello2'! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:31'!
+contentString3
+	^'hello3'! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:31'!
+contentString4
+	^'hello4'! !
+
+!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 08:32'!
+createButtonBar
+
+^ LayoutMorph newRow 
+    addMorph: 
+        (PluggableButtonMorph 
+			model: [ self display: #contentString1 ] action: #value label: 'red'
+	  ) 
+    fixedWidth: 70;
+	
+    addMorph: 
+      (PluggableButtonMorph 
+			model: [ self display: #contentString2 ] action: #value label: 'green'
+	) 
+    fixedWidth: 70;
+	
+    addMorph: 
+       (PluggableButtonMorph 
+			model: [ self display: #contentString3 ] action: #value label: 'blue'
+	 ) 
+	 fixedWidth: 70;
+      
+    addMorph: 
+       (PluggableButtonMorph 
+			model: [ self display: #contentString4 ] action: #value label: 'yellow'
+	 ) 
+	fixedWidth: 70
+	! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:43'!
+display: aContentSelector
+
+	self layoutMorph removeMorph: contentArea.
+	self layoutMorph addMorphUseAll: (contentArea := self textModelMorphforSelector:  aContentSelector)
+	! !
+
+!LayoutDemo3d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo3d methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:37'!
+textModelMorphforSelector: aContentSelector
+
+	^TextModelMorph withText: (self perform: aContentSelector)
+	! !
+
+!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 09:19'!
+buildMorphicWindow
+
+self setLabel: self className.
+
+contentArea := self textModelMorphforSelector:  #contentString1.
+currentContentStringSelector := #contentString1.
+
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorphUseAll: contentArea.
+
+self openInWorld
+
+! !
+
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:40'!
+contentString1
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:40'!
+contentString2
+	^ 'green'! !
+
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:40'!
+contentString3
+	^ 'blue'! !
+
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:41'!
+contentString4
+	^ 'yellow'! !
+
+!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 09:40'!
+createButtonBar
+
+| bar |
+
+^ (bar :=LayoutMorph newRow color: Color red) 
+    addMorph: 
+        (PluggableButtonMorph 
+			model: [ self display: #contentString1.
+				        bar color: Color red] action: #value label: 'red'
+	  ) 
+    fixedWidth: 70;
+	
+    addMorph: 
+      (PluggableButtonMorph 
+			model: [ self display: #contentString2.
+				       bar color: Color green] action: #value label: 'green'
+	) 
+    fixedWidth: 70;
+	
+    addMorph: 
+       (PluggableButtonMorph 
+			model: [ self display: #contentString3.
+				  bar color: Color blue ] action: #value label: 'blue'
+	 ) 
+	 fixedWidth: 70;
+      
+    addMorph: 
+       (PluggableButtonMorph 
+			model: [ self display: #contentString4.
+				  bar color: Color yellow ] action: #value label: 'yellow'
+	 ) 
+	fixedWidth: 70
+	! !
+
+!LayoutDemo3e methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:29'!
+display: aContentSelector
+
+	currentContentStringSelector ifNotNil:  [self removeOldContent].
+	
+	currentContentStringSelector := aContentSelector.
+	
+	self layoutMorph addMorphUseAll: 
+		(contentArea := self textModelMorphforSelector:  currentContentStringSelector)
+	! !
+
+!LayoutDemo3e methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo3e methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo3e methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:35'!
+removeOldContent
+"save the old content in a method first and then remove the text morph"
+
+  | methodSource |
+
+  methodSource :=
+
+		 	currentContentStringSelector asString
+			
+			, String newLineString 
+			
+			,'	^ ''' ,
+			
+			contentArea model actualContents asString,
+			
+			''''.
+   self class compile: methodSource.
+			
+   self layoutMorph removeMorph: contentArea.! !
+
+!LayoutDemo3e methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 08:37'!
+textModelMorphforSelector: aContentSelector
+
+	^TextModelMorph withText: (self perform: aContentSelector)
+	! !
 
 !LayoutDemo4 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:49'!
 buildMorphicWindow
