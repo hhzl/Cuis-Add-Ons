@@ -272,7 +272,5 @@ Method Integer>>nextUnicodeCodePointFromUtf8:
 - http://wiki.squeak.org/squeak/919
 - http://www.is.titech.ac.jp/~ohshima/squeak/m17npaper/index.html
 - http://www.is.titech.ac.jp/~ohshima/squeak/squeak-multilingual-e.html
-- 
 - https://code.google.com/p/chibi-scheme/source/browse/lib/scheme/char.sld
-
 - Unicode treatment in the Scheme language: http://scheme-reports.org/2012/working-group-1.html 
