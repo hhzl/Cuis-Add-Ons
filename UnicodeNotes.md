@@ -268,5 +268,11 @@ Method Integer>>nextUnicodeCodePointFromUtf8:
 - http://www.unicode.org/versions/Unicode6.2.0/
 - http://en.wikipedia.org/wiki/ISO/IEC_8859-15
 - http://en.wikipedia.org/wiki/Plane_%28Unicode%29#Basic_Multilingual_Plane
+- http://wiki.squeak.org/squeak/857
+- http://wiki.squeak.org/squeak/919
+- http://www.is.titech.ac.jp/~ohshima/squeak/m17npaper/index.html
+- http://www.is.titech.ac.jp/~ohshima/squeak/squeak-multilingual-e.html
+- 
+- https://code.google.com/p/chibi-scheme/source/browse/lib/scheme/char.sld
 
 - Unicode treatment in the Scheme language: http://scheme-reports.org/2012/working-group-1.html 
