@@ -268,3 +268,5 @@ Method Integer>>nextUnicodeCodePointFromUtf8:
 - http://www.unicode.org/versions/Unicode6.2.0/
 - http://en.wikipedia.org/wiki/ISO/IEC_8859-15
 - http://en.wikipedia.org/wiki/Plane_%28Unicode%29#Basic_Multilingual_Plane
+
+- Unicode treatment in the Scheme language: http://scheme-reports.org/2012/working-group-1.html 
