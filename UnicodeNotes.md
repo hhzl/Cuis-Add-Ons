@@ -203,6 +203,17 @@ Method String>>iso8859s15ToUtf8
 				evaluate: [ :byte | strm nextPut: (Character value: byte) ]
 				withUtf8BytesOfUnicodeCodePoint: characters next unicodeCodePoint ]]
 	
+Line endings, method String>>withCuisLineEndings
+    
+    withCuisLineEndings
+	    "assume the string is textual, and that CR, LF, and CRLF are all 
+	    valid line endings.  Replace each occurence with a single Lf
+	    ('aLine', String crlfString, 'anotherOne') withCuisLineEndings
+	    "
+
+	^ self withLineEndings: String newLineString
+
+
 
 #### Class Integer
 
