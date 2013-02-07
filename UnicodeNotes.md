@@ -292,3 +292,5 @@ http://forum.world.st/New-Win32-VM-m17n-testers-needed-tc63730.html#none
 - http://www.is.titech.ac.jp/~ohshima/squeak/squeak-multilingual-e.html
 - https://code.google.com/p/chibi-scheme/source/browse/lib/scheme/char.sld
 - Unicode treatment in the Scheme language: http://scheme-reports.org/2012/working-group-1.html 
+- http://www.cprogramming.com/tutorial/unicode.html; Unicode in C and C++: What You Can Do About It Today
+by Jeff Bezanson; keywords: Encoding, display, input method, internationalization (i18n), lexicography, UTF-8
