@@ -272,6 +272,13 @@ Method Integer>>nextUnicodeCodePointFromUtf8:
 
 	^nil
 	
+### History
+
+Unicode support needs a VM which supports Unicode. 
+A Squeak VM for Windows which supports Unicode was introduced in June 2007 by Andreas Raab and Chris
+Petsos
+
+http://forum.world.st/New-Win32-VM-m17n-testers-needed-tc63730.html#none
 
 
 ### References
