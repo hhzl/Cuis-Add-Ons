@@ -164,6 +164,27 @@ Method Character class>>unicodeCodePoint:
 	code = -1 ifTrue: [ ^nil ].
 	^Character value: code
 
+In Cuis 4.1 the value instance variable for instances of Character is restricted to be 8 bit only. 
+But the value as such is a 32bit integer value.
+
+The implementation of Character class>>value:
+
+    value: anInteger 
+        "Answer the Character whose value is anInteger."
+
+        ^CharacterTable at: anInteger + 1
+
+The CharacterTable class variable has 256 entries and a Character _must_ be included there.
+
+Contrariwise in Squeak 4.4. (and earlier versions) the method Character class>> value: is implemented as
+
+    value: anInteger 
+        "Answer the Character whose value is anInteger."
+
+        anInteger > 255 ifTrue: [^self basicNew setValue: anInteger].
+        ^ CharacterTable at: anInteger + 1.
+
+
 
 #### Class String
 
