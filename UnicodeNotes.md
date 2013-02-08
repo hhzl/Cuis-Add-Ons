@@ -322,3 +322,4 @@ http://forum.world.st/New-Win32-VM-m17n-testers-needed-tc63730.html#none
 - Unicode treatment in the Scheme language: http://scheme-reports.org/2012/working-group-1.html 
 - http://www.cprogramming.com/tutorial/unicode.html; Unicode in C and C++: What You Can Do About It Today
 by Jeff Bezanson; keywords: Encoding, display, input method, internationalization (i18n), lexicography, UTF-8
+- http://docs.python.org/2/howto/unicode.html support for either 16bit or 32 bit Unicode values, depending on how Python was compiled.
