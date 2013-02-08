@@ -1,6 +1,13 @@
 ﻿
+Note
+------
 
-Unicode support in Cuis
+This document needs to be updated as Juan Vuletich is implementing changes in 4.1-1590
+
+https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-InvertibleUTF8Conversion-JuanVuletich-2013Feb08-08h11m-jmv.1.cs.st
+
+
+Unicode support in Cuis 4.1
 ------------------------------
 
 Cuis has limited Unicode support.
