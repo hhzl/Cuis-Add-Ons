@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1583] on 31 January 2013 at 9:41:16 am'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1590] on 11 February 2013 at 9:44:10 am'!
 'Description Add-Ons which show how Morphic works'!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
@@ -130,6 +130,36 @@ SystemWindow subclass: #LayoutDemo3e
 LayoutDemo3e class
 	instanceVariableNames: ''!
 
+!classDefinition: #LayoutDemo3f category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo3f
+	instanceVariableNames: 'contentArea currentContentStringSelector'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo3f class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3f class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo3eNotes category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3f subclass: #LayoutDemo3eNotes
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo3eNotes class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3eNotes class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo3fNotes category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3f subclass: #LayoutDemo3fNotes
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo3fNotes class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3fNotes class
+	instanceVariableNames: ''!
+
 !classDefinition: #LayoutDemo4 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo4
 	instanceVariableNames: 'contentArea'
@@ -170,9 +200,59 @@ SystemWindow subclass: #LayoutDemo5
 LayoutDemo5 class
 	instanceVariableNames: ''!
 
+!classDefinition: #LayoutDemo5b category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo5b
+	instanceVariableNames: 'contentArea currentPage pages'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo5b class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo5b class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo5c category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo5c
+	instanceVariableNames: 'contentArea currentPage pages'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo5c class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo5c class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo5d category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo5d
+	instanceVariableNames: 'contentArea currentPage pages'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo5d class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo5d class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo5e category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo5e
+	instanceVariableNames: 'contentArea currentPage pages'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo5e class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo5e class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo5f category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo5f
+	instanceVariableNames: 'contentArea currentPage pages'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo5f class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo5f class
+	instanceVariableNames: ''!
+
 !classDefinition: #LayoutDemo6 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo6
-	instanceVariableNames: 'contentArea currentPage pages'
+	instanceVariableNames: 'contentArea'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Add-Ons-LayoutDemo'!
@@ -182,7 +262,7 @@ LayoutDemo6 class
 
 !classDefinition: #LayoutDemo6b category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo6b
-	instanceVariableNames: 'contentArea currentPage pages'
+	instanceVariableNames: 'contentArea'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Add-Ons-LayoutDemo'!
@@ -192,7 +272,7 @@ LayoutDemo6b class
 
 !classDefinition: #LayoutDemo6c category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo6c
-	instanceVariableNames: 'contentArea currentPage pages'
+	instanceVariableNames: 'contentArea'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Add-Ons-LayoutDemo'!
@@ -200,24 +280,24 @@ SystemWindow subclass: #LayoutDemo6c
 LayoutDemo6c class
 	instanceVariableNames: ''!
 
-!classDefinition: #LayoutDemo6d category: #'Add-Ons-LayoutDemo'!
-SystemWindow subclass: #LayoutDemo6d
-	instanceVariableNames: 'contentArea currentPage pages'
+!classDefinition: #LayoutDemo6dABC category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo6dABC
+	instanceVariableNames: 'contentArea'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Add-Ons-LayoutDemo'!
-!classDefinition: 'LayoutDemo6d class' category: #'Add-Ons-LayoutDemo'!
-LayoutDemo6d class
+!classDefinition: 'LayoutDemo6dABC class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo6dABC class
 	instanceVariableNames: ''!
 
-!classDefinition: #LayoutDemo7 category: #'Add-Ons-LayoutDemo'!
-SystemWindow subclass: #LayoutDemo7
-	instanceVariableNames: 'contentArea currentPage pages'
+!classDefinition: #ABCbook category: #'Add-Ons-LayoutDemo'!
+LayoutDemo6dABC subclass: #ABCbook
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Add-Ons-LayoutDemo'!
-!classDefinition: 'LayoutDemo7 class' category: #'Add-Ons-LayoutDemo'!
-LayoutDemo7 class
+!classDefinition: 'ABCbook class' category: #'Add-Ons-LayoutDemo'!
+ABCbook class
 	instanceVariableNames: ''!
 
 !classDefinition: #LayoutDemo8Timer category: #'Add-Ons-LayoutDemo'!
@@ -230,6 +310,9 @@ SystemWindow subclass: #LayoutDemo8Timer
 LayoutDemo8Timer class
 	instanceVariableNames: ''!
 
+
+!ABCbook commentStamp: 'hjh 2/11/2013 07:36' prior: 0!
+ABCbook open!
 
 !LayoutDemo0 commentStamp: 'hjh 1/16/2013 06:19' prior: 0!
 Subclass of SystemWindow. 
@@ -356,14 +439,41 @@ Changed the behaviour of the buttons to change the text.
 
     LayoutDemo3d new openInWorld!
 
-!LayoutDemo3e commentStamp: 'hjh 1/31/2013 09:37' prior: 0!
+!LayoutDemo3e commentStamp: 'hjh 1/31/2013 09:48' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
-Add a TextModelMorph as the content. 
+
+A TextModelMorph as the content. 
 
 Changed the behaviour of the buttons to change the text and automatically save the string in methods.
 
 
     LayoutDemo3e new openInWorld!
+
+!LayoutDemo3eNotes commentStamp: 'hjh 1/31/2013 10:46' prior: 0!
+A subclass of  LayoutDemo3e
+
+     The changed content strings are stored here.
+
+
+     LayoutDemo3eNotes new openInWorld!
+
+!LayoutDemo3f commentStamp: 'hjh 1/31/2013 12:20' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+
+A TextModelMorph as the content. 
+
+Changed the behaviour of the buttons to change the text and automatically save the string in methods.
+
+
+    LayoutDemo3f new openInWorld!
+
+!LayoutDemo3fNotes commentStamp: 'hjh 1/31/2013 12:43' prior: 0!
+A subclass of  LayoutDemo3f
+
+     The changed content strings are stored here.
+
+
+     LayoutDemo3fNotes new openInWorld!
 
 !LayoutDemo4 commentStamp: 'hjh 1/16/2013 09:35' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
@@ -383,51 +493,154 @@ Changed from LayoutDemo4: method
 
     LayoutDemo4b new openInWorld!
 
-!LayoutDemo4c commentStamp: 'hjh 1/31/2013 07:00' prior: 0!
+!LayoutDemo4c commentStamp: 'hjh 2/10/2013 16:50' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
-The morphs which are added have a #name property set. This allows to call them and bring them to the front.
+The pages morphs are stacked on top of each other in the contentArea (RectangleLikeMorph) morph.
+
+The morphs which are added have a #name property set. This allows to call them and bring them to the front. 
+This is done with #bringPageToFront:.
 
 The RectangleLikeMorph have been replace by DragAndDropAreaMorph. Morph instances dropped on them stay.
 
 
     LayoutDemo4c new openInWorld!
 
-!LayoutDemo5 commentStamp: 'hjh 1/16/2013 14:04' prior: 0!
+!LayoutDemo5 commentStamp: 'hjh 2/10/2013 16:57' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
+A more complicated way of achieving the same thing as LayoutDemo4.
 
+Pages are still put on a morph hold in the instance variable contentArea. They are all hidden.
+
+Pages are hold in addition in a separated OrderedCollection, all hidden.
+There is a page called the currentPage which is shown.
      LayoutDemo5 new openInWorld!
 
-!LayoutDemo6 commentStamp: '<historical>' prior: 0!
+!LayoutDemo5b commentStamp: '<historical>' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
-     LayoutDemo6 new openInWorld!
+     LayoutDemo5b new openInWorld!
 
-!LayoutDemo6b commentStamp: '<historical>' prior: 0!
+!LayoutDemo5c commentStamp: '<historical>' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
-     LayoutDemo6b new openInWorld!
+     LayoutDemo5c new openInWorld!
 
-!LayoutDemo6c commentStamp: '<historical>' prior: 0!
+!LayoutDemo5d commentStamp: '<historical>' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
+Hee pages have an individual creation method.
+	#createPage1, #createPage2, ...
 
-     LayoutDemo6c new openInWorld!
+     LayoutDemo5d new openInWorld!
 
-!LayoutDemo6d commentStamp: '<historical>' prior: 0!
+!LayoutDemo5e commentStamp: '<historical>' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
      LayoutDemo6d new openInWorld!
 
-!LayoutDemo7 commentStamp: '<historical>' prior: 0!
+!LayoutDemo5f commentStamp: '<historical>' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
      LayoutDemo7 new openInWorld!
 
-!LayoutDemo8Timer commentStamp: 'hjh 1/29/2013 18:57' prior: 0!
+!LayoutDemo6 commentStamp: 'hjh 2/10/2013 19:14' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+Adapted from LayoutDemo4c. That version only has 7 instance methods whereas 5c has 11 methods.
+ 
+So here again only one instance variable contentArea to hold the pages.
+
+The pages morphs are stacked on top of each other in the contentArea (RectangleLikeMorph) morph.
+
+The morphs which are added have a #name property set. This is used by #bringPageToFront: .
+
+In this demo method #addPageTo:name: aName has been added.
+
+       LayoutDemo6 open!
+
+!LayoutDemo6b commentStamp: 'hjh 2/10/2013 19:14' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+The same as LayoutDemo6 but a morph is added centered on each page.
+
+In #addPageTo: name: a LayoutMorph is used.
+
+       LayoutDemo6b open
+
+
+QUESTION:
+
+| row |
+row := LayoutMorph newRow.
+row
+     color: Color green;
+     addMorph: (BorderedRectMorph new 
+				color: (Color h: 60 s: 0.6 v: 0.6);
+				morphExtent: 170@170).
+row padding: #center.
+row openInWorld.
+row morphExtent: 200@200.
+row morphPosition: 150 at 130
+
+If you use a Column and not a Row, you don't even need to specify the 
+#padding:, as it defaults to #center.
+!
+
+!LayoutDemo6c commentStamp: 'hjh 2/10/2013 19:14' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+The same as LayoutDemo6 but a morph is added centered on each page.
+
+In #addPageTo: name: a LayoutMorph is used.
+
+       LayoutDemo6c open
+
+
+Uses ABC book 
+
+
+
+!
+
+!LayoutDemo6dABC commentStamp: '<historical>' prior: 0!
+Subclass of SystemWindows specialised to display layout examples
+The same as LayoutDemo6 but a morph is added centered on each page.
+
+In #addPageTo: name: a LayoutMorph is used.
+
+       LayoutDemo6dABC open
+
+
+Uses ABC book 
+
+
+
+!
+
+!LayoutDemo8Timer commentStamp: 'hjh 2/2/2013 04:20' prior: 0!
 Subclass of SystemWindow specialised to display layout examples
 
-     LayoutDemo8Timer new openInWorld!
+     LayoutDemo8Timer open!
+
+!ABCbook methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 07:43'!
+addButtonTo: aMorph name: aName
+| aSymbol button |
+
+
+aSymbol := aName asSymbol.
+
+button := PluggableButtonMorph 
+			               model: [ self bringPageToFront: aSymbol]
+			               action: #value.
+			 
+button label: aName first asString font: (
+	AbstractFont familyName: 'DejaVu' pointSize: 17
+     ).
+
+aMorph addMorph: button fixedWidth: 70! !
+
+!ABCbook class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 09:20'!
+defaultBackgroundColor
+
+	^Color green darker darker! !
 
 !LayoutDemo0 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 06:22'!
 buildMorphicWindow
@@ -954,10 +1167,10 @@ textModelMorphforSelector: aContentSelector
 	^TextModelMorph withText: (self perform: aContentSelector)
 	! !
 
-!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 09:19'!
+!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 10:43'!
 buildMorphicWindow
 
-self setLabel: self className.
+self setLabel: self titleString.
 
 contentArea := self textModelMorphforSelector:  #contentString1.
 currentContentStringSelector := #contentString1.
@@ -970,22 +1183,22 @@ self openInWorld
 
 ! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:40'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:49'!
 contentString1
 	^ 'This is the red content area.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:40'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:49'!
 contentString2
 	^ 'green'! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:40'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:49'!
 contentString3
 	^ 'blue'! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:41'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:49'!
 contentString4
 	^ 'yellow'! !
 
@@ -1088,6 +1301,265 @@ textModelMorphforSelector: aContentSelector
 
 	^TextModelMorph withText: (self perform: aContentSelector)
 	! !
+
+!LayoutDemo3e methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:43'!
+titleString
+
+	^ self className! !
+
+!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 11:18'!
+contentString1
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.
+
+
+'! !
+
+!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 11:18'!
+contentString2
+	^ 'green area
+
+A sample note
+------------------
+
+https://help.github.com/articles/interactive-rebase
+
+
+ git rebase --interactive'! !
+
+!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 11:18'!
+contentString3
+	^ 'blue notes area'! !
+
+!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 11:18'!
+contentString4
+	^ 'yellow notes area'! !
+
+!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 10:44'!
+titleString
+
+	^ 'Notes'! !
+
+!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 12:35'!
+buildMorphicWindow
+
+self setLabel: self titleString.
+
+contentArea := self textModelMorphforSelector:  #contentString1.
+currentContentStringSelector := #contentString1.
+
+
+self layoutMorph addMorph:  (self createButtonBarFromSpec: self customButtonSpecs) fixedHeight: 40.
+self layoutMorph addMorphUseAll: contentArea.
+
+self openInWorld
+
+! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:41'!
+contentString1
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+contentString2
+	^ 'green'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+contentString3
+	^ 'blue'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+contentString4
+	^ 'yellow'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+contentString5
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+contentString6
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:15'!
+createButtonBarFromSpec: aButtonCollectionSpec
+
+| bar |
+
+bar :=LayoutMorph newRow color: Color red.
+
+aButtonCollectionSpec do: [ :buttonSpec |
+    bar addMorph: 
+        (PluggableButtonMorph 
+			model: [ self display: (buttonSpec at: 2).
+				        bar color: (Color perform: (buttonSpec at: 3))] 
+			action: #value label: (buttonSpec at: 1)
+	  ) 
+    fixedWidth: self defaultButtonWidth].
+
+^ bar! !
+
+!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 12:41'!
+customButtonSpecs
+	"Answer an array of elements of the label, selector and color"
+
+	^#(
+		('red'			#contentString1			     #lightRed)
+		('green'			#contentString2			     #lightGreen)
+		('blue'			#contentString3			     #lightBlue)
+		('yellow'		#contentString4		           #yellow)
+		('orange'		#contentString5		           #orange)
+		('magenta'		#contentString6		           #magenta)
+	)
+
+  
+! !
+
+!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:16'!
+defaultButtonWidth
+	^70! !
+
+!LayoutDemo3f methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:29'!
+display: aContentSelector
+
+	currentContentStringSelector ifNotNil:  [self removeOldContent].
+	
+	currentContentStringSelector := aContentSelector.
+	
+	self layoutMorph addMorphUseAll: 
+		(contentArea := self textModelMorphforSelector:  currentContentStringSelector)
+	! !
+
+!LayoutDemo3f methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo3f methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo3f methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:35'!
+removeOldContent
+"save the old content in a method first and then remove the text morph"
+
+  | methodSource |
+
+  methodSource :=
+
+		 	currentContentStringSelector asString
+			
+			, String newLineString 
+			
+			,'	^ ''' ,
+			
+			contentArea model actualContents asString,
+			
+			''''.
+   self class compile: methodSource.
+			
+   self layoutMorph removeMorph: contentArea.! !
+
+!LayoutDemo3f methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 08:37'!
+textModelMorphforSelector: aContentSelector
+
+	^TextModelMorph withText: (self perform: aContentSelector)
+	! !
+
+!LayoutDemo3f methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:43'!
+titleString
+
+	^ self className! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+contentString1
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+contentString2
+	^ 'green'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+contentString3
+	^ 'blue'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+contentString4
+	^ 'yellow'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+contentString5
+	^ 'orange
+'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+contentString6
+	^ 'magenta'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+contentString7
+	^ 'brown'! !
+
+!LayoutDemo3fNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 13:13'!
+customButtonSpecs
+	"Answer an array of elements of the label, selector and color"
+
+	^#(
+		('1'			#contentString1			     #lightRed)
+		('2'			#contentString2			     #lightGreen)
+		('3'			#contentString3			     #lightBlue)
+		('4'		      #contentString4		           #yellow)
+		('5'		      #contentString5		           #orange)
+		('6'		      #contentString6		           #magenta)
+		('7'		      #contentString7		           #brown)
+	)
+
+  ! !
+
+!LayoutDemo3fNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 13:16'!
+defaultButtonWidth
+	^50! !
+
+!LayoutDemo3fNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 13:16'!
+initialExtent
+
+^ 400 @ 500! !
+
+!LayoutDemo3fNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 12:44'!
+titleString
+
+	^ 'Notes'! !
 
 !LayoutDemo4 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:49'!
 buildMorphicWindow
@@ -1440,7 +1912,7 @@ titleString
 
 	^self class name ! !
 
-!LayoutDemo6 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
+!LayoutDemo5b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
 buildMorphicWindow
 
 
@@ -1453,7 +1925,7 @@ buildMorphicWindow
 
   self displayPage: currentPage.! !
 
-!LayoutDemo6 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
+!LayoutDemo5b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
 createButtonBar
 
 
@@ -1475,7 +1947,7 @@ addMorph: (PluggableButtonMorph
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo6 methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
+!LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
 displayPage: pageNumber
 	| page |
 	"self adjustButtonsForPage: pageNumber."
@@ -1483,27 +1955,27 @@ displayPage: pageNumber
 	contentArea addMorphUseAll: page.
 	contentArea layoutSubmorphs! !
 
-!LayoutDemo6 methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
+!LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
 hideCurrentPage
 	| page |
 	page := pages at: currentPage.
       contentArea removeMorph: page.
 ! !
 
-!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
+!LayoutDemo5b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
 initialExtent
 	
 	
 	^ 480 @ 360! !
 
-!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 18:21'!
+!LayoutDemo5b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 18:21'!
 initialize
 
 	super initialize.
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo6 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
@@ -1518,7 +1990,7 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo6 methodsFor: 'page creation' stamp: 'hjh 1/16/2013 14:15'!
+!LayoutDemo5b methodsFor: 'page creation' stamp: 'hjh 1/16/2013 14:15'!
 makePages
 	| r |
 	pages := OrderedCollection new.
@@ -1535,24 +2007,24 @@ makePages
 	^r
 	! !
 
-!LayoutDemo6 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+!LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 nextPage
 	self hideCurrentPage.
 	currentPage := currentPage + 1.
 	self displayPage: currentPage! !
 
-!LayoutDemo6 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+!LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 showPage: aNumber.
 	self hideCurrentPage.
 	currentPage := aNumber.
 	self displayPage: currentPage! !
 
-!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
+!LayoutDemo5b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
 titleString
 
 	^self class name ! !
 
-!LayoutDemo6b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
+!LayoutDemo5c methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
 buildMorphicWindow
 
 
@@ -1565,7 +2037,7 @@ buildMorphicWindow
 
   self displayPage: currentPage.! !
 
-!LayoutDemo6b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
+!LayoutDemo5c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
 createButtonBar
 
 
@@ -1587,7 +2059,7 @@ addMorph: (PluggableButtonMorph
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo6b methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
+!LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
 displayPage: pageNumber
 	| page |
 	"self adjustButtonsForPage: pageNumber."
@@ -1595,26 +2067,26 @@ displayPage: pageNumber
 	contentArea addMorphUseAll: page.
 	contentArea layoutSubmorphs! !
 
-!LayoutDemo6b methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
+!LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
 hideCurrentPage
 	| page |
 	page := pages at: currentPage.
       contentArea removeMorph: page.
 ! !
 
-!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
+!LayoutDemo5c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
 initialExtent
 	
 	
 	^ 480 @ 360! !
 
-!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
+!LayoutDemo5c methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
 initialize
 	super initialize.
 
 	self buildMorphicWindow.! !
 
-!LayoutDemo6b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
@@ -1629,14 +2101,14 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo6b methodsFor: 'page creation' stamp: 'hjh 1/16/2013 14:27'!
+!LayoutDemo5c methodsFor: 'page creation' stamp: 'hjh 2/10/2013 16:40'!
 makePages
 	| r page1 page2 page3 |
 	pages := OrderedCollection new.
 	
-	pages add: (page1 _ RectangleLikeMorph new color: Color red).
-	pages add: (page2 _ RectangleLikeMorph new color: Color green).
-	pages add: (page3 _ RectangleLikeMorph new color: Color blue).
+	pages add: (page1 _ DragAndDropAreaMorph new color: Color red).
+	pages add: (page2 _ DragAndDropAreaMorph new color: Color green).
+	pages add: (page3 _ DragAndDropAreaMorph new color: Color blue).
 	pages add: (RectangleLikeMorph new color: Color yellow).
 	
 	page1 addMorph: (EllipseMorph new morphPosition: 40@60; morphWidth: 100; morphHeight:100;
@@ -1656,24 +2128,24 @@ makePages
 	^r
 	! !
 
-!LayoutDemo6b methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+!LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 nextPage
 	self hideCurrentPage.
 	currentPage := currentPage + 1.
 	self displayPage: currentPage! !
 
-!LayoutDemo6b methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+!LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 showPage: aNumber.
 	self hideCurrentPage.
 	currentPage := aNumber.
 	self displayPage: currentPage! !
 
-!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
+!LayoutDemo5c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
 titleString
 
 	^self class name ! !
 
-!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
+!LayoutDemo5d methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
 buildMorphicWindow
 
 
@@ -1686,7 +2158,7 @@ buildMorphicWindow
 
   self displayPage: currentPage.! !
 
-!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
+!LayoutDemo5d methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
 createButtonBar
 
 
@@ -1708,162 +2180,7 @@ addMorph: (PluggableButtonMorph
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo6c methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:11'!
-createPage1
-
-
-| page1 |
-
-								
-
-page1 _ RectangleLikeMorph new color: Color red.
-
-page1 addMorph: (EllipseMorph new morphPosition: 40@60; morphWidth: 100; morphHeight:100;
-						color: Color white).
-     
-^page1! !
-
-!LayoutDemo6c methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:09'!
-createPage2
-
-
-| page2 |
-
-								
-
-page2 _ RectangleLikeMorph new color: Color green.
-
-page2 addMorph: ((LimitedHeightTextMorph new
-						maxHeight: 48;
-						model: (TextModel new contents: 'abc def ghi jkl mno pqr stu vwx yz'))
-						morphPosition: 40@60).
-
-^page2! !
-
-!LayoutDemo6c methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:08'!
-createPage3
-
-
-| page3 |
-
-page3 _ RectangleLikeMorph new color: Color blue.
-
-page3 addMorph: (EllipseMorph new morphPosition: 89@20; morphWidth: 50; morphHeight:50).
-
-^page3! !
-
-!LayoutDemo6c methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
-displayPage: pageNumber
-	| page |
-	"self adjustButtonsForPage: pageNumber."
-	page := pages at: pageNumber.
-	contentArea addMorphUseAll: page.
-	contentArea layoutSubmorphs! !
-
-!LayoutDemo6c methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
-hideCurrentPage
-	| page |
-	page := pages at: currentPage.
-      contentArea removeMorph: page.
-! !
-
-!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
-initialize
-	super initialize.
-
-	self buildMorphicWindow.! !
-
-!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-
-	|  box |
-
-	box _ self createCloseBox.
-	self addMorph: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
-
-!LayoutDemo6c methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:12'!
-makePages
-	| p  |
-	pages := OrderedCollection new.
-	
-	pages add: self createPage1.
-	pages add: self createPage2.
-	pages add: self createPage3.
-	pages add: (RectangleLikeMorph new color: Color yellow).
-	
-	
-	p _ LayoutMorph  newRow color: Color gray; morphWidth: 180; morphHeight: 100.
-	p addMorphUseAll: (pages at: 1).
-	
-	^p
-	! !
-
-!LayoutDemo6c methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
-nextPage
-	self hideCurrentPage.
-	currentPage := currentPage + 1.
-	self displayPage: currentPage! !
-
-!LayoutDemo6c methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
-showPage: aNumber.
-	self hideCurrentPage.
-	currentPage := aNumber.
-	self displayPage: currentPage! !
-
-!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
-titleString
-
-	^self class name ! !
-
-!LayoutDemo6d methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
-buildMorphicWindow
-
-
-  self layoutMorph addMorph: self createButtonBar fixedHeight: 40.
-  self layoutMorph addMorphUseAll: (contentArea := self makePages).
-  self setLabel: self className.
-  self openInWorld.
-
-  currentPage := 1.
-
-  self displayPage: currentPage.! !
-
-!LayoutDemo6d methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
-createButtonBar
-
-
-^ LayoutMorph newRow 
-	
-addMorph: (PluggableButtonMorph 
-			model: [ self showPage: 1] action: #value label: 'red') 
-	            fixedWidth: 70;
-	
-addMorph: (PluggableButtonMorph 
-			model: [ self showPage: 2] action: #value label: 'green') 
-	           fixedWidth: 70;
-	
-addMorph: (PluggableButtonMorph 
-			model: [ self showPage: 3] action: #value label: 'blue') 
-	           fixedWidth: 70;
-
-addMorph: (PluggableButtonMorph 
-			model: [ self showPage: 4] action: #value label: 'yellow') 
-	           fixedWidth: 70! !
-
-!LayoutDemo6d methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
+!LayoutDemo5d methodsFor: 'page creation' stamp: 'hjh 2/10/2013 16:40'!
 createPage1
 
 
@@ -1878,7 +2195,7 @@ page1 addMorph: (EllipseMorph new morphPosition: 40@60; morphWidth: 100; morphHe
      
 ^page1! !
 
-!LayoutDemo6d methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
+!LayoutDemo5d methodsFor: 'page creation' stamp: 'hjh 2/10/2013 16:41'!
 createPage2
 
 
@@ -1895,7 +2212,162 @@ page2 addMorph: ((LimitedHeightTextMorph new
 
 ^page2! !
 
-!LayoutDemo6d methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:36'!
+!LayoutDemo5d methodsFor: 'page creation' stamp: 'hjh 2/10/2013 16:41'!
+createPage3
+
+
+| page3 |
+
+page3 _ DragAndDropAreaMorph new color: Color blue.
+
+page3 addMorph: (EllipseMorph new morphPosition: 89@20; morphWidth: 50; morphHeight:50).
+
+^page3! !
+
+!LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
+displayPage: pageNumber
+	| page |
+	"self adjustButtonsForPage: pageNumber."
+	page := pages at: pageNumber.
+	contentArea addMorphUseAll: page.
+	contentArea layoutSubmorphs! !
+
+!LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
+hideCurrentPage
+	| page |
+	page := pages at: currentPage.
+      contentArea removeMorph: page.
+! !
+
+!LayoutDemo5d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo5d methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
+initialize
+	super initialize.
+
+	self buildMorphicWindow.! !
+
+!LayoutDemo5d methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo5d methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:12'!
+makePages
+	| p  |
+	pages := OrderedCollection new.
+	
+	pages add: self createPage1.
+	pages add: self createPage2.
+	pages add: self createPage3.
+	pages add: (RectangleLikeMorph new color: Color yellow).
+	
+	
+	p _ LayoutMorph  newRow color: Color gray; morphWidth: 180; morphHeight: 100.
+	p addMorphUseAll: (pages at: 1).
+	
+	^p
+	! !
+
+!LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+nextPage
+	self hideCurrentPage.
+	currentPage := currentPage + 1.
+	self displayPage: currentPage! !
+
+!LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+showPage: aNumber.
+	self hideCurrentPage.
+	currentPage := aNumber.
+	self displayPage: currentPage! !
+
+!LayoutDemo5d methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
+titleString
+
+	^self class name ! !
+
+!LayoutDemo5e methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
+buildMorphicWindow
+
+
+  self layoutMorph addMorph: self createButtonBar fixedHeight: 40.
+  self layoutMorph addMorphUseAll: (contentArea := self makePages).
+  self setLabel: self className.
+  self openInWorld.
+
+  currentPage := 1.
+
+  self displayPage: currentPage.! !
+
+!LayoutDemo5e methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
+createButtonBar
+
+
+^ LayoutMorph newRow 
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self showPage: 1] action: #value label: 'red') 
+	            fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self showPage: 2] action: #value label: 'green') 
+	           fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self showPage: 3] action: #value label: 'blue') 
+	           fixedWidth: 70;
+
+addMorph: (PluggableButtonMorph 
+			model: [ self showPage: 4] action: #value label: 'yellow') 
+	           fixedWidth: 70! !
+
+!LayoutDemo5e methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
+createPage1
+
+
+| page1 |
+
+								
+
+page1 _ DragAndDropAreaMorph new color: Color red.
+
+page1 addMorph: (EllipseMorph new morphPosition: 40@60; morphWidth: 100; morphHeight:100;
+						color: Color white).
+     
+^page1! !
+
+!LayoutDemo5e methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
+createPage2
+
+
+| page2 |
+
+								
+
+page2 _ DragAndDropAreaMorph new color: Color green.
+
+page2 addMorph: ((LimitedHeightTextMorph new
+						maxHeight: 48;
+						model: (TextModel new contents: 'abc def ghi jkl mno pqr stu vwx yz'))
+						morphPosition: 40@60).
+
+^page2! !
+
+!LayoutDemo5e methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:36'!
 createPage3
 
 | page3 col |
@@ -1917,7 +2389,7 @@ page3 _ LayoutMorph newRow color: Color gray; morphWidth: 400; morphHeight:300.
 
 ^page3! !
 
-!LayoutDemo6d methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
+!LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
 displayPage: pageNumber
 	| page |
 	"self adjustButtonsForPage: pageNumber."
@@ -1925,26 +2397,26 @@ displayPage: pageNumber
 	contentArea addMorphUseAll: page.
 	contentArea layoutSubmorphs! !
 
-!LayoutDemo6d methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
+!LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
 hideCurrentPage
 	| page |
 	page := pages at: currentPage.
       contentArea removeMorph: page.
 ! !
 
-!LayoutDemo6d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
+!LayoutDemo5e methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
 initialExtent
 	
 	
 	^ 480 @ 360! !
 
-!LayoutDemo6d methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
+!LayoutDemo5e methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
 initialize
 	super initialize.
 
 	self buildMorphicWindow.! !
 
-!LayoutDemo6d methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5e methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
@@ -1959,7 +2431,7 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo6d methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
+!LayoutDemo5e methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 makePages
 	| p  |
 	pages := OrderedCollection new.
@@ -1976,24 +2448,24 @@ makePages
 	^p
 	! !
 
-!LayoutDemo6d methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+!LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 nextPage
 	self hideCurrentPage.
 	currentPage := currentPage + 1.
 	self displayPage: currentPage! !
 
-!LayoutDemo6d methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+!LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 showPage: aNumber.
 	self hideCurrentPage.
 	currentPage := aNumber.
 	self displayPage: currentPage! !
 
-!LayoutDemo6d methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
+!LayoutDemo5e methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
 titleString
 
 	^self class name ! !
 
-!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 18:10'!
+!LayoutDemo5f methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 18:10'!
 buildMorphicWindow
 
 
@@ -2006,7 +2478,7 @@ buildMorphicWindow
 
   self displayPage: currentPage.! !
 
-!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
+!LayoutDemo5f methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 12:37'!
 createButtonBar
 
 
@@ -2028,7 +2500,7 @@ addMorph: (PluggableButtonMorph
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo7 methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
+!LayoutDemo5f methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 createPage1
 
 
@@ -2043,7 +2515,7 @@ page1 addMorph: (EllipseMorph new morphPosition: 40@60; morphWidth: 100; morphHe
      
 ^page1! !
 
-!LayoutDemo7 methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
+!LayoutDemo5f methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 createPage2
 
 
@@ -2060,7 +2532,7 @@ page2 addMorph: ((LimitedHeightTextMorph new
 
 ^page2! !
 
-!LayoutDemo7 methodsFor: 'page creation' stamp: 'hjh 1/29/2013 17:00'!
+!LayoutDemo5f methodsFor: 'page creation' stamp: 'hjh 1/29/2013 17:00'!
 createPage3
 
 | page3 |
@@ -2076,7 +2548,7 @@ page3 _ LayoutMorph newRow color: Color gray; morphWidth: 400; morphHeight:300.
 
 ^page3! !
 
-!LayoutDemo7 methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
+!LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
 displayPage: pageNumber
 	| page |
 	"self adjustButtonsForPage: pageNumber."
@@ -2084,26 +2556,26 @@ displayPage: pageNumber
 	contentArea addMorphUseAll: page.
 	contentArea layoutSubmorphs! !
 
-!LayoutDemo7 methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
+!LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
 hideCurrentPage
 	| page |
 	page := pages at: currentPage.
       contentArea removeMorph: page.
 ! !
 
-!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
+!LayoutDemo5f methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
 initialExtent
 	
 	
 	^ 480 @ 360! !
 
-!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
+!LayoutDemo5f methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
 initialize
 	super initialize.
 
 	self buildMorphicWindow.! !
 
-!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5f methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
@@ -2118,7 +2590,7 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo7 methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
+!LayoutDemo5f methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 makePages
 	| p  |
 	pages := OrderedCollection new.
@@ -2135,22 +2607,641 @@ makePages
 	^p
 	! !
 
-!LayoutDemo7 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+!LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 nextPage
 	self hideCurrentPage.
 	currentPage := currentPage + 1.
 	self displayPage: currentPage! !
 
-!LayoutDemo7 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+!LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 showPage: aNumber.
 	self hideCurrentPage.
 	currentPage := aNumber.
 	self displayPage: currentPage! !
 
-!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
+!LayoutDemo5f methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
 titleString
 
 	^self class name ! !
+
+!LayoutDemo6 methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:20'!
+addPageTo: contentArea name: aName
+
+	| colorSymbol |
+	
+	colorSymbol := aName asSymbol.
+
+      contentArea addMorph: (DragAndDropAreaMorph new 
+								color: (Color perform: colorSymbol);
+								setProperty: #name toValue: colorSymbol;
+								morphExtent: 430@250
+							).
+								
+	
+	
+	
+
+
+    ! !
+
+!LayoutDemo6 methodsFor: 'pages' stamp: 'hjh 1/31/2013 05:20'!
+bringPageToFront: aPageName
+
+ 	| page |
+	
+	page := contentArea submorphs detect: [ :morph | (morph valueOfProperty: #name) = aPageName].
+	
+	contentArea addMorphFront: page. 
+	
+
+
+! !
+
+!LayoutDemo6 methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:25'!
+buildMorphicWindow
+
+self setLabel: self titleString.
+
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorphUseAll: self makeContentArea.
+
+self openInWorld
+! !
+
+!LayoutDemo6 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 05:17'!
+createButtonBar
+
+
+^ LayoutMorph newRow 
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #red] action: #value label: 'red') 
+	            fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self  bringPageToFront: #green] action: #value label: 'green') 
+	           fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #blue] action: #value label: 'blue') 
+	           fixedWidth: 70;
+
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #yellow] action: #value label: 'yellow') 
+	           fixedWidth: 70! !
+
+!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo6 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo6 methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:14'!
+makeContentArea
+
+ 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
+
+	"morphs are added on top of each other"
+
+      self addPageTo: contentArea name: 'red'.
+      self addPageTo: contentArea name: 'green'.
+      self addPageTo: contentArea name: 'blue'.
+      self addPageTo: contentArea name: 'yellow'.
+								
+	
+	^ contentArea
+
+
+    ! !
+
+!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:25'!
+titleString
+
+	^self class name ! !
+
+!LayoutDemo6 class methodsFor: 'as yet unclassified' stamp: 'hjh 2/10/2013 19:13'!
+open
+
+	^self new openInWorld! !
+
+!LayoutDemo6b methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:31'!
+addPageTo: contentArea name: aName
+
+	| colorSymbol b |
+	
+	colorSymbol := aName asSymbol.
+
+	b := BorderedRectMorph new 
+											color: (Color perform: colorSymbol) darker;
+											morphExtent: 100@100.
+
+      contentArea addMorph: (LayoutMorph newColumn 
+								color: (Color perform: colorSymbol);
+								setProperty: #name toValue: colorSymbol;
+								addMorph: b;
+								morphExtent: 430@250
+							).
+								
+								
+	
+
+
+    ! !
+
+!LayoutDemo6b methodsFor: 'pages' stamp: 'hjh 1/31/2013 05:20'!
+bringPageToFront: aPageName
+
+ 	| page |
+	
+	page := contentArea submorphs detect: [ :morph | (morph valueOfProperty: #name) = aPageName].
+	
+	contentArea addMorphFront: page. 
+	
+
+
+! !
+
+!LayoutDemo6b methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:25'!
+buildMorphicWindow
+
+self setLabel: self titleString.
+
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorphUseAll: self makeContentArea.
+
+self openInWorld
+! !
+
+!LayoutDemo6b methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 05:17'!
+createButtonBar
+
+
+^ LayoutMorph newRow 
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #red] action: #value label: 'red') 
+	            fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self  bringPageToFront: #green] action: #value label: 'green') 
+	           fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #blue] action: #value label: 'blue') 
+	           fixedWidth: 70;
+
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #yellow] action: #value label: 'yellow') 
+	           fixedWidth: 70! !
+
+!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo6b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo6b methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:14'!
+makeContentArea
+
+ 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
+
+	"morphs are added on top of each other"
+
+      self addPageTo: contentArea name: 'red'.
+      self addPageTo: contentArea name: 'green'.
+      self addPageTo: contentArea name: 'blue'.
+      self addPageTo: contentArea name: 'yellow'.
+								
+	
+	^ contentArea
+
+
+    ! !
+
+!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:25'!
+titleString
+
+	^self class name ! !
+
+!LayoutDemo6b class methodsFor: 'as yet unclassified' stamp: 'hjh 2/10/2013 19:13'!
+open
+
+	^self new openInWorld! !
+
+!LayoutDemo6c methodsFor: 'pages' stamp: 'hjh 2/10/2013 18:10'!
+addPageTo: contentArea name: aName
+
+	| colorSymbol b |
+	
+	colorSymbol := aName asSymbol.
+
+	b := ImageMorph new image: (ABC at: aName).
+
+      contentArea addMorph: (LayoutMorph newColumn 
+								setProperty: #name toValue: colorSymbol;
+								addMorph: b;
+								morphExtent: 500@350
+							).
+								
+								
+	
+
+
+    ! !
+
+!LayoutDemo6c methodsFor: 'pages' stamp: 'hjh 1/31/2013 05:20'!
+bringPageToFront: aPageName
+
+ 	| page |
+	
+	page := contentArea submorphs detect: [ :morph | (morph valueOfProperty: #name) = aPageName].
+	
+	contentArea addMorphFront: page. 
+	
+
+
+! !
+
+!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:26'!
+buildMorphicWindow
+
+self setLabel: self titleString.
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorphUseAll: self makeContentArea.
+
+self openInWorld
+! !
+
+!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 17:38'!
+createButtonBar
+
+
+^ LayoutMorph newRow 
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #Apple] action: #value label: 'Apple') 
+	            fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self  bringPageToFront: #Ball] action: #value label: 'Ball') 
+	           fixedWidth: 70;
+	
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #Cat] action: #value label: 'Cat') 
+	           fixedWidth: 70;
+
+addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: #Duck] action: #value label: 'Duck') 
+	           fixedWidth: 70! !
+
+!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 2/10/2013 17:43'!
+initialExtent
+	
+	
+	^ 600 @ 480! !
+
+!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo6c methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:39'!
+makeContentArea
+
+ 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
+
+	"morphs are added on top of each other"
+
+      self addPageTo: contentArea name: 'Apple'.
+      self addPageTo: contentArea name: 'Ball'.
+      self addPageTo: contentArea name: 'Cat'.
+      self addPageTo: contentArea name: 'Duck'.
+								
+	
+	^ contentArea
+
+
+    ! !
+
+!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:26'!
+titleString
+
+	^self class name ! !
+
+!LayoutDemo6c class methodsFor: 'as yet unclassified' stamp: 'hjh 2/10/2013 19:13'!
+open
+
+	^self new openInWorld! !
+
+!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:17'!
+addButtonTo: aMorph name: aName
+| aSymbol |
+
+
+aSymbol := aName asSymbol.
+
+aMorph addMorph: (PluggableButtonMorph 
+			model: [ self bringPageToFront: aSymbol] action: #value label: aName) 
+	            fixedWidth: 70! !
+
+!LayoutDemo6dABC methodsFor: 'pages' stamp: 'hjh 2/11/2013 09:41'!
+addPageTo: contentArea name: aName
+
+	|  b aSymbol |
+	
+	aSymbol := aName asSymbol.
+
+	b := ImageMorph new image: 
+		((Smalltalk at: #ContentPack2ABC) current  at: aName).
+
+      contentArea addMorph: (LayoutMorph newColumn 
+								setProperty: #name toValue: aSymbol;
+								color:  self class defaultBackgroundColor;
+								addMorph: b;
+								morphExtent: 500@350
+							).
+								! !
+
+!LayoutDemo6dABC methodsFor: 'pages' stamp: 'hjh 1/31/2013 05:20'!
+bringPageToFront: aPageName
+
+ 	| page |
+	
+	page := contentArea submorphs detect: [ :morph | (morph valueOfProperty: #name) = aPageName].
+	
+	contentArea addMorphFront: page. 
+	
+
+
+! !
+
+!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:54'!
+buildMorphicWindow
+
+self setLabel: self titleString.
+
+
+self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+self layoutMorph addMorph:  self createButtonBar2 fixedHeight: 40.
+self layoutMorph addMorph:  self createButtonBar3 fixedHeight: 40.
+self layoutMorph addMorph:  self createButtonBar4 fixedHeight: 40.
+self layoutMorph addMorph:  self createButtonBar5 fixedHeight: 40.
+
+
+self layoutMorph addMorphUseAll: self makeContentArea.
+
+self bringPageToFront: #Apple.
+
+self openInWorld.
+
+! !
+
+!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:27'!
+createButtonBar
+ | bar |
+
+	bar := LayoutMorph newRow. 
+
+ 	self addButtonTo: bar  name: 'Apple'. 
+	self addButtonTo: bar  name: 'Ball'. 
+ 	self addButtonTo: bar  name: 'Cat'. 
+ 	self addButtonTo: bar  name: 'Duck'. 
+ 	self addButtonTo: bar  name: 'Elephant'. 
+ 	
+	
+	^bar
+	
+! !
+
+!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:29'!
+createButtonBar2
+ | bar |
+
+	bar := LayoutMorph newRow. 
+
+ 	self addButtonTo: bar  name: 'Fish'. 
+ 	self addButtonTo: bar  name: 'Gate'. 
+	self addButtonTo: bar  name: 'Horse'. 
+	self addButtonTo: bar  name: 'Igloo'. 
+	self addButtonTo: bar  name: 'Jam'. 
+ 	
+	
+	^bar
+	
+! !
+
+!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:33'!
+createButtonBar3
+ | bar |
+
+	bar := LayoutMorph newRow. 
+
+ 	self addButtonTo: bar  name: 'Kangaroo'. 
+ 	self addButtonTo: bar  name: 'Lion'. 
+	self addButtonTo: bar  name: 'Mouse'. 
+	self addButtonTo: bar  name: 'Nest'. 
+	self addButtonTo: bar  name: 'Octopus'. 
+ 	
+	
+	^bar
+	
+! !
+
+!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:50'!
+createButtonBar4
+ | bar |
+
+	bar := LayoutMorph newRow. 
+
+ 	self addButtonTo: bar  name: 'Pig'. 
+ 	self addButtonTo: bar  name: 'Queen'. 
+	self addButtonTo: bar  name: 'Road'. 
+	self addButtonTo: bar  name: 'Sun'. 
+	self addButtonTo: bar  name: 'Turtle'. 
+	
+	
+	^bar
+	
+! !
+
+!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:54'!
+createButtonBar5
+ | bar |
+
+	bar := LayoutMorph newRow. 
+
+ 	self addButtonTo: bar  name: 'Umbrella'. 
+ 	self addButtonTo: bar  name: 'Volcano'. 
+	self addButtonTo: bar  name: 'Window'. 
+	self addButtonTo: bar  name: 'Xylophon'. 
+	self addButtonTo: bar  name: 'Yo-yo'. 
+	self addButtonTo: bar  name: 'Zebra'. 
+	
+	^bar
+	
+! !
+
+!LayoutDemo6dABC methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:55'!
+initialExtent
+	
+	
+	^ 500 @ 600! !
+
+!LayoutDemo6dABC methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	|  box |
+
+	box _ self createCloseBox.
+	self addMorph: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo6dABC methodsFor: 'pages' stamp: 'hjh 2/10/2013 18:54'!
+makeContentArea
+	"ABC"
+ 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
+
+	"morphs are added on top of each other"
+
+      self addPageTo: contentArea name: 'Apple'.
+      self addPageTo: contentArea name: 'Ball'.
+      self addPageTo: contentArea name: 'Cat'.
+      self addPageTo: contentArea name: 'Duck'.
+	self addPageTo: contentArea name: 'Elephant'.
+
+	self addPageTo: contentArea name: 'Fish'.
+	self addPageTo: contentArea name: 'Gate'.							
+	self addPageTo: contentArea name: 'Horse'.	
+	self addPageTo: contentArea name: 'Igloo'.
+	self addPageTo: contentArea name: 'Jam'.	
+
+	self addPageTo: contentArea name: 'Kangaroo'.	
+	self addPageTo: contentArea name: 'Lion'.	
+	self addPageTo: contentArea name: 'Mouse'.	
+	self addPageTo: contentArea name: 'Nest'.	
+	self addPageTo: contentArea name: 'Octopus'.	
+	
+	self addPageTo: contentArea name: 'Pig'.	
+	self addPageTo: contentArea name: 'Queen'.	
+	self addPageTo: contentArea name: 'Road'.	
+	self addPageTo: contentArea name: 'Sun'.	
+	self addPageTo: contentArea name: 'Turtle'.	
+	
+	self addPageTo: contentArea name: 'Pig'.	
+	self addPageTo: contentArea name: 'Queen'.	
+	self addPageTo: contentArea name: 'Road'.	
+	self addPageTo: contentArea name: 'Sun'.	
+	self addPageTo: contentArea name: 'Turtle'.	
+	
+	self addPageTo: contentArea name: 'Umbrella'.	
+	self addPageTo: contentArea name: 'Volcano'.	
+	self addPageTo: contentArea name: 'Window'.	
+	self addPageTo: contentArea name: 'Xylophon'.	
+	self addPageTo: contentArea name: 'Yo-yo'.	
+	self addPageTo: contentArea name: 'Zebra'.	
+
+	^ contentArea
+
+
+    ! !
+
+!LayoutDemo6dABC methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:26'!
+titleString
+
+	^'ABC book' ! !
+
+!LayoutDemo6dABC class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 09:36'!
+checkIfABCdictionaryWithPicturesPresent
+
+	(Smalltalk at: #ContentPack2ABC ifAbsent: []) isNil
+		ifTrue: [self inform: 'You need to have loaded ''ContentPack2ABC'' from https://github.com/hhzl/ContentPack.' . ^false].
+		
+	^true	! !
+
+!LayoutDemo6dABC class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 09:19'!
+defaultBackgroundColor
+
+	^Color blue! !
+
+!LayoutDemo6dABC class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 09:35'!
+open
+
+	self checkIfABCdictionaryWithPicturesPresent
+	
+	    ifTrue:  [^self new openInWorld]! !
 
 !LayoutDemo8Timer methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 19:02'!
 buildMorphicWindow
@@ -2230,3 +3321,8 @@ wantsSteps
 	"Return true if the receiver wants to its #step or #stepAt: methods be run"
 
 	^true! !
+
+!LayoutDemo8Timer class methodsFor: 'as yet unclassified' stamp: 'hjh 2/2/2013 04:19'!
+open
+
+	^self new openInWorld ! !
