@@ -1,6 +1,13 @@
 ﻿
+Note
+------
 
-Unicode support in Cuis
+This document needs to be updated as Juan Vuletich is implementing changes in 4.1-1590
+
+https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-InvertibleUTF8Conversion-JuanVuletich-2013Feb08-08h11m-jmv.1.cs.st
+
+
+Unicode support in Cuis 4.1
 ------------------------------
 
 Cuis has limited Unicode support.
@@ -164,6 +171,27 @@ Method Character class>>unicodeCodePoint:
 	code = -1 ifTrue: [ ^nil ].
 	^Character value: code
 
+In Cuis 4.1 the value instance variable for instances of Character is restricted to be 8 bit only. 
+But the value as such is a 32bit integer value.
+
+The implementation of Character class>>value:
+
+    value: anInteger 
+        "Answer the Character whose value is anInteger."
+
+        ^CharacterTable at: anInteger + 1
+
+The CharacterTable class variable has 256 entries and a Character _must_ be included there.
+
+Contrariwise in Squeak 4.4. (and earlier versions) the method Character class>> value: is implemented as
+
+    value: anInteger 
+        "Answer the Character whose value is anInteger."
+
+        anInteger > 255 ifTrue: [^self basicNew setValue: anInteger].
+        ^ CharacterTable at: anInteger + 1.
+
+
 
 #### Class String
 
@@ -272,6 +300,13 @@ Method Integer>>nextUnicodeCodePointFromUtf8:
 
 	^nil
 	
+### History
+
+Unicode support needs a VM which supports Unicode. 
+A Squeak VM for Windows which supports Unicode was introduced in June 2007 by Andreas Raab and Chris
+Petsos
+
+http://forum.world.st/New-Win32-VM-m17n-testers-needed-tc63730.html#none
 
 
 ### References
@@ -285,3 +320,6 @@ Method Integer>>nextUnicodeCodePointFromUtf8:
 - http://www.is.titech.ac.jp/~ohshima/squeak/squeak-multilingual-e.html
 - https://code.google.com/p/chibi-scheme/source/browse/lib/scheme/char.sld
 - Unicode treatment in the Scheme language: http://scheme-reports.org/2012/working-group-1.html 
+- http://www.cprogramming.com/tutorial/unicode.html; Unicode in C and C++: What You Can Do About It Today
+by Jeff Bezanson; keywords: Encoding, display, input method, internationalization (i18n), lexicography, UTF-8
+- http://docs.python.org/2/howto/unicode.html support for either 16bit or 32 bit Unicode values, depending on how Python was compiled.
