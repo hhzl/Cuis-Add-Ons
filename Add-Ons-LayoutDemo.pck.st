@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1590] on 11 February 2013 at 9:44:10 am'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1590] on 11 February 2013 at 10:33:26 pm'!
 'Description Add-Ons which show how Morphic works'!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
@@ -419,16 +419,17 @@ Add a TextModelMorph as the content
 
     LayoutDemo3b new openInWorld!
 
-!LayoutDemo3c commentStamp: 'hjh 1/31/2013 07:37' prior: 0!
+!LayoutDemo3c commentStamp: 'hjh 2/11/2013 22:33' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 Add a TextModelMorph as the content. 
 
 Changed the behaviour of the buttons to change the text.
 
-Does not work because it uses methods of TextModel which need to be cleaned.
+Works properly if a fix is present in TextModelMorph>>#update:
+see http://jvuletich.org/pipermail/cuis_jvuletich.org/2013-February/000827.html
 
 
-    LayoutDemo3c new openInWorld!
+    LayoutDemo3c open!
 
 !LayoutDemo3d commentStamp: '<historical>' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
@@ -1012,31 +1013,31 @@ self openInWorld
 
 ! !
 
-!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:38'!
+!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hjh 2/11/2013 22:28'!
 createButtonBar
 
 ^ LayoutMorph newRow 
     addMorph: 
         (PluggableButtonMorph 
-			model: [ contentArea model contents: 'red'] action: #value label: 'red'
+			model: [ contentArea model actualContents:  'red'] action: #value label: 'red'
 	  ) 
     fixedWidth: 70;
 	
     addMorph: 
       (PluggableButtonMorph 
-			model: [ contentArea model contents: 'green'] action: #value label: 'green'
+			model: [ contentArea model actualContents: 'green'] action: #value label: 'green'
 	) 
     fixedWidth: 70;
 	
     addMorph: 
        (PluggableButtonMorph 
-			model: [ contentArea model contents: 'blue'] action: #value label: 'blue'
+			model: [ contentArea model actualContents: 'blue'] action: #value label: 'blue'
 	 ) 
 	 fixedWidth: 70;
       
     addMorph: 
        (PluggableButtonMorph 
-			model: [ contentArea color: Color yellow] action: #value label: 'yellow'
+			model: [ contentArea model actualContents: 'yellow'] action: #value label: 'yellow'
 	 ) 
 	fixedWidth: 70
 	! !
@@ -1067,6 +1068,10 @@ initializeLabelArea
 	box morphExtent: self boxExtent.
 
 ! !
+
+!LayoutDemo3c class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 22:32'!
+open
+	^self new openInWorld! !
 
 !LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 08:40'!
 buildMorphicWindow
