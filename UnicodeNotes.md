@@ -4,7 +4,7 @@ Unicode support in Cuis 4.1
 ### Note
 
 This document is in the process of beeing  updated as Juan Vuletich has implemented Unicode
-related changes in with change set 1590
+related changes with change set 1590
 
 https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-InvertibleUTF8Conversion-JuanVuletich-2013Feb08-08h11m-jmv.1.cs.st
 
@@ -135,6 +135,7 @@ so that all instances of a character ($R, for example) are identical.
 
 
 The class variable UnicodeCodePoints contains the Unicode values with which Cuis can deal. It is initialized with
+
     Character initializeUnicodeCodePoints
     
 
@@ -163,16 +164,31 @@ In a pristine Cuis image initialization has been done.
 Method Character class>>unicodeCodePoint:
 
     unicodeCodePoint: codePoint
+    	"
+    	Answer nil if the Unicode codePoint is not a valid ISO 8859-15 character
+	
+    	self assert: (Character unicodeCodePoint: 16r41) = $A.
+    	self assert: (Character unicodeCodePoint: 16r20AC) = $€.
+    	"
+    	^ (self iso8859s15CodeForUnicodeCodePoint: codePoint)
+    		ifNotNil: [ :code | Character value: code ]
+		
+
+
+Method Character class>>iso8859s15CodeForUnicodeCodePoint:
+
+    iso8859s15CodeForUnicodeCodePoint: codePoint
 	"
 	Answer nil if the Unicode codePoint is not a valid ISO 8859-15 character
 	
-	self assert: (Character unicodeCodePoint: 16r41) = $A.
-	self assert: (Character unicodeCodePoint: 16r20AC) = $€.
+	self assert: (Character iso8859s15CodeForUnicodeCodePoint: 16r41) = $A iso8859s15Code.
+	self assert: (Character iso8859s15CodeForUnicodeCodePoint: 16r20AC) = $€ iso8859s15Code.
 	"
 	| code |
 	code _ (UnicodeCodePoints indexOf: codePoint) -1.
 	code = -1 ifTrue: [ ^nil ].
-	^Character value: code
+	^code
+
 
 In Cuis 4.1 the value instance variable for instances of Character is restricted to be 8 bit only. 
 But the value as such is a 32bit integer value.
@@ -193,6 +209,37 @@ Contrariwise in Squeak 4.4. (and earlier versions) the method Character class>> 
 
         anInteger > 255 ifTrue: [^self basicNew setValue: anInteger].
         ^ CharacterTable at: anInteger + 1.
+
+
+
+Method Character class>>utf8BytesOfUnicodeCodePoint:
+
+    utf8BytesOfUnicodeCodePoint: aCodePoint
+
+    	^ ByteArray streamContents: [ :strm |
+    		Character
+    			evaluate: [ :byte |
+    				strm nextPut: byte ]
+    			withUtf8BytesOfUnicodeCodePoint: aCodePoint ]
+
+
+
+Method Character class>>evaluate:withUtf8BytesOfUnicodeCodePoint:
+
+
+    evaluate: aBlock withUtf8BytesOfUnicodeCodePoint: aCodePoint
+    	"See senders for typical usage"
+
+    	| mask nBytes shift |
+    	aCodePoint < 128 ifTrue: [
+    		^aBlock value: aCodePoint ].
+    	nBytes _ aCodePoint highBit + 3 // 5.
+    	mask _ #(128 192 224 240 248 252 254 255) at: nBytes.
+    	shift _ nBytes - 1 * -6.
+    	aBlock value: (aCodePoint bitShift: shift) + mask.
+    	2 to: nBytes do: [ :i | 
+    		shift _ shift + 6.
+    		aBlock value: ((aCodePoint bitShift: shift) bitAnd: 63) + 128 ]
 
 
 
@@ -219,7 +266,8 @@ String also inherits many useful methods from its hierarchy, such as
 	SequenceableCollection ,
 	SequenceableCollection copyReplaceAll:with:
 	
-	
+
+
 Method String>>iso8859s15ToUtf8
 
 	iso8859s15ToUtf8
