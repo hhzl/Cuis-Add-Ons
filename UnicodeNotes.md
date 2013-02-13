@@ -1,21 +1,24 @@
-﻿
-Note
-------
+Unicode support in Cuis 4.1
+------------------------------
 
-This document needs to be updated as Juan Vuletich is implementing changes in 4.1-1590
+### Note
+
+This document is in the process of beeing  updated as Juan Vuletich has implemented Unicode
+related changes in with change set 1590
 
 https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-InvertibleUTF8Conversion-JuanVuletich-2013Feb08-08h11m-jmv.1.cs.st
 
 
-Unicode support in Cuis 4.1
-------------------------------
+### Introduction
 
-Cuis has limited Unicode support.
+Cuis has limited Unicode support. 
 
-Externally, this means for the clipboard UTF8 is used. For files it is ISO8859-15.
+Externally, this means for the clipboard UTF8 is used. 
+For files it is possible to read and write UTF8 encodes text files losslessly.
+Characters which are in the ISO8859-15 character set can be dealt with directly as 
+internally the 8 bit ISO8959-15 convention is used (http://en.wikipedia.org/wiki/ISO/IEC_8859-15). This means less 
+than 255 code points. 
 
-
-Internally the 8 bit ISO8959-15 is used (http://en.wikipedia.org/wiki/ISO/IEC_8859-15) . This means less than 255 code points. 
 The rest is converted to numerical character entities when reading from a file or when text is pasted through the clipboard.
 
 
@@ -242,63 +245,6 @@ Line endings, method String>>withCuisLineEndings
 	^ self withLineEndings: String newLineString
 
 
-
-#### Class Integer
-
-Method Integer>>utf8BytesOfUnicodeCodePoint:
-
-	utf8BytesOfUnicodeCodePoint: aCodePoint
-	  "
-	  self assert: (Integer utf8BytesOfUnicodeCodePoint: 16r0024) hex =  '24'.
-	  self assert: (Integer utf8BytesOfUnicodeCodePoint: 16r00A2) hex =  'C2A2'.
-	  self assert: (Integer utf8BytesOfUnicodeCodePoint: 16r20AC) hex = 'E282AC'.
-	  self assert: (Integer utf8BytesOfUnicodeCodePoint: 16r024B62) hex = 'F0A4ADA2'.
-	  "
-	  ^ ByteArray streamContents: [ :strm |
-		self
-			evaluate: [ :byte |
-				strm nextPut: byte ]
-			withUtf8BytesOfUnicodeCodePoint: aCodePoint ].
-			
-
-Method Integer>>nextUnicodeCodePointFromUtf8:
-
-    nextUnicodeCodePointFromUtf8: anUtf8Stream
-	"
-	anUtf8Stream can be over a ByteArray or a String
-	Answer nil if conversion not possible
-
-	| bytes string |
-	bytes _ (ByteArray readHexFrom: 'C3A1C3A5C3A6C3B1C386C2A5C3BC') readStream.
-	string _ String streamContents: [ :strm |
-		[bytes atEnd ] whileFalse: [
-			strm nextPut: (Character value: (Integer nextUnicodeCodePointFromUtf8: bytes )) ]].
-	self assert: string = 'áåæñÆ¥ü'
-	"
-	| byte1 byte2 byte3 byte4 |
-	byte1 _ anUtf8Stream next asInteger.
-	byte1 < 128 ifTrue: [	"single byte"
-		^byte1 ].
-	
-	"At least 2 bytes"
-	byte2 _ anUtf8Stream next asInteger.
-	(byte2 bitAnd: 16rC0) = 16r80 ifFalse: [^nil]. "invalid UTF-8"
-	(byte1 bitAnd: 16rE0) = 192 ifTrue: [ "two bytes"
-		^ ((byte1 bitAnd: 31) bitShift: 6) + (byte2 bitAnd: 63) ].
-	
-	"At least 3 bytes"
-	byte3 _ anUtf8Stream next asInteger.
-	(byte3 bitAnd: 16rC0) = 16r80 ifFalse: [^nil]. "invalid UTF-8"
-	(byte1 bitAnd: 16rF0) = 224 ifTrue: [ "three bytes"
-		^ ((byte1 bitAnd: 15) bitShift: 12) + ((byte2 bitAnd: 63) bitShift: 6) + (byte3 bitAnd: 63) ].
-
-	byte4 _ anUtf8Stream next asInteger.
-	(byte4 bitAnd: 16rC0) = 16r80 ifFalse: [^nil]. "invalid UTF-8"
-	(byte1 bitAnd: 16rF8) = 240 ifTrue: [  "four bytes"
-		^ ((byte1 bitAnd: 16r7) bitShift: 18) +
-                  ((byte2 bitAnd: 63) bitShift: 12) + ((byte3 bitAnd: 63) bitShift: 6) + (byte4 bitAnd: 63) ].
-
-	^nil
 	
 ### History
 
