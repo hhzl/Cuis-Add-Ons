@@ -3,10 +3,13 @@ Unicode support in Cuis 4.1
 
 ### Note
 
-This document is in the process of beeing  updated as Juan Vuletich has implemented Unicode
+This document has been updated as Juan Vuletich has implemented Unicode
 related changes with change set 1590
 
 https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-InvertibleUTF8Conversion-JuanVuletich-2013Feb08-08h11m-jmv.1.cs.st
+
+Another check is needed to see if everything has been updated correctly.
+--HH
 
 
 ### Introduction
@@ -69,7 +72,8 @@ Write the data above as a UTF8 encoded file in binary mode.
 
 Read it back
 
-      (FileStream fileNamed: 'UTF8abc-test.txt') contentsOfEntireFile utf8ToISO8859s15
+    String fromUtf8:
+          (FileStream fileNamed: 'UTF8abc-test.txt') contentsOfEntireFile
 
 gives the result below. The result appears correctly in the Cuis image but not in this UnicodeNotes.md file as this is a UTF8 file 
 and thus does not show ISO8859-15 properly.
