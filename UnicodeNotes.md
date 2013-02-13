@@ -243,6 +243,38 @@ Method Character class>>evaluate:withUtf8BytesOfUnicodeCodePoint:
 
 
 
+Method Character class>>nextUnicodeCodePointFromUtf8:
+
+    nextUnicodeCodePointFromUtf8: anUtf8Stream
+    	"anUtf8Stream can be over a ByteArray
+    	Answer nil if conversion not possible, because of invalid UTF-8"
+
+    	| byte1 byte2 byte3 byte4 |
+    	byte1 _ anUtf8Stream next asInteger.
+    	byte1 < 128 ifTrue: [	"single byte"
+    		^byte1 ].
+	
+    	"At least 2 bytes"
+    	byte2 _ anUtf8Stream next asInteger.
+    	(byte2 bitAnd: 16rC0) = 16r80 ifFalse: [^nil]. "invalid UTF-8"
+    	(byte1 bitAnd: 16rE0) = 192 ifTrue: [ "two bytes"
+    		^ ((byte1 bitAnd: 31) bitShift: 6) + (byte2 bitAnd: 63) ].
+	
+    	"At least 3 bytes"
+    	byte3 _ anUtf8Stream next asInteger.
+    	(byte3 bitAnd: 16rC0) = 16r80 ifFalse: [^nil]. "invalid UTF-8"
+    	(byte1 bitAnd: 16rF0) = 224 ifTrue: [ "three bytes"
+    		^ ((byte1 bitAnd: 15) bitShift: 12) + ((byte2 bitAnd: 63) bitShift: 6) + (byte3 bitAnd: 63) ].
+
+    	"4 bytes"
+    	byte4 _ anUtf8Stream next asInteger.
+    	(byte4 bitAnd: 16rC0) = 16r80 ifFalse: [^nil]. "invalid UTF-8"
+    	(byte1 bitAnd: 16rF8) = 240 ifTrue: [  "four bytes"
+    		^ ((byte1 bitAnd: 16r7) bitShift: 18) + ((byte2 bitAnd: 63) bitShift: 12) + ((byte3 bitAnd: 63) bitShift: 6) + (byte4 bitAnd: 63) ].
+
+    	^nil
+
+
 #### Class String
 
     ArrayedCollection variableByteSubclass: #String
@@ -268,20 +300,104 @@ String also inherits many useful methods from its hierarchy, such as
 	
 
 
-Method String>>iso8859s15ToUtf8
+Method String>>asUtf8
 
-	iso8859s15ToUtf8
-	"Convert the given string to UTF-8 from the internal encoding: ISO Latin 9 (ISO 8859-15)"
-	"
-	self assert: ('A¢€' iso8859s15ToUtf8 asByteArray) hex = '41C2A2E282AC'
-	"
-	^String streamContents: [ :strm | | characters |
-		characters _ self readStream.
-		[ characters atEnd ] whileFalse: [
-			Integer
-				evaluate: [ :byte | strm nextPut: (Character value: byte) ]
-				withUtf8BytesOfUnicodeCodePoint: characters next unicodeCodePoint ]]
+    asUtf8
+    	"Convert the given string to UTF-8 from the internal encoding: ISO Latin 9 (ISO 8859-15)
+    	Answer a ByteArray.
 	
+    	See #fromUtf8: "
+
+    	^self asUtf8: false
+    	
+    	
+Method String>>asUtf8
+
+
+    asUtf8: convertEmbeddedNCRs
+    	"Convert the given string to UTF-8 from the internal encoding: ISO Latin 9 (ISO 8859-15)
+    	Answer a ByteArray.
+	
+    	If convertEmbeddedNCRs, then convert embedded NCRs such as '&#956;' (decimal) or '&#x03BC;' (hex) to CodePoints.
+    	See http://en.wikipedia.org/wiki/Numeric_character_reference
+	
+	
+    	Note: The conversion of NCRs is reversible. See #fromUtf8:hex:
+    	This allows handling the full Unicode in Cuis tools, that can only display the Latin alphabet, by editing the NCRs.
+    	The conversions can be done when reading / saving files, or when pasting from Clipboard and storing back on it."
+
+    	^ByteArray streamContents: [ :outStream | | inStream nextChar prevPos maybeUnicodeNCR ncrSize codePoint |
+    		inStream _ self readStream.
+    		[ inStream atEnd ] whileFalse: [
+    			nextChar _ inStream next.
+    		    	(convertEmbeddedNCRs and: [ nextChar = $& ])
+     		   		ifTrue: [
+    					prevPos _ inStream position.
+    					maybeUnicodeNCR _ inStream next: 9.
+    					maybeUnicodeNCR first = $# ifTrue: [
+    		  				ncrSize _ maybeUnicodeNCR indexOf: $;.
+    						ncrSize = 0
+    							ifFalse: [
+    								codePoint _ maybeUnicodeNCR second = $x
+    									ifTrue: [ ('16r', (maybeUnicodeNCR copyFrom: 3 to: ncrSize) asUppercase) asNumber ]
+    		   							ifFalse: [ (maybeUnicodeNCR copyFrom: 2 to: ncrSize) asNumber ]]
+    							ifTrue: [
+    								"Not an NCR after all. Just add the $& and continue from there"
+    								codePoint _ nextChar unicodeCodePoint ].
+    						Character
+    							evaluate: [ :byte | outStream nextPut: byte ]
+    							withUtf8BytesOfUnicodeCodePoint: codePoint.
+     						inStream position: prevPos + ncrSize ]]
+    				ifFalse: [
+    					codePoint _ nextChar unicodeCodePoint.
+    					Character
+    						evaluate: [ :byte | outStream nextPut: byte ]
+    						withUtf8BytesOfUnicodeCodePoint: codePoint ]]]
+
+
+String class>>fromUtf8:
+
+    fromUtf8: aByteArray
+    	"Convert the given bytes from UTF-8 to  the internal encoding: ISO Latin 9 (ISO 8859-15).
+    	See #asUtf8 "
+    	"For any unicode chars not in ISO Latin 9 (ISO 8859-15), embed an NCR.
+    	See http://en.wikipedia.org/wiki/Numeric_character_reference"
+    
+    	^self fromUtf8: aByteArray hex: false
+
+
+String class>>fromUtf8:hex:
+
+    fromUtf8: aByteArray hex: useHex
+    	"Convert the given string from UTF-8 to  the internal encoding: ISO Latin 9 (ISO 8859-15)"
+    	"For unicode chars not in ISO Latin 9 (ISO 8859-15), embed Decimal NCRs or Hexadecimal NCRs according to useHex.
+ 	
+    	See http://en.wikipedia.org/wiki/Numeric_character_reference
+    	See http://rishida.net/tools/conversion/. Tests prepared there.
+	
+    	Note: The conversion of NCRs is reversible. See #asUtf8:
+    	This allows handling the full Unicode in Cuis tools, that can only display the Latin alphabet, by editing the NCRs.
+    	The conversions can be done when reading / saving files, or when pasting from Clipboard and storing back on it."
+
+    	^String streamContents: [ :strm | | bytes |
+    		bytes _ aByteArray readStream.
+    		[ bytes atEnd ] whileFalse: [
+    			(Character nextUnicodeCodePointFromUtf8: bytes) ifNotNil: [ :codePoint | 
+    				(Character unicodeCodePoint: codePoint)
+    					ifNotNil: [ :iso8859m15code | strm nextPut: iso8859m15code]
+    					ifNil: [
+    						useHex
+    							ifTrue: [
+    								strm nextPutAll: '&#x'.
+    								codePoint printOn: strm base: 16 length: 4 padded: true.
+    								strm nextPut: $; ]
+    							ifFalse: [
+    								strm nextPutAll: '&#'.
+    								codePoint printOn: strm base: 10.
+    								strm nextPut: $; ]]]]] 
+
+
+
 Line endings, method String>>withCuisLineEndings
     
     withCuisLineEndings
