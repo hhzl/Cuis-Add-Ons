@@ -10,7 +10,8 @@ https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-Inver
 
 https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1600-WindowsClipboardFix-JuanVuletich-2013Feb14-14h37m-jmv.1.cs.st
 
-Note: More checks needed if everything is updated correctly in this file.
+
+Note: More checks needed if everything is updated correctly in this file. Some of the Cuis methods cited here have changed.
 
 
 ### Introduction
