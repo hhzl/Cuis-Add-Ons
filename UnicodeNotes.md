@@ -7,6 +7,7 @@ This document has been updated as Juan Vuletich has implemented Unicode
 related changes with change sets 1590 and 1600
 
 https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-InvertibleUTF8Conversion-JuanVuletich-2013Feb08-08h11m-jmv.1.cs.st
+
 https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1600-WindowsClipboardFix-JuanVuletich-2013Feb14-14h37m-jmv.1.cs.st
 
 Note: More checks needed if everything is updated correctly in this file.
