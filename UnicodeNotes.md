@@ -4,12 +4,12 @@ Unicode support in Cuis 4.1
 ### Note
 
 This document has been updated as Juan Vuletich has implemented Unicode
-related changes with change set 1590
+related changes with change sets 1590 and 1600
 
 https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-InvertibleUTF8Conversion-JuanVuletich-2013Feb08-08h11m-jmv.1.cs.st
+https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1600-WindowsClipboardFix-JuanVuletich-2013Feb14-14h37m-jmv.1.cs.st
 
-Another check is needed to see if everything has been updated correctly.
---HH
+Note: More checks needed if everything is updated correctly in this file.
 
 
 ### Introduction
@@ -91,9 +91,6 @@ gives the result
 
 which are the UTF8 bytes. Again here in this UnicodeNotes.md file this appears correctly whereas in the Cuis image it does not.
 
-
-
-Note: #utf8ToISO8859s15 is only used by the clipboard. 
 
 
 ### Test with ISO8859-15 text file
