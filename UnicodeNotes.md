@@ -3,10 +3,15 @@ Unicode support in Cuis 4.1
 
 ### Note
 
-This document is in the process of beeing  updated as Juan Vuletich has implemented Unicode
-related changes with change set 1590
+This document has been updated as Juan Vuletich has implemented Unicode
+related changes with change sets 1590 and 1600
 
 https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1590-InvertibleUTF8Conversion-JuanVuletich-2013Feb08-08h11m-jmv.1.cs.st
+
+https://github.com/jvuletich/Cuis/blob/master/UpdatesSinceLastRelease/1600-WindowsClipboardFix-JuanVuletich-2013Feb14-14h37m-jmv.1.cs.st
+
+
+Note: More checks needed if everything is updated correctly in this file. Some of the Cuis methods cited here have changed.
 
 
 ### Introduction
@@ -59,17 +64,22 @@ JavaScript escapes
 
 Write the data above as a UTF8 encoded file in binary mode.  
 
+````smalltalk
      | stream |
 
      stream := (FileStream newFileNamed: 'UTF8abc-test.txt') binary.
      stream nextPutAll: #[16r61 16r62 16r63 16r20 16rC3 16rA0 16rC3 16rA8 16rE2 
 	                              16r82 16rAC 16r20 16rCE 16rB1 16rCE 16rB2 16rCE 16rB3].
      stream close.
+````
    
 
 Read it back
 
-      (FileStream fileNamed: 'UTF8abc-test.txt') contentsOfEntireFile utf8ToISO8859s15
+````smalltalk
+    String fromUtf8:
+          (FileStream fileNamed: 'UTF8abc-test.txt') contentsOfEntireFile
+````
 
 gives the result below. The result appears correctly in the Cuis image but not in this UnicodeNotes.md file as this is a UTF8 file 
 and thus does not show ISO8859-15 properly.
@@ -78,8 +88,10 @@ and thus does not show ISO8859-15 properly.
 
 
 Whereas
-      
+
+````smalltalk
       (FileStream fileNamed: 'UTF8abc-test.txt') contentsOfEntireFile     
+````
 
 gives the result
 
@@ -89,24 +101,21 @@ which are the UTF8 bytes. Again here in this UnicodeNotes.md file this appears c
 
 
 
-Note: #utf8ToISO8859s15 is only used by the clipboard. 
-
-
 ### Test with ISO8859-15 text file
 
-
+````smalltalk
     | stream |
 
      stream  := (FileStream newFileNamed: 'ISO8859-15abc-test.txt').
      32 to: 255 do: [ :code | stream nextPut: code asCharacter].
      stream close.
-
+````
 
 Reading it back
 
-
+````smalltalk
     (FileStream fileNamed: 'ISO8859-15abc-test.txt') contentsOfEntireFile
-
+````
 
 The default encoding for files is ISO8859-15.    
 
@@ -122,12 +131,14 @@ and the constructed ISO8859 file.
 
 
 #### Class Character
+````smalltalk
     Magnitude subclass: #Character
 	instanceVariableNames: 'value'
 	classVariableNames: 'CharacterTable ClassificationTable LetterBits LowercaseBit 
 	                     UnaccentedTable UnicodeCodePoints UppercaseBit'
 	poolDictionaries: ''
 	category: 'Kernel-Text'
+````
 
 Comment:
 I represent a character by storing its associated Latin-9 code (ISO 8859-15). My instances are created uniquely, 
@@ -136,8 +147,9 @@ so that all instances of a character ($R, for example) are identical.
 
 The class variable UnicodeCodePoints contains the Unicode values with which Cuis can deal. It is initialized with
 
+````smalltalk
     Character initializeUnicodeCodePoints
-    
+````    
 
 In a pristine Cuis image initialization has been done.
 
