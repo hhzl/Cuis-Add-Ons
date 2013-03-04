@@ -1,5 +1,5 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1590] on 11 February 2013 at 10:33:26 pm'!
-'Description Add-Ons which show how Morphic works'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 4 March 2013 at 10:40:48 am'!
+'Description Add-Ons which show how Morphic layout works'!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
 	instanceVariableNames: ''
@@ -140,16 +140,6 @@ SystemWindow subclass: #LayoutDemo3f
 LayoutDemo3f class
 	instanceVariableNames: ''!
 
-!classDefinition: #LayoutDemo3eNotes category: #'Add-Ons-LayoutDemo'!
-LayoutDemo3f subclass: #LayoutDemo3eNotes
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Add-Ons-LayoutDemo'!
-!classDefinition: 'LayoutDemo3eNotes class' category: #'Add-Ons-LayoutDemo'!
-LayoutDemo3eNotes class
-	instanceVariableNames: ''!
-
 !classDefinition: #LayoutDemo3fNotes category: #'Add-Ons-LayoutDemo'!
 LayoutDemo3f subclass: #LayoutDemo3fNotes
 	instanceVariableNames: ''
@@ -158,6 +148,16 @@ LayoutDemo3f subclass: #LayoutDemo3fNotes
 	category: 'Add-Ons-LayoutDemo'!
 !classDefinition: 'LayoutDemo3fNotes class' category: #'Add-Ons-LayoutDemo'!
 LayoutDemo3fNotes class
+	instanceVariableNames: ''!
+
+!classDefinition: #LayoutDemo3fNotes2 category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3f subclass: #LayoutDemo3fNotes2
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Add-Ons-LayoutDemo'!
+!classDefinition: 'LayoutDemo3fNotes2 class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo3fNotes2 class
 	instanceVariableNames: ''!
 
 !classDefinition: #LayoutDemo4 category: #'Add-Ons-LayoutDemo'!
@@ -270,34 +270,14 @@ SystemWindow subclass: #LayoutDemo6b
 LayoutDemo6b class
 	instanceVariableNames: ''!
 
-!classDefinition: #LayoutDemo6c category: #'Add-Ons-LayoutDemo'!
-SystemWindow subclass: #LayoutDemo6c
-	instanceVariableNames: 'contentArea'
+!classDefinition: #LayoutDemo7 category: #'Add-Ons-LayoutDemo'!
+SystemWindow subclass: #LayoutDemo7
+	instanceVariableNames: 'contentArea currentContentStringSelector notesList selectedNote'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Add-Ons-LayoutDemo'!
-!classDefinition: 'LayoutDemo6c class' category: #'Add-Ons-LayoutDemo'!
-LayoutDemo6c class
-	instanceVariableNames: ''!
-
-!classDefinition: #LayoutDemo6dABC category: #'Add-Ons-LayoutDemo'!
-SystemWindow subclass: #LayoutDemo6dABC
-	instanceVariableNames: 'contentArea'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Add-Ons-LayoutDemo'!
-!classDefinition: 'LayoutDemo6dABC class' category: #'Add-Ons-LayoutDemo'!
-LayoutDemo6dABC class
-	instanceVariableNames: ''!
-
-!classDefinition: #ABCbook category: #'Add-Ons-LayoutDemo'!
-LayoutDemo6dABC subclass: #ABCbook
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Add-Ons-LayoutDemo'!
-!classDefinition: 'ABCbook class' category: #'Add-Ons-LayoutDemo'!
-ABCbook class
+!classDefinition: 'LayoutDemo7 class' category: #'Add-Ons-LayoutDemo'!
+LayoutDemo7 class
 	instanceVariableNames: ''!
 
 !classDefinition: #LayoutDemo8Timer category: #'Add-Ons-LayoutDemo'!
@@ -310,9 +290,6 @@ SystemWindow subclass: #LayoutDemo8Timer
 LayoutDemo8Timer class
 	instanceVariableNames: ''!
 
-
-!ABCbook commentStamp: 'hjh 2/11/2013 07:36' prior: 0!
-ABCbook open!
 
 !LayoutDemo0 commentStamp: 'hjh 1/16/2013 06:19' prior: 0!
 Subclass of SystemWindow. 
@@ -419,7 +396,9 @@ Add a TextModelMorph as the content
 
     LayoutDemo3b new openInWorld!
 
-!LayoutDemo3c commentStamp: 'hjh 2/11/2013 22:33' prior: 0!
+!LayoutDemo3c commentStamp: 'hjh 3/4/2013 10:25' prior: 0!
+DOES NOT WORK PROPERLY
+
 Subclass of SystemWindows specialised to display layout examples
 Add a TextModelMorph as the content. 
 
@@ -431,14 +410,19 @@ see http://jvuletich.org/pipermail/cuis_jvuletich.org/2013-February/000827.html
 
     LayoutDemo3c open!
 
-!LayoutDemo3d commentStamp: '<historical>' prior: 0!
+!LayoutDemo3d commentStamp: 'hjh 3/4/2013 10:26' prior: 0!
+DOES NOT WORK PROPERLY
+
 Subclass of SystemWindows specialised to display layout examples
 Add a TextModelMorph as the content. 
 
 Changed the behaviour of the buttons to change the text.
 
+Works properly if a fix is present in TextModelMorph>>#update:
+see http://jvuletich.org/pipermail/cuis_jvuletich.org/2013-February/000827.html
 
-    LayoutDemo3d new openInWorld!
+
+    LayoutDemo3d open!
 
 !LayoutDemo3e commentStamp: 'hjh 1/31/2013 09:48' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
@@ -450,38 +434,40 @@ Changed the behaviour of the buttons to change the text and automatically save t
 
     LayoutDemo3e new openInWorld!
 
-!LayoutDemo3eNotes commentStamp: 'hjh 1/31/2013 10:46' prior: 0!
-A subclass of  LayoutDemo3e
-
-     The changed content strings are stored here.
-
-
-     LayoutDemo3eNotes new openInWorld!
-
-!LayoutDemo3f commentStamp: 'hjh 1/31/2013 12:20' prior: 0!
+!LayoutDemo3f commentStamp: 'hjh 3/4/2013 10:23' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
 A TextModelMorph as the content. 
 
 Changed the behaviour of the buttons to change the text and automatically save the string in methods.
 
+A TextModelMorph is removed and added when changing to a different page.
 
-    LayoutDemo3f new openInWorld!
 
-!LayoutDemo3fNotes commentStamp: 'hjh 1/31/2013 12:43' prior: 0!
+    LayoutDemo3f open!
+
+!LayoutDemo3fNotes commentStamp: 'hjh 3/4/2013 10:09' prior: 0!
+A subclass of  LayoutDemo3e
+
+     The changed content strings are stored here.
+
+
+     LayoutDemo3fNotes open!
+
+!LayoutDemo3fNotes2 commentStamp: 'hjh 3/4/2013 10:10' prior: 0!
 A subclass of  LayoutDemo3f
 
      The changed content strings are stored here.
 
 
-     LayoutDemo3fNotes new openInWorld!
+     LayoutDemo3fNotes open!
 
-!LayoutDemo4 commentStamp: 'hjh 1/16/2013 09:35' prior: 0!
+!LayoutDemo4 commentStamp: 'hjh 3/4/2013 10:29' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
-    LayoutDemo4 new openInWorld!
+    LayoutDemo4 open!
 
-!LayoutDemo4b commentStamp: 'hjh 1/31/2013 05:07' prior: 0!
+!LayoutDemo4b commentStamp: 'hjh 3/4/2013 10:30' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 Changed from LayoutDemo4: method 
     #makePages
@@ -492,9 +478,9 @@ Changed from LayoutDemo4: method
     The button bar changes still the background color of the contentArea morph.
 
 
-    LayoutDemo4b new openInWorld!
+    LayoutDemo4b open!
 
-!LayoutDemo4c commentStamp: 'hjh 2/10/2013 16:50' prior: 0!
+!LayoutDemo4c commentStamp: 'hjh 3/4/2013 10:31' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
 The pages morphs are stacked on top of each other in the contentArea (RectangleLikeMorph) morph.
@@ -505,7 +491,7 @@ This is done with #bringPageToFront:.
 The RectangleLikeMorph have been replace by DragAndDropAreaMorph. Morph instances dropped on them stay.
 
 
-    LayoutDemo4c new openInWorld!
+    LayoutDemo4c open!
 
 !LayoutDemo5 commentStamp: 'hjh 2/10/2013 16:57' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
@@ -540,10 +526,10 @@ Subclass of SystemWindows specialised to display layout examples
 
      LayoutDemo6d new openInWorld!
 
-!LayoutDemo5f commentStamp: '<historical>' prior: 0!
+!LayoutDemo5f commentStamp: 'hjh 3/4/2013 10:16' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
-     LayoutDemo7 new openInWorld!
+     LayoutDemo5f new openInWorld!
 
 !LayoutDemo6 commentStamp: 'hjh 2/10/2013 19:14' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
@@ -559,7 +545,7 @@ In this demo method #addPageTo:name: aName has been added.
 
        LayoutDemo6 open!
 
-!LayoutDemo6b commentStamp: 'hjh 2/10/2013 19:14' prior: 0!
+!LayoutDemo6b commentStamp: 'hjh 3/4/2013 09:58' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 The same as LayoutDemo6 but a morph is added centered on each page.
 
@@ -569,6 +555,7 @@ In #addPageTo: name: a LayoutMorph is used.
 
 
 QUESTION:
+How do I center a morph?
 
 | row |
 row := LayoutMorph newRow.
@@ -586,62 +573,23 @@ If you use a Column and not a Row, you don't even need to specify the
 #padding:, as it defaults to #center.
 !
 
-!LayoutDemo6c commentStamp: 'hjh 2/10/2013 19:14' prior: 0!
+!LayoutDemo7 commentStamp: 'hjh 3/4/2013 09:57' prior: 0!
+NOT YET READY.
+
 Subclass of SystemWindows specialised to display layout examples
-The same as LayoutDemo6 but a morph is added centered on each page.
 
-In #addPageTo: name: a LayoutMorph is used.
+A TextModelMorph as the content. Uses a PluggableListMorph
 
-       LayoutDemo6c open
-
-
-Uses ABC book 
+Based on LayoutDemo3f
 
 
 
-!
-
-!LayoutDemo6dABC commentStamp: '<historical>' prior: 0!
-Subclass of SystemWindows specialised to display layout examples
-The same as LayoutDemo6 but a morph is added centered on each page.
-
-In #addPageTo: name: a LayoutMorph is used.
-
-       LayoutDemo6dABC open
-
-
-Uses ABC book 
-
-
-
-!
+    LayoutDemo7 open!
 
 !LayoutDemo8Timer commentStamp: 'hjh 2/2/2013 04:20' prior: 0!
 Subclass of SystemWindow specialised to display layout examples
 
      LayoutDemo8Timer open!
-
-!ABCbook methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 07:43'!
-addButtonTo: aMorph name: aName
-| aSymbol button |
-
-
-aSymbol := aName asSymbol.
-
-button := PluggableButtonMorph 
-			               model: [ self bringPageToFront: aSymbol]
-			               action: #value.
-			 
-button label: aName first asString font: (
-	AbstractFont familyName: 'DejaVu' pointSize: 17
-     ).
-
-aMorph addMorph: button fixedWidth: 70! !
-
-!ABCbook class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 09:20'!
-defaultBackgroundColor
-
-	^Color green darker darker! !
 
 !LayoutDemo0 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 06:22'!
 buildMorphicWindow
@@ -1073,12 +1021,13 @@ initializeLabelArea
 open
 	^self new openInWorld! !
 
-!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 08:40'!
+!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:14'!
 buildMorphicWindow
 
 self setLabel: self className.
 
-contentArea := self textModelMorphforSelector:  #contentString1.
+contentArea := TextModelMorph withText: 'abc...'.
+
 
 self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
 self layoutMorph addMorphUseAll: contentArea.
@@ -1087,56 +1036,49 @@ self openInWorld
 
 ! !
 
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:31'!
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:37'!
 contentString1
 	^'hello1'! !
 
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:31'!
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
 contentString2
 	^'hello2'! !
 
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:31'!
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
 contentString3
 	^'hello3'! !
 
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:31'!
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
 contentString4
 	^'hello4'! !
 
-!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 08:32'!
+!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 2/12/2013 15:39'!
 createButtonBar
 
 ^ LayoutMorph newRow 
     addMorph: 
         (PluggableButtonMorph 
-			model: [ self display: #contentString1 ] action: #value label: 'red'
+			model: [ contentArea model actualContents:  self contentString1] action: #value label: 'red'
 	  ) 
     fixedWidth: 70;
 	
     addMorph: 
       (PluggableButtonMorph 
-			model: [ self display: #contentString2 ] action: #value label: 'green'
+			model: [ contentArea model actualContents: self contentString2] action: #value label: 'green'
 	) 
     fixedWidth: 70;
 	
     addMorph: 
        (PluggableButtonMorph 
-			model: [ self display: #contentString3 ] action: #value label: 'blue'
+			model: [ contentArea model actualContents: self contentString3] action: #value label: 'blue'
 	 ) 
 	 fixedWidth: 70;
       
     addMorph: 
        (PluggableButtonMorph 
-			model: [ self display: #contentString4 ] action: #value label: 'yellow'
+			model: [ contentArea model actualContents: self contentString4] action: #value label: 'yellow'
 	 ) 
 	fixedWidth: 70
-	! !
-
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:43'!
-display: aContentSelector
-
-	self layoutMorph removeMorph: contentArea.
-	self layoutMorph addMorphUseAll: (contentArea := self textModelMorphforSelector:  aContentSelector)
 	! !
 
 !LayoutDemo3d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
@@ -1166,11 +1108,9 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 1/31/2013 08:37'!
-textModelMorphforSelector: aContentSelector
-
-	^TextModelMorph withText: (self perform: aContentSelector)
-	! !
+!LayoutDemo3d class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 22:32'!
+open
+	^self new openInWorld! !
 
 !LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 10:43'!
 buildMorphicWindow
@@ -1188,24 +1128,24 @@ self openInWorld
 
 ! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:49'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 3/4/2013 10:26'!
 contentString1
 	^ 'This is the red content area.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:49'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 3/4/2013 10:26'!
 contentString2
 	^ 'green'! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:49'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 3/4/2013 10:26'!
 contentString3
 	^ 'blue'! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 1/31/2013 09:49'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 3/4/2013 10:26'!
 contentString4
-	^ 'yellow'! !
+	^ 'yellow...'! !
 
 !LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 09:40'!
 createButtonBar
@@ -1312,41 +1252,6 @@ titleString
 
 	^ self className! !
 
-!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 11:18'!
-contentString1
-	^ 'This is the red content area.
-
-   You may edit this text and 
-   when you press another button it will be  saved.
-
-
-'! !
-
-!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 11:18'!
-contentString2
-	^ 'green area
-
-A sample note
-------------------
-
-https://help.github.com/articles/interactive-rebase
-
-
- git rebase --interactive'! !
-
-!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 11:18'!
-contentString3
-	^ 'blue notes area'! !
-
-!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 11:18'!
-contentString4
-	^ 'yellow notes area'! !
-
-!LayoutDemo3eNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 10:44'!
-titleString
-
-	^ 'Notes'! !
-
 !LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 12:35'!
 buildMorphicWindow
 
@@ -1363,26 +1268,26 @@ self openInWorld
 
 ! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:41'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString1
 	^ 'This is the red content area.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString2
 	^ 'green'! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString3
 	^ 'blue'! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString4
 	^ 'yellow'! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString5
 	^ 'This is the red content area.
 
@@ -1504,39 +1409,98 @@ titleString
 
 	^ self className! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+!LayoutDemo3f class methodsFor: 'as yet unclassified' stamp: 'hjh 3/4/2013 10:09'!
+open
+
+	^self new openInWorld! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+contentString1
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.
+
+
+'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+contentString2
+	^ 'green area
+
+A sample note
+------------------
+
+https://help.github.com/articles/interactive-rebase
+
+
+ git rebase --interactive'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+contentString3
+	^ 'blue notes area...'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+contentString4
+	^ 'yellow notes area'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+contentString5
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+contentString6
+	^ 'content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3fNotes methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:44'!
+titleString
+
+	^ 'Notes'! !
+
+!LayoutDemo3fNotes class methodsFor: 'as yet unclassified' stamp: 'hjh 3/4/2013 10:06'!
+open
+
+	^self new openInWorld! !
+
+!LayoutDemo3fNotes2 methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString1
 	^ 'This is the red content area.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+!LayoutDemo3fNotes2 methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString2
 	^ 'green'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+!LayoutDemo3fNotes2 methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString3
 	^ 'blue'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+!LayoutDemo3fNotes2 methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString4
 	^ 'yellow'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+!LayoutDemo3fNotes2 methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString5
 	^ 'orange
 '! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+!LayoutDemo3fNotes2 methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
 contentString6
 	^ 'magenta'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
+!LayoutDemo3fNotes2 methodsFor: 'content' stamp: 'hjh 1/31/2013 13:17'!
 contentString7
 	^ 'brown'! !
 
-!LayoutDemo3fNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 13:13'!
+!LayoutDemo3fNotes2 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:13'!
 customButtonSpecs
 	"Answer an array of elements of the label, selector and color"
 
@@ -1552,16 +1516,16 @@ customButtonSpecs
 
   ! !
 
-!LayoutDemo3fNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 13:16'!
+!LayoutDemo3fNotes2 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:16'!
 defaultButtonWidth
 	^50! !
 
-!LayoutDemo3fNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 13:16'!
+!LayoutDemo3fNotes2 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:16'!
 initialExtent
 
 ^ 400 @ 500! !
 
-!LayoutDemo3fNotes methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 12:44'!
+!LayoutDemo3fNotes2 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 12:44'!
 titleString
 
 	^ 'Notes'! !
@@ -1632,6 +1596,11 @@ makeContentArea
 
 
       ^contentArea := RectangleLikeMorph new color: Color green.! !
+
+!LayoutDemo4 class methodsFor: 'as yet unclassified' stamp: 'hjh 3/4/2013 10:28'!
+open
+
+	^self new openInWorld! !
 
 !LayoutDemo4b methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 06:33'!
 buildMorphicWindow
@@ -1712,6 +1681,11 @@ makePages
 
 
     ! !
+
+!LayoutDemo4b class methodsFor: 'as yet unclassified' stamp: 'hjh 3/4/2013 10:30'!
+open
+
+	^self new openInWorld! !
 
 !LayoutDemo4c methodsFor: 'pages' stamp: 'hjh 1/31/2013 05:20'!
 bringPageToFront: aPageName
@@ -1812,6 +1786,11 @@ makeContentArea
 
 
     ! !
+
+!LayoutDemo4c class methodsFor: 'as yet unclassified' stamp: 'hjh 3/4/2013 10:31'!
+open
+
+	^self new openInWorld! !
 
 !LayoutDemo5 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 12:40'!
 buildMorphicWindow
@@ -2629,7 +2608,7 @@ titleString
 
 	^self class name ! !
 
-!LayoutDemo6 methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:20'!
+!LayoutDemo6 methodsFor: 'pages' stamp: 'hjh 3/4/2013 10:04'!
 addPageTo: contentArea name: aName
 
 	| colorSymbol |
@@ -2639,8 +2618,8 @@ addPageTo: contentArea name: aName
       contentArea addMorph: (DragAndDropAreaMorph new 
 								color: (Color perform: colorSymbol);
 								setProperty: #name toValue: colorSymbol;
-								morphExtent: 430@250
-							).
+								morphExtent: 470@290
+							  ).
 								
 	
 	
@@ -2877,86 +2856,99 @@ open
 
 	^self new openInWorld! !
 
-!LayoutDemo6c methodsFor: 'pages' stamp: 'hjh 2/10/2013 18:10'!
-addPageTo: contentArea name: aName
-
-	| colorSymbol b |
-	
-	colorSymbol := aName asSymbol.
-
-	b := ImageMorph new image: (ABC at: aName).
-
-      contentArea addMorph: (LayoutMorph newColumn 
-								setProperty: #name toValue: colorSymbol;
-								addMorph: b;
-								morphExtent: 500@350
-							).
-								
-								
-	
-
-
-    ! !
-
-!LayoutDemo6c methodsFor: 'pages' stamp: 'hjh 1/31/2013 05:20'!
-bringPageToFront: aPageName
-
- 	| page |
-	
-	page := contentArea submorphs detect: [ :morph | (morph valueOfProperty: #name) = aPageName].
-	
-	contentArea addMorphFront: page. 
-	
-
-
-! !
-
-!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:26'!
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 2/22/2013 13:39'!
 buildMorphicWindow
 
 self setLabel: self titleString.
 
-self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
-self layoutMorph addMorphUseAll: self makeContentArea.
+contentArea := self textModelMorphforSelector:  #contentString1.
+currentContentStringSelector := #contentString1.
+
+
+self layoutMorph addMorph:  self notesListMorph fixedHeight: 100.
+self layoutMorph addMorphUseAll: contentArea.
 
 self openInWorld
 ! !
 
-!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 17:38'!
-createButtonBar
+!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:50'!
+contentString1
+	^ '1
 
+   1111'! !
 
-^ LayoutMorph newRow 
+!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:50'!
+contentString2
+	^ '2 green
+
+222'! !
+
+!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:51'!
+contentString3
+	^ '3 bluebbbffff'! !
+
+!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:51'!
+contentString4
+	^ '4 yellow'! !
+
+!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:50'!
+contentString5
+	^ '5
 	
-addMorph: (PluggableButtonMorph 
-			model: [ self bringPageToFront: #Apple] action: #value label: 'Apple') 
-	            fixedWidth: 70;
-	
-addMorph: (PluggableButtonMorph 
-			model: [ self  bringPageToFront: #Ball] action: #value label: 'Ball') 
-	           fixedWidth: 70;
-	
-addMorph: (PluggableButtonMorph 
-			model: [ self bringPageToFront: #Cat] action: #value label: 'Cat') 
-	           fixedWidth: 70;
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
 
-addMorph: (PluggableButtonMorph 
-			model: [ self bringPageToFront: #Duck] action: #value label: 'Duck') 
-	           fixedWidth: 70! !
+!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:50'!
+contentString6
+	^ '6
 
-!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 2/10/2013 17:43'!
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 12:41'!
+customButtonSpecs
+	"Answer an array of elements of the label, selector and color"
+
+	^#(
+		('red'			#contentString1			     #lightRed)
+		('green'			#contentString2			     #lightGreen)
+		('blue'			#contentString3			     #lightBlue)
+		('yellow'		#contentString4		           #yellow)
+		('orange'		#contentString5		           #orange)
+		('magenta'		#contentString6		           #magenta)
+	)
+
+  
+! !
+
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:16'!
+defaultButtonWidth
+	^70! !
+
+!LayoutDemo7 methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:29'!
+display: aContentSelector
+
+	currentContentStringSelector ifNotNil:  [self removeOldContent].
+	
+	currentContentStringSelector := aContentSelector.
+	
+	self layoutMorph addMorphUseAll: 
+		(contentArea := self textModelMorphforSelector:  currentContentStringSelector)
+	! !
+
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
 initialExtent
 	
 	
-	^ 600 @ 480! !
+	^ 480 @ 360! !
 
-!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 2/12/2013 16:12'!
 initialize
 
-	super initialize.
+	super initialize.	self initializeNotesList.
 	self buildMorphicWindow.! !
 
-!LayoutDemo6c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
@@ -2971,282 +2963,92 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo6c methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:39'!
-makeContentArea
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 2/12/2013 16:13'!
+initializeNotesList
 
- 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
+notesList isNil ifTrue: [notesList := OrderedCollection new.
+							notesList add: #contentString1.
+							notesList add: #contentString2.
+							notesList add: #contentString3.
+							notesList add: #contentString4.
+							notesList add: #contentString5.
+							notesList add: #contentString6.
+							selectedNote := 1].	! !
 
-	"morphs are added on top of each other"
-
-      self addPageTo: contentArea name: 'Apple'.
-      self addPageTo: contentArea name: 'Ball'.
-      self addPageTo: contentArea name: 'Cat'.
-      self addPageTo: contentArea name: 'Duck'.
-								
+!LayoutDemo7 methodsFor: 'notes list' stamp: 'hjh 2/12/2013 16:12'!
+notesList
+						
+	^notesList
 	
-	^ contentArea
+	! !
 
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 3/4/2013 09:50'!
+notesListMorph
 
-    ! !
+	
+ ^PluggableListMorph
+		model: self
+		listGetter: #notesList
+		indexGetter: #selectedNote
+		indexSetter: #selectedNote:
+		mainView: self
+		menuGetter: nil
+		keystrokeAction: nil! !
 
-!LayoutDemo6c methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:26'!
+!LayoutDemo7 methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:35'!
+removeOldContent
+"save the old content in a method first and then remove the text morph"
+
+  | methodSource |
+
+  methodSource :=
+
+		 	currentContentStringSelector asString
+			
+			, String newLineString 
+			
+			,'	^ ''' ,
+			
+			contentArea model actualContents asString,
+			
+			''''.
+   self class compile: methodSource.
+			
+   self layoutMorph removeMorph: contentArea.! !
+
+!LayoutDemo7 methodsFor: 'notes list' stamp: 'hjh 2/12/2013 16:10'!
+selectedNote
+	^selectedNote! !
+
+!LayoutDemo7 methodsFor: 'notes list' stamp: 'hjh 2/22/2013 13:36'!
+selectedNote: aSmallInteger 
+	selectedNote := aSmallInteger.
+	"display the selected note"
+	self display: (self notesList at: aSmallInteger).
+	self changed: #selectedNote.! !
+
+!LayoutDemo7 methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 08:37'!
+textModelMorphforSelector: aContentSelector
+
+	^TextModelMorph withText: (self perform: aContentSelector)
+	! !
+
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:43'!
 titleString
 
-	^self class name ! !
+	^ self className! !
 
-!LayoutDemo6c class methodsFor: 'as yet unclassified' stamp: 'hjh 2/10/2013 19:13'!
+!LayoutDemo7 methodsFor: 'notes list' stamp: 'hjh 2/12/2013 16:31'!
+update: aSymbol
+	super update: aSymbol.
+	self halt.
+	aSymbol == #selectedNote ifTrue: [self halt.
+		 self display: (notesList at: selectedNote asSymbol) ].
+! !
+
+!LayoutDemo7 class methodsFor: 'as yet unclassified' stamp: 'hjh 2/12/2013 16:02'!
 open
-
 	^self new openInWorld! !
-
-!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:17'!
-addButtonTo: aMorph name: aName
-| aSymbol |
-
-
-aSymbol := aName asSymbol.
-
-aMorph addMorph: (PluggableButtonMorph 
-			model: [ self bringPageToFront: aSymbol] action: #value label: aName) 
-	            fixedWidth: 70! !
-
-!LayoutDemo6dABC methodsFor: 'pages' stamp: 'hjh 2/11/2013 09:41'!
-addPageTo: contentArea name: aName
-
-	|  b aSymbol |
-	
-	aSymbol := aName asSymbol.
-
-	b := ImageMorph new image: 
-		((Smalltalk at: #ContentPack2ABC) current  at: aName).
-
-      contentArea addMorph: (LayoutMorph newColumn 
-								setProperty: #name toValue: aSymbol;
-								color:  self class defaultBackgroundColor;
-								addMorph: b;
-								morphExtent: 500@350
-							).
-								! !
-
-!LayoutDemo6dABC methodsFor: 'pages' stamp: 'hjh 1/31/2013 05:20'!
-bringPageToFront: aPageName
-
- 	| page |
-	
-	page := contentArea submorphs detect: [ :morph | (morph valueOfProperty: #name) = aPageName].
-	
-	contentArea addMorphFront: page. 
-	
-
-
-! !
-
-!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:54'!
-buildMorphicWindow
-
-self setLabel: self titleString.
-
-
-self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
-self layoutMorph addMorph:  self createButtonBar2 fixedHeight: 40.
-self layoutMorph addMorph:  self createButtonBar3 fixedHeight: 40.
-self layoutMorph addMorph:  self createButtonBar4 fixedHeight: 40.
-self layoutMorph addMorph:  self createButtonBar5 fixedHeight: 40.
-
-
-self layoutMorph addMorphUseAll: self makeContentArea.
-
-self bringPageToFront: #Apple.
-
-self openInWorld.
-
-! !
-
-!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:27'!
-createButtonBar
- | bar |
-
-	bar := LayoutMorph newRow. 
-
- 	self addButtonTo: bar  name: 'Apple'. 
-	self addButtonTo: bar  name: 'Ball'. 
- 	self addButtonTo: bar  name: 'Cat'. 
- 	self addButtonTo: bar  name: 'Duck'. 
- 	self addButtonTo: bar  name: 'Elephant'. 
- 	
-	
-	^bar
-	
-! !
-
-!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:29'!
-createButtonBar2
- | bar |
-
-	bar := LayoutMorph newRow. 
-
- 	self addButtonTo: bar  name: 'Fish'. 
- 	self addButtonTo: bar  name: 'Gate'. 
-	self addButtonTo: bar  name: 'Horse'. 
-	self addButtonTo: bar  name: 'Igloo'. 
-	self addButtonTo: bar  name: 'Jam'. 
- 	
-	
-	^bar
-	
-! !
-
-!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:33'!
-createButtonBar3
- | bar |
-
-	bar := LayoutMorph newRow. 
-
- 	self addButtonTo: bar  name: 'Kangaroo'. 
- 	self addButtonTo: bar  name: 'Lion'. 
-	self addButtonTo: bar  name: 'Mouse'. 
-	self addButtonTo: bar  name: 'Nest'. 
-	self addButtonTo: bar  name: 'Octopus'. 
- 	
-	
-	^bar
-	
-! !
-
-!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:50'!
-createButtonBar4
- | bar |
-
-	bar := LayoutMorph newRow. 
-
- 	self addButtonTo: bar  name: 'Pig'. 
- 	self addButtonTo: bar  name: 'Queen'. 
-	self addButtonTo: bar  name: 'Road'. 
-	self addButtonTo: bar  name: 'Sun'. 
-	self addButtonTo: bar  name: 'Turtle'. 
-	
-	
-	^bar
-	
-! !
-
-!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:54'!
-createButtonBar5
- | bar |
-
-	bar := LayoutMorph newRow. 
-
- 	self addButtonTo: bar  name: 'Umbrella'. 
- 	self addButtonTo: bar  name: 'Volcano'. 
-	self addButtonTo: bar  name: 'Window'. 
-	self addButtonTo: bar  name: 'Xylophon'. 
-	self addButtonTo: bar  name: 'Yo-yo'. 
-	self addButtonTo: bar  name: 'Zebra'. 
-	
-	^bar
-	
-! !
-
-!LayoutDemo6dABC methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:55'!
-initialExtent
-	
-	
-	^ 500 @ 600! !
-
-!LayoutDemo6dABC methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
-!LayoutDemo6dABC methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-
-	|  box |
-
-	box _ self createCloseBox.
-	self addMorph: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
-
-!LayoutDemo6dABC methodsFor: 'pages' stamp: 'hjh 2/10/2013 18:54'!
-makeContentArea
-	"ABC"
- 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
-
-	"morphs are added on top of each other"
-
-      self addPageTo: contentArea name: 'Apple'.
-      self addPageTo: contentArea name: 'Ball'.
-      self addPageTo: contentArea name: 'Cat'.
-      self addPageTo: contentArea name: 'Duck'.
-	self addPageTo: contentArea name: 'Elephant'.
-
-	self addPageTo: contentArea name: 'Fish'.
-	self addPageTo: contentArea name: 'Gate'.							
-	self addPageTo: contentArea name: 'Horse'.	
-	self addPageTo: contentArea name: 'Igloo'.
-	self addPageTo: contentArea name: 'Jam'.	
-
-	self addPageTo: contentArea name: 'Kangaroo'.	
-	self addPageTo: contentArea name: 'Lion'.	
-	self addPageTo: contentArea name: 'Mouse'.	
-	self addPageTo: contentArea name: 'Nest'.	
-	self addPageTo: contentArea name: 'Octopus'.	
-	
-	self addPageTo: contentArea name: 'Pig'.	
-	self addPageTo: contentArea name: 'Queen'.	
-	self addPageTo: contentArea name: 'Road'.	
-	self addPageTo: contentArea name: 'Sun'.	
-	self addPageTo: contentArea name: 'Turtle'.	
-	
-	self addPageTo: contentArea name: 'Pig'.	
-	self addPageTo: contentArea name: 'Queen'.	
-	self addPageTo: contentArea name: 'Road'.	
-	self addPageTo: contentArea name: 'Sun'.	
-	self addPageTo: contentArea name: 'Turtle'.	
-	
-	self addPageTo: contentArea name: 'Umbrella'.	
-	self addPageTo: contentArea name: 'Volcano'.	
-	self addPageTo: contentArea name: 'Window'.	
-	self addPageTo: contentArea name: 'Xylophon'.	
-	self addPageTo: contentArea name: 'Yo-yo'.	
-	self addPageTo: contentArea name: 'Zebra'.	
-
-	^ contentArea
-
-
-    ! !
-
-!LayoutDemo6dABC methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:26'!
-titleString
-
-	^'ABC book' ! !
-
-!LayoutDemo6dABC class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 09:36'!
-checkIfABCdictionaryWithPicturesPresent
-
-	(Smalltalk at: #ContentPack2ABC ifAbsent: []) isNil
-		ifTrue: [self inform: 'You need to have loaded ''ContentPack2ABC'' from https://github.com/hhzl/ContentPack.' . ^false].
-		
-	^true	! !
-
-!LayoutDemo6dABC class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 09:19'!
-defaultBackgroundColor
-
-	^Color blue! !
-
-!LayoutDemo6dABC class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 09:35'!
-open
-
-	self checkIfABCdictionaryWithPicturesPresent
-	
-	    ifTrue:  [^self new openInWorld]! !
 
 !LayoutDemo8Timer methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 19:02'!
 buildMorphicWindow
