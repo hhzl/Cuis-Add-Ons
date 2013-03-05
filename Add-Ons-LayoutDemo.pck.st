@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 4 March 2013 at 10:40:48 am'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 5 March 2013 at 9:09:50 am'!
 'Description Add-Ons which show how Morphic layout works'!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
@@ -278,16 +278,6 @@ SystemWindow subclass: #LayoutDemo7
 	category: 'Add-Ons-LayoutDemo'!
 !classDefinition: 'LayoutDemo7 class' category: #'Add-Ons-LayoutDemo'!
 LayoutDemo7 class
-	instanceVariableNames: ''!
-
-!classDefinition: #LayoutDemo8Timer category: #'Add-Ons-LayoutDemo'!
-SystemWindow subclass: #LayoutDemo8Timer
-	instanceVariableNames: 'minuteMorphs startTime'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Add-Ons-LayoutDemo'!
-!classDefinition: 'LayoutDemo8Timer class' category: #'Add-Ons-LayoutDemo'!
-LayoutDemo8Timer class
 	instanceVariableNames: ''!
 
 
@@ -585,11 +575,6 @@ Based on LayoutDemo3f
 
 
     LayoutDemo7 open!
-
-!LayoutDemo8Timer commentStamp: 'hjh 2/2/2013 04:20' prior: 0!
-Subclass of SystemWindow specialised to display layout examples
-
-     LayoutDemo8Timer open!
 
 !LayoutDemo0 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 06:22'!
 buildMorphicWindow
@@ -3049,87 +3034,3 @@ update: aSymbol
 !LayoutDemo7 class methodsFor: 'as yet unclassified' stamp: 'hjh 2/12/2013 16:02'!
 open
 	^self new openInWorld! !
-
-!LayoutDemo8Timer methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 19:02'!
-buildMorphicWindow
-
-
- 
-  self setLabel: self titleString.
-  self layoutMorph beRow.
-  25 timesRepeat: [ | circle | circle := (EllipseMorph new color: Color red muchLighter; 
-	morphExtent: 20@20).
-	minuteMorphs add: circle.
-	self layoutMorph addMorph: circle].
-
-  5 timesRepeat: [ | circle | circle := (EllipseMorph new color: Color blue muchLighter; 
-	morphExtent: 20@20).
-	minuteMorphs add: circle.
-	self layoutMorph addMorph: circle].
-
- ! !
-
-!LayoutDemo8Timer methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 21:53'!
-initialExtent
-	
-	
-	^ 610 @ 40! !
-
-!LayoutDemo8Timer methodsFor: 'initialization' stamp: 'hjh 1/29/2013 21:30'!
-initialize
-	super initialize.
-	
-	minuteMorphs := OrderedCollection new.
-	startTime := Time now.
-
-	self buildMorphicWindow.! !
-
-!LayoutDemo8Timer methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 18:12'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-
-	|  box |
-
-	box _ self createCloseBox.
-	self addMorph: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
-
-!LayoutDemo8Timer methodsFor: 'updating' stamp: 'hjh 1/29/2013 21:49'!
-step
-	| currentColor currentMorph minutes |
-
-	
-	minutes := (Time now - startTime) minutes.
-	minutes > 0 ifTrue: [
-				currentMorph := minuteMorphs at:  minutes ifAbsent: [minuteMorphs last].
-			
-				currentColor := currentMorph color darker.
-				minutes <= 25 ifTrue: [currentColor := Color red]. "set to red for the first 25"
-				currentMorph color: currentColor
-				]! !
-
-!LayoutDemo8Timer methodsFor: 'updating' stamp: 'hjh 1/29/2013 21:50'!
-stepTime
-
-	^5000! !
-
-!LayoutDemo8Timer methodsFor: 'initialization' stamp: 'hjh 1/29/2013 18:08'!
-titleString
-
-	^'Timer'! !
-
-!LayoutDemo8Timer methodsFor: 'updating' stamp: 'hjh 1/29/2013 18:47'!
-wantsSteps
-	"Return true if the receiver wants to its #step or #stepAt: methods be run"
-
-	^true! !
-
-!LayoutDemo8Timer class methodsFor: 'as yet unclassified' stamp: 'hjh 2/2/2013 04:19'!
-open
-
-	^self new openInWorld ! !
