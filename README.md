@@ -14,3 +14,9 @@ They show how to create an interface with tabs or register cards.
 
 is different; it opens a Pomodoro type of timer  (http://en.wikipedia.org/wiki/Pomodoro_Technique)
 
+
+Compatibility
+-------------
+
+This is for Cuis 4.1. Not yet tested for 4.2. Needs to be moved.
+
