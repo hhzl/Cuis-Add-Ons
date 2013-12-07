@@ -9,10 +9,11 @@ The examples are numbered in order of complexity.
 
 They show how to create an interface with tabs or register cards.
 
+In package 'Add-Ons-Timerä
 
-     LayoutDemo8Timer new openInWorld
+     PomodoroTimer openForTask: 'My task at hand'.
 
-is different; it opens a Pomodoro type of timer  (http://en.wikipedia.org/wiki/Pomodoro_Technique)
+opens a Pomodoro type of timer  (http://en.wikipedia.org/wiki/Pomodoro_Technique)
 
 
 Compatibility
