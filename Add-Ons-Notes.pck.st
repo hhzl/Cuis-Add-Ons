@@ -1,6 +1,7 @@
 'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 4 March 2013 at 10:45:34 am'!
 'Description General classes to keep notes'!
 !classDefinition: #MyNotes category: #'Add-Ons-Notes'!
+!provides: 'Notes' 1 0!
 SystemWindow subclass: #MyNotes
 	instanceVariableNames: 'contentArea currentContentStringSelector'
 	classVariableNames: ''
