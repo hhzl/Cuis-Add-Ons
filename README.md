@@ -25,9 +25,11 @@ Updated and tested in 4.2
 
 - Add-Ons-LayoutDemo
 - Add-Ons-Timer
+- Add-Ons-Notes
 
 To install do
 
     Feature require: 'Add-Ons-LayoutDemo'.
     Feature require: 'Add-Ons-Timer'.
+    Feature require: 'Add-Ons-Notes'.
 
