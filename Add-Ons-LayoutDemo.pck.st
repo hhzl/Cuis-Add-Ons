@@ -1,6 +1,6 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 5 March 2013 at 9:09:50 am'!
+'From Cuis 4.2 of 25 July 2013 [latest update: #1867] on 7 December 2013 at 10:18:16.832175 pm'!
 'Description Add-Ons which show how Morphic layout works'!
-!provides: 'LayoutDemo' 1 0!
+!provides: 'Add-Ons-LayoutDemo' 1 1!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
 	instanceVariableNames: ''
@@ -790,7 +790,7 @@ initialize
 	self buildMorphicWindow.
 	! !
 
-!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 06:32'!
+!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:01'!
 buildMorphicWindow
 
 self setLabel: self className.
@@ -798,7 +798,7 @@ self setLabel: self className.
 contentArea := RectangleLikeMorph new color: Color green.
 
 
-self layoutMorph addMorph:  self createButtonBar fixedHeight: 40.
+"self layoutMorph addMorph:  self createButtonBar fixedHeight: 40."
 self layoutMorph addMorphUseAll: contentArea.
 
 self openInWorld
@@ -846,19 +846,20 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:05'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
+	
 ! !
 
 !LayoutDemo3b methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:14'!
@@ -917,16 +918,16 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo3b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo3b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:06'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
@@ -988,16 +989,16 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:06'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
@@ -1079,20 +1080,18 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo3d methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:07'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo3d class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 22:32'!
 open
@@ -1114,18 +1113,18 @@ self openInWorld
 
 ! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 3/4/2013 10:26'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hh 12/7/2013 22:08'!
 contentString1
 	^ 'This is the red content area.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 3/4/2013 10:26'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hh 12/7/2013 22:08'!
 contentString2
 	^ 'green'! !
 
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 3/4/2013 10:26'!
+!LayoutDemo3e methodsFor: 'content' stamp: 'hh 12/7/2013 22:08'!
 contentString3
 	^ 'blue'! !
 
@@ -1191,19 +1190,18 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:08'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
-
 ! !
 
 !LayoutDemo3e methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:35'!
@@ -1254,26 +1252,26 @@ self openInWorld
 
 ! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString1
 	^ 'This is the red content area.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString2
 	^ 'green'! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString3
 	^ 'blue'! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString4
 	^ 'yellow'! !
 
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/12/2013 15:52'!
+!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString5
 	^ 'This is the red content area.
 
@@ -1348,20 +1346,18 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:08'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo3f methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:35'!
 removeOldContent
@@ -1400,7 +1396,7 @@ open
 
 	^self new openInWorld! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString1
 	^ 'This is the red content area.
 
@@ -1410,7 +1406,7 @@ contentString1
 
 '! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString2
 	^ 'green area
 
@@ -1422,22 +1418,22 @@ https://help.github.com/articles/interactive-rebase
 
  git rebase --interactive'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString3
 	^ 'blue notes area...'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString4
 	^ 'yellow notes area'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString5
 	^ 'This is the red content area.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 3/4/2013 10:10'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
 contentString6
 	^ 'content area.
 
@@ -1562,16 +1558,16 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo4 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo4 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:10'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
@@ -1634,19 +1630,18 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo4b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo4b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:10'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
-
 ! !
 
 !LayoutDemo4b methodsFor: 'page creation' stamp: 'hjh 1/31/2013 05:09'!
@@ -1732,16 +1727,16 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo4c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo4c methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:11'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
@@ -1833,16 +1828,16 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo5 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:11'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
@@ -1946,19 +1941,18 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo5b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:12'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
-
 ! !
 
 !LayoutDemo5b methodsFor: 'page creation' stamp: 'hjh 1/16/2013 14:15'!
@@ -2057,16 +2051,16 @@ initialize
 
 	self buildMorphicWindow.! !
 
-!LayoutDemo5c methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5c methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:12'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      | spacing box |
+	spacing _ self boxExtent x + 2.
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
@@ -2222,20 +2216,17 @@ initialize
 
 	self buildMorphicWindow.! !
 
-!LayoutDemo5d methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5d methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:14'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
-
+      |  box |
+	
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo5d methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:12'!
 makePages
@@ -2387,20 +2378,17 @@ initialize
 
 	self buildMorphicWindow.! !
 
-!LayoutDemo5e methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5e methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:14'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
-
+      |  box |
+	
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo5e methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 makePages
@@ -2546,20 +2534,17 @@ initialize
 
 	self buildMorphicWindow.! !
 
-!LayoutDemo5f methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo5f methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:15'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
-
+      |  box |
+	
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo5f methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 makePages
@@ -2674,16 +2659,15 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo6 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo6 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:16'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
-
+      |  box |
+	
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
@@ -2800,20 +2784,17 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo6b methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo6b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:16'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
-
+      |  box |
+	
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo6b methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:14'!
 makeContentArea
@@ -2858,34 +2839,34 @@ self layoutMorph addMorphUseAll: contentArea.
 self openInWorld
 ! !
 
-!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:50'!
+!LayoutDemo7 methodsFor: 'content' stamp: 'hh 12/7/2013 22:17'!
 contentString1
 	^ '1
 
    1111'! !
 
-!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:50'!
+!LayoutDemo7 methodsFor: 'content' stamp: 'hh 12/7/2013 22:17'!
 contentString2
 	^ '2 green
 
 222'! !
 
-!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:51'!
+!LayoutDemo7 methodsFor: 'content' stamp: 'hh 12/7/2013 22:17'!
 contentString3
 	^ '3 bluebbbffff'! !
 
-!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:51'!
+!LayoutDemo7 methodsFor: 'content' stamp: 'hh 12/7/2013 22:17'!
 contentString4
 	^ '4 yellow'! !
 
-!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:50'!
+!LayoutDemo7 methodsFor: 'content' stamp: 'hh 12/7/2013 22:17'!
 contentString5
 	^ '5
 	
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo7 methodsFor: 'content' stamp: 'hjh 3/4/2013 09:50'!
+!LayoutDemo7 methodsFor: 'content' stamp: 'hh 12/7/2013 22:17'!
 contentString6
 	^ '6
 
@@ -2936,16 +2917,15 @@ initialize
 	self initializeNotesList.
 	self buildMorphicWindow.! !
 
-!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:17'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
-
+      |  box |
+	
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 
