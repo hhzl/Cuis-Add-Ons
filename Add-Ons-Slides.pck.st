@@ -1,5 +1,6 @@
 'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 4 March 2013 at 10:36:37 am'!
 'Description Morphs to display different slides. See also Add-Ons-LayoutDemo.'!
+!provides: 'Slides' 1 0!
 !classDefinition: #ABCbook category: #'Add-Ons-Slides'!
 SystemWindow subclass: #ABCbook
 	instanceVariableNames: 'contentArea'
