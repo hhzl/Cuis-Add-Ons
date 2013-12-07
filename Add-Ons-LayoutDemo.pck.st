@@ -1,5 +1,6 @@
 'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 5 March 2013 at 9:09:50 am'!
 'Description Add-Ons which show how Morphic layout works'!
+!provides: 'LayoutDemo' 1 0!
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
 	instanceVariableNames: ''
@@ -1781,7 +1782,8 @@ open
 buildMorphicWindow
 
 
-  self layoutMorph addMorph: self createButtonBar fixedHeight: 40.  self layoutMorph addMorphUseAll: self makePages.
+  self layoutMorph addMorph: self createButtonBar fixedHeight: 40.
+  self layoutMorph addMorphUseAll: self makePages.
   self setLabel: self className.
   self openInWorld.
 
@@ -2930,7 +2932,8 @@ initialExtent
 !LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 2/12/2013 16:12'!
 initialize
 
-	super initialize.	self initializeNotesList.
+	super initialize.
+	self initializeNotesList.
 	self buildMorphicWindow.! !
 
 !LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/12/2013 11:21'!
