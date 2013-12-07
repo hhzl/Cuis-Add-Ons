@@ -1,7 +1,7 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 5 March 2013 at 9:09:39 am'!
+'From Cuis 4.2 of 25 July 2013 [latest update: #1867] on 7 December 2013 at 10:34:04.510184 pm'!
 'Description Pomodoro Timer : http://en.wikipedia.org/wiki/Pomodoro_Technique'!
+!provides: 'Add-Ons-Timer' 1 1!
 !classDefinition: #PomodoroTimer category: #'Add-Ons-Timer'!
-!provides: 'PomodoroTimer' 1 0!
 SystemWindow subclass: #PomodoroTimer
 	instanceVariableNames: 'minuteMorphs startTime titleString'
 	classVariableNames: ''
@@ -37,7 +37,7 @@ There are five basic steps to implementing the technique:
 5) every four "pomodori" take a longer break (15&#8211;30 minutes)
 !
 
-!PomodoroTimer methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 19:02'!
+!PomodoroTimer methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:33'!
 buildMorphicWindow
 
 
@@ -56,11 +56,11 @@ buildMorphicWindow
 
  ! !
 
-!PomodoroTimer methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 21:53'!
+!PomodoroTimer methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:31'!
 initialExtent
 	
 	
-	^ 610 @ 40! !
+	^ 610 @ 20! !
 
 !PomodoroTimer methodsFor: 'initialization' stamp: 'hjh 3/5/2013 08:51'!
 initialize
@@ -72,19 +72,18 @@ initialize
 
 	self buildMorphicWindow.! !
 
-!PomodoroTimer methodsFor: 'GUI building' stamp: 'hjh 1/29/2013 18:12'!
+!PomodoroTimer methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:29'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea.
 	We do not create the other controls"
-
-	|  box |
+      |  box |
+	
 
 	box _ self createCloseBox.
-	self addMorph: box.
+	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
-
 ! !
 
 !PomodoroTimer methodsFor: 'updating' stamp: 'hjh 1/29/2013 21:49'!
