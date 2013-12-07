@@ -1,7 +1,7 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 4 March 2013 at 10:45:34 am'!
+'From Cuis 4.2 of 25 July 2013 [latest update: #1867] on 7 December 2013 at 10:53:50.510173 pm'!
 'Description General classes to keep notes'!
+!provides: 'Add-Ons-Notes' 1 1!
 !classDefinition: #MyNotes category: #'Add-Ons-Notes'!
-!provides: 'Notes' 1 0!
 SystemWindow subclass: #MyNotes
 	instanceVariableNames: 'contentArea currentContentStringSelector'
 	classVariableNames: ''
@@ -85,6 +85,20 @@ contentString5
 !MyNotes methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
 contentString6
 	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!MyNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:52'!
+contentString7
+	^ 'This is the red content area 7.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!MyNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:52'!
+contentString8
+	^ 'This is the red content area 8.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
@@ -200,6 +214,53 @@ titleString
 !MyNotes class methodsFor: 'as yet unclassified' stamp: 'hjh 1/31/2013 14:13'!
 open
 	^self new openInWorld! !
+
+!MyNotesWithText methodsFor: 'as yet unclassified' stamp: 'hh 12/7/2013 22:53'!
+contentString1
+	^ (Text string: 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.' runs: (RunArray runs: #(116 ) values: #(#() )))! !
+
+!MyNotesWithText methodsFor: 'as yet unclassified' stamp: 'hh 12/7/2013 22:49'!
+contentString2
+	^ (Text string: 'green' runs: (RunArray runs: #(5 ) values: #(#() )))! !
+
+!MyNotesWithText methodsFor: 'as yet unclassified' stamp: 'hh 12/7/2013 22:49'!
+contentString3
+	^ (Text string: 'blue' runs: (RunArray runs: #(4 ) values: #(#() )))! !
+
+!MyNotesWithText methodsFor: 'as yet unclassified' stamp: 'hh 12/7/2013 22:49'!
+contentString4
+	^ (Text string: 'yellow' runs: (RunArray runs: #(6 ) values: #(#() )))! !
+
+!MyNotesWithText methodsFor: 'as yet unclassified' stamp: 'hh 12/7/2013 22:49'!
+contentString5
+	^ (Text string: 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.' runs: (RunArray runs: #(116 ) values: #(#() )))! !
+
+!MyNotesWithText methodsFor: 'as yet unclassified' stamp: 'hh 12/7/2013 22:53'!
+contentString6
+	^ (Text string: 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.' runs: (RunArray runs: #(116 ) values: #(#() )))! !
+
+!MyNotesWithText methodsFor: 'as yet unclassified' stamp: 'hh 12/7/2013 22:53'!
+contentString7
+	^ (Text string: 'This is the red content area 7.
+
+   You may edit this text and 
+   when you press another button it will be  saved.' runs: (RunArray runs: #(118 ) values: #(#() )))! !
+
+!MyNotesWithText methodsFor: 'as yet unclassified' stamp: 'hh 12/7/2013 22:53'!
+contentString8
+	^ (Text string: 'This is the red content area 8.
+
+   You may edit this text and 
+   when you press another button it will be  saved.' runs: (RunArray runs: #(118 ) values: #(#() )))! !
 
 !MyNotesWithText methodsFor: 'configuration' stamp: 'hjh 1/31/2013 18:02'!
 customButtonSpecs
