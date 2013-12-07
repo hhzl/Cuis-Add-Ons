@@ -18,5 +18,16 @@ is different; it opens a Pomodoro type of timer  (http://en.wikipedia.org/wiki/P
 Compatibility
 -------------
 
-This is for Cuis 4.1. Not yet tested for 4.2. Needs to be moved.
+This is for Cuis 4.1. Update to 4.2 in progress.
+
+
+Updated and tested in 4.2
+
+- Add-Ons-LayoutDemo
+- Add-Ons-Timer
+
+To install do
+
+    Feature require: 'Add-Ons-LayoutDemo'.
+    Feature require: 'Add-Ons-Timer'.
 
