@@ -1,6 +1,7 @@
 'From Cuis 4.1 of 12 December 2012 [latest update: #1616] on 5 March 2013 at 9:09:39 am'!
 'Description Pomodoro Timer : http://en.wikipedia.org/wiki/Pomodoro_Technique'!
 !classDefinition: #PomodoroTimer category: #'Add-Ons-Timer'!
+!provides: 'PomodoroTimer' 1 0!
 SystemWindow subclass: #PomodoroTimer
 	instanceVariableNames: 'minuteMorphs startTime titleString'
 	classVariableNames: ''
