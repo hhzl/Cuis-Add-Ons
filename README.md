@@ -20,7 +20,7 @@ Compatibility
 -------------
 Updated and tested in 7.1
 
-- Add-Ons-Notes
+- AddOns-Notes
 To install do
 
     Feature require: 'AddOns-Notes'.
