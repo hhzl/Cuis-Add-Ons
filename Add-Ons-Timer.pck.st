@@ -1,6 +1,9 @@
-'From Cuis 4.2 of 25 July 2013 [latest update: #1867] on 7 December 2013 at 10:34:04.510184 pm'!
+'From Cuis7.1 [latest update: #6814] on 26 February 2025 at 5:32:13 pm'!
 'Description Pomodoro Timer : http://en.wikipedia.org/wiki/Pomodoro_Technique'!
-!provides: 'Add-Ons-Timer' 1 1!
+!provides: 'Add-Ons-Timer' 1 2!
+SystemOrganization addCategory: #'Add-Ons-Timer'!
+
+
 !classDefinition: #PomodoroTimer category: #'Add-Ons-Timer'!
 SystemWindow subclass: #PomodoroTimer
 	instanceVariableNames: 'minuteMorphs startTime titleString'
@@ -62,17 +65,7 @@ initialExtent
 	
 	^ 610 @ 20! !
 
-!PomodoroTimer methodsFor: 'initialization' stamp: 'hjh 3/5/2013 08:51'!
-initialize
-	super initialize.
-	
-	minuteMorphs := OrderedCollection new.
-	startTime := Time now.
-	titleString := 'Timer 25 plus 5 minutes'.
-
-	self buildMorphicWindow.! !
-
-!PomodoroTimer methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:29'!
+!PomodoroTimer methodsFor: 'GUI building' stamp: 'hjh 2/26/2025 16:30:48'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
 	This is a shorter version of inherited #initializeLabelArea. Copied from superclass.
@@ -86,9 +79,17 @@ initializeLabelArea
 	"self addMorph: self createCollapseButton position: spacing@0 + topLeft.
 	self addMorph: self createExpandButton position: spacing*2@0 + topLeft.
 	self addMorph: self createMenuButton position: spacing*3@0 + topLeft"
-
- 
 ! !
+
+!PomodoroTimer methodsFor: 'initialization' stamp: 'hjh 3/5/2013 08:51'!
+initialize
+	super initialize.
+	
+	minuteMorphs := OrderedCollection new.
+	startTime := Time now.
+	titleString := 'Timer 25 plus 5 minutes'.
+
+	self buildMorphicWindow.! !
 
 !PomodoroTimer methodsFor: 'updating' stamp: 'hjh 1/29/2013 21:49'!
 step
@@ -109,16 +110,16 @@ stepTime
 
 	^5000! !
 
-!PomodoroTimer methodsFor: 'accessing' stamp: 'hjh 3/5/2013 09:01'!
-titleString
-	
-	^'Timer 25 plus 5 minutes'! !
-
 !PomodoroTimer methodsFor: 'updating' stamp: 'hjh 1/29/2013 18:47'!
 wantsSteps
 	"Return true if the receiver wants to its #step or #stepAt: methods be run"
 
 	^true! !
+
+!PomodoroTimer methodsFor: 'accessing' stamp: 'hjh 3/5/2013 09:01'!
+titleString
+	
+	^'Timer 25 plus 5 minutes'! !
 
 !PomodoroTimer class methodsFor: 'as yet unclassified' stamp: 'hjh 2/2/2013 04:19'!
 open
