@@ -75,15 +75,19 @@ initialize
 !PomodoroTimer methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:29'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
+	This is a shorter version of inherited #initializeLabelArea. Copied from superclass.
 	We do not create the other controls"
-      |  box |
-	
+ 
 
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
+	| topLeft spacing |
+	topLeft := (self labelHeight + borderWidth - Theme current titleBarButtonsExtent / 2) ceiling asPoint.
+	spacing := Theme current titleBarButtonsExtent x *13//10.
+	self addMorph: self createCloseButton position: topLeft.
+	"self addMorph: self createCollapseButton position: spacing@0 + topLeft.
+	self addMorph: self createExpandButton position: spacing*2@0 + topLeft.
+	self addMorph: self createMenuButton position: spacing*3@0 + topLeft"
+
+ 
 ! !
 
 !PomodoroTimer methodsFor: 'updating' stamp: 'hjh 1/29/2013 21:49'!
