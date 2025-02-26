@@ -21,14 +21,12 @@ Compatibility
 Updated and tested in 7.1
 
 - AddOns-Notes
-To install do
-
-    Feature require: 'AddOns-Notes'.
+- Add-Ons-Timer
 
 Updated and tested in 4.2
 
 - Add-Ons-LayoutDemo
-- Add-Ons-Timer
+
 
 The rest is for Cuis 4.1. 
 
@@ -36,4 +34,6 @@ To install do
 
     Feature require: 'Add-Ons-LayoutDemo'.
     Feature require: 'Add-Ons-Timer'.
+    Feature require: 'AddOns-Notes'.
+  
 
