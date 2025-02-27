@@ -1,6 +1,9 @@
-'From Cuis 4.2 of 25 July 2013 [latest update: #1867] on 7 December 2013 at 10:18:16.832175 pm'!
+'From Cuis7.3 [latest update: #7053] on 27 February 2025 at 9:04:01 pm'!
 'Description Add-Ons which show how Morphic layout works'!
-!provides: 'Add-Ons-LayoutDemo' 1 1!
+!provides: 'Add-Ons-LayoutDemo' 1 2!
+SystemOrganization addCategory: #'Add-Ons-LayoutDemo'!
+
+
 !classDefinition: #LayoutDemo0 category: #'Add-Ons-LayoutDemo'!
 SystemWindow subclass: #LayoutDemo0
 	instanceVariableNames: ''
@@ -290,55 +293,42 @@ Just sets the window label.
 
       LayoutDemo0 new openInWorld!
 
-!LayoutDemo1 commentStamp: 'hjh 1/16/2013 06:34' prior: 0!
+!LayoutDemo1 commentStamp: 'hjh 2/27/2025 20:04:59' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
-
 
 A SystemWindow instance holds a LayoutMorph instance to which the content has to be added.
 
 This class shows how to do that.
-
-
 
     LayoutDemo1 new openInWorld!
 
-!LayoutDemo1b commentStamp: 'hjh 1/16/2013 06:34' prior: 0!
+!LayoutDemo1b commentStamp: 'hjh 2/27/2025 20:06:46' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
-
 
 A SystemWindow instance holds a LayoutMorph instance to which the content has to be added.
 
 This class shows how to do that.
 
-
-
     LayoutDemo1b new openInWorld!
 
-!LayoutDemo2 commentStamp: '<historical>' prior: 0!
+!LayoutDemo2 commentStamp: 'hjh 2/27/2025 20:07:12' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
-
 
    This class shows how to use the #addMorphUseAll: method to use all up the remaining space.
 
-
-
     LayoutDemo2 new openInWorld!
 
-!LayoutDemo2b commentStamp: 'hjh 1/31/2013 04:35' prior: 0!
+!LayoutDemo2b commentStamp: 'hjh 2/27/2025 20:08:06' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
-
 
     With #addMorph:fixedHeight:  a header/title or button bar area may be created.
 	
     And with #addMorphUseAll: method all of the remaining space is used..
 
-
-
     LayoutDemo2b new openInWorld!
 
-!LayoutDemo2c commentStamp: 'hjh 1/16/2013 11:19' prior: 0!
+!LayoutDemo2c commentStamp: 'hjh 2/27/2025 20:08:54' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
-
 
    This class shows how to use the #addMorphUseAll: method to use all up the remaining space.
 
@@ -346,29 +336,21 @@ Subclass of SystemWindow specialised to show how content has to be added.
      self beRow.
    is used to put the morphs which are added into a row.
 
-
-
     LayoutDemo2c new openInWorld!
 
-!LayoutDemo2d commentStamp: 'hjh 1/16/2013 11:07' prior: 0!
+!LayoutDemo2d commentStamp: 'hjh 2/27/2025 20:33:56' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
 
-
-   This class shows how to use the #addMorphUseAll: method to use all up the remaining space. It as well demonstrates the use of UpdatingStringMorph. They may be used to build a specialized expression watch window.
-
-
+   This class shows how to use the #addMorphUseAll: method to use all up the remaining space. It as well demonstrates the use of UpdatingLabelMorph. They may be used to build a specialized expression watch window.
 
     LayoutDemo2d new openInWorld!
 
-!LayoutDemo2e commentStamp: 'hjh 1/31/2013 04:41' prior: 0!
+!LayoutDemo2e commentStamp: 'hjh 2/27/2025 20:48:41' prior: 0!
 Subclass of SystemWindow specialised to show how content has to be added.
 
-
-   This class shows how to use the #addMorphUseAll: method to use all up the remaining space. It as well demonstrates the use of UpdatingStringMorph. They may be used to build a specialized expression watch window.
+   This class shows how to use the #addMorphUseAll: method to use all up the remaining space. It as well demonstrates the use of UpdatingLabelMorph. They may be used to build a specialized expression watch window.
 
 Display of the date added.
-
-
 
     LayoutDemo2e new openInWorld!
 
@@ -380,14 +362,13 @@ overriding #initialExtent sets the extent of the window.
 
     LayoutDemo3 new openInWorld!
 
-!LayoutDemo3b commentStamp: 'hjh 1/31/2013 07:13' prior: 0!
+!LayoutDemo3b commentStamp: 'hjh 2/27/2025 20:52:00' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 Add a TextModelMorph as the content
 
-
     LayoutDemo3b new openInWorld!
 
-!LayoutDemo3c commentStamp: 'hjh 3/4/2013 10:25' prior: 0!
+!LayoutDemo3c commentStamp: 'hjh 2/27/2025 20:53:27' prior: 0!
 DOES NOT WORK PROPERLY
 
 Subclass of SystemWindows specialised to display layout examples
@@ -397,7 +378,6 @@ Changed the behaviour of the buttons to change the text.
 
 Works properly if a fix is present in TextModelMorph>>#update:
 see http://jvuletich.org/pipermail/cuis_jvuletich.org/2013-February/000827.html
-
 
     LayoutDemo3c open!
 
@@ -415,17 +395,16 @@ see http://jvuletich.org/pipermail/cuis_jvuletich.org/2013-February/000827.html
 
     LayoutDemo3d open!
 
-!LayoutDemo3e commentStamp: 'hjh 1/31/2013 09:48' prior: 0!
+!LayoutDemo3e commentStamp: 'hjh 2/27/2025 20:56:29' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
 A TextModelMorph as the content. 
 
 Changed the behaviour of the buttons to change the text and automatically save the string in methods.
 
-
     LayoutDemo3e new openInWorld!
 
-!LayoutDemo3f commentStamp: 'hjh 3/4/2013 10:23' prior: 0!
+!LayoutDemo3f commentStamp: 'hjh 2/27/2025 20:57:29' prior: 0!
 Subclass of SystemWindows specialised to display layout examples
 
 A TextModelMorph as the content. 
@@ -434,22 +413,19 @@ Changed the behaviour of the buttons to change the text and automatically save t
 
 A TextModelMorph is removed and added when changing to a different page.
 
-
     LayoutDemo3f open!
 
-!LayoutDemo3fNotes commentStamp: 'hjh 3/4/2013 10:09' prior: 0!
+!LayoutDemo3fNotes commentStamp: 'hjh 2/27/2025 20:58:50' prior: 0!
 A subclass of  LayoutDemo3e
 
      The changed content strings are stored here.
 
-
      LayoutDemo3fNotes open!
 
-!LayoutDemo3fNotes2 commentStamp: 'hjh 3/4/2013 10:10' prior: 0!
+!LayoutDemo3fNotes2 commentStamp: 'hjh 2/27/2025 21:01:06' prior: 0!
 A subclass of  LayoutDemo3f
 
      The changed content strings are stored here.
-
 
      LayoutDemo3fNotes open!
 
@@ -592,20 +568,20 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo1 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 06:30'!
+!LayoutDemo1 methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:04:19'!
 buildMorphicWindow
 
 
      	self setLabel: self className.
 
 	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color yellow) fixedHeight: 80.
+	   (ColoredBoxMorph new color: Color yellow) fixedHeight: 80.
 	
  	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color green) fixedHeight: 80.
+	   (ColoredBoxMorph new color: Color green) fixedHeight: 80.
  
 	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color red) fixedHeight: 80! !
+	   (ColoredBoxMorph new color: Color red) fixedHeight: 80! !
 
 !LayoutDemo1 methodsFor: 'initialization' stamp: 'hjh 1/16/2013 06:20'!
 initialize
@@ -614,7 +590,7 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo1b methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:31'!
+!LayoutDemo1b methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:06:20'!
 buildMorphicWindow
 
 
@@ -625,13 +601,13 @@ buildMorphicWindow
       self beRow."
 
 	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color yellow).
+	   (ColoredBoxMorph new color: Color yellow).
 	
  	self layoutMorph  addMorph: 
-	   (DragAndDropAreaMorph new color: Color green).
+	   (ColoredBoxMorph new color: Color green).
  
 	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color red).! !
+	   (ColoredBoxMorph new color: Color red).! !
 
 !LayoutDemo1b methodsFor: 'initialization' stamp: 'hjh 1/16/2013 06:20'!
 initialize
@@ -640,20 +616,20 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo2 methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 11:02'!
+!LayoutDemo2 methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:07:24'!
 buildMorphicWindow
 
 
      	self setLabel: self className.
 
 	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color red).
+	   (ColoredBoxMorph new color: Color red).
 
 	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color yellow).
+	   (ColoredBoxMorph new color: Color yellow).
 	
  	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color green) 
+	   (ColoredBoxMorph new color: Color green) 
  
 	! !
 
@@ -664,17 +640,17 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo2b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 06:57'!
+!LayoutDemo2b methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:08:19'!
 buildMorphicWindow
 
 
      	self setLabel: self className.
 
 	self layoutMorph  addMorph: 
-	   (RectangleLikeMorph new color: Color yellow) fixedHeight: 80.
+	   (ColoredBoxMorph new color: Color yellow) fixedHeight: 80.
 	
  	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color green) 
+	   (ColoredBoxMorph new color: Color green) 
  
 	! !
 
@@ -685,7 +661,7 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo2c methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 11:18'!
+!LayoutDemo2c methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:09:08'!
 buildMorphicWindow
 
 
@@ -694,13 +670,13 @@ buildMorphicWindow
 	self beRow.
 
 	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color red).
+	   (ColoredBoxMorph new color: Color red).
 
 	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color yellow).
+	   (ColoredBoxMorph new color: Color yellow).
 	
  	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color green) 
+	   (ColoredBoxMorph new color: Color green) 
  
 	! !
 
@@ -711,7 +687,7 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo2d methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:40'!
+!LayoutDemo2d methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:19:39'!
 buildMorphicWindow
 
 
@@ -719,7 +695,7 @@ buildMorphicWindow
 
 	self layoutMorph  
 	 addMorph: 
-	    ((UpdatingStringMorph new
+	    ((UpdatingLabelMorph new
       			target: ['Cursor position: ',
 				            self runningWorld activeHand morphPosition asString
 				           ];
@@ -727,13 +703,37 @@ buildMorphicWindow
      			      stepTime: 10) color: Color blue).
 	
 	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color green). 
+	   (ColoredBoxMorph new color: Color green). 
  
 	
  	self layoutMorph  addMorph: 
-	   (UpdatingStringMorph new
-      			target: ['self morphBoundsInWorld ',
-				            self morphBoundsInWorld asString];
+	   (UpdatingLabelMorph new
+      			target: ['self extentInWorld ',
+				            self extentInWorld asString];    
+		            getSelector: #value;
+     			      stepTime: 10) 
+	fixedHeight: 60.
+	
+	self layoutMorph  addMorph: 
+	   (UpdatingLabelMorph new
+      			target: ['self morphExtent ',
+				            self morphExtent asString];    "fullBoundsInOwner  localBounds "
+		            getSelector: #value;
+     			      stepTime: 10) 
+	fixedHeight: 60.
+	
+	self layoutMorph  addMorph: 
+	   (UpdatingLabelMorph new
+      			target: ['self localBounds ',
+				            self localBounds asString];    "fullBoundsInOwner   "
+		            getSelector: #value;
+     			      stepTime: 10) 
+	fixedHeight: 60.
+	
+	self layoutMorph  addMorph: 
+	   (UpdatingLabelMorph new
+      			target: ['self fullBoundsInOwner ',
+				            self fullBoundsInOwner asString];    
 		            getSelector: #value;
      			      stepTime: 10) 
 	fixedHeight: 60.
@@ -748,7 +748,7 @@ initialize
 	self buildMorphicWindow.
 	! !
 
-!LayoutDemo2e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 04:43'!
+!LayoutDemo2e methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:48:18'!
 buildMorphicWindow
 
 
@@ -756,7 +756,7 @@ buildMorphicWindow
 
 	self layoutMorph  
 	 addMorph: 
-	    ((UpdatingStringMorph new
+	    ((UpdatingLabelMorph  new
       			target: ['Cursor position: ',
 				            self runningWorld activeHand morphPosition asString
 				           ];
@@ -765,17 +765,17 @@ buildMorphicWindow
 	 fixedHeight: 80.
 	
 	self layoutMorph  addMorphUseAll: 
-	   (RectangleLikeMorph new color: Color green). 
+	   (ColoredBoxMorph new color: Color green). 
 	
  	self layoutMorph  addMorph: 
-	   (UpdatingStringMorph new
-      			target: ['self morphBoundsInWorld ',
-				            self morphBoundsInWorld asString];
+	   (UpdatingLabelMorph new
+      			target: ['self extentInWorld  ',
+				            self extentInWorld  asString];
 		            getSelector: #value;
      			      stepTime: 10). 
  
  	self layoutMorph  addMorph: 
-	   (UpdatingStringMorph new
+	   (UpdatingLabelMorph new
       			target: [Date today asString];
 		            getSelector: #value;
      			      stepTime: 10) 
@@ -790,12 +790,12 @@ initialize
 	self buildMorphicWindow.
 	! !
 
-!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:01'!
+!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:50:53'!
 buildMorphicWindow
 
 self setLabel: self className.
 
-contentArea := RectangleLikeMorph new color: Color green.
+contentArea := ColoredBoxMorph new color: Color green.
 
 
 "self layoutMorph addMorph:  self createButtonBar fixedHeight: 40."
@@ -834,33 +834,34 @@ createButtonBar
 	fixedWidth: 70
 	! !
 
-!LayoutDemo3 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:50:33'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+
+	| topLeft spacing |
+	topLeft := (self labelHeight + borderWidth - Theme current titleBarButtonsExtent / 2) ceiling asPoint.
+	spacing := Theme current titleBarButtonsExtent x *13//10.
+	self addMorph: self createCloseButton position: topLeft.
+	"self addMorph: self createCollapseButton position: spacing@0 + topLeft.
+	self addMorph: self createExpandButton position: spacing*2@0 + topLeft.
+	self addMorph: self createMenuButton position: spacing*3@0 + topLeft"
+
+	
+! !
+
+!LayoutDemo3 methodsFor: 'initialization' stamp: 'hjh 2/27/2025 20:51:42'!
 initialExtent
 	
 	
-	^ 480 @ 360! !
+	^ 360 @ 240! !
 
 !LayoutDemo3 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
 initialize
 
 	super initialize.
 	self buildMorphicWindow.! !
-
-!LayoutDemo3 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:05'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      | spacing box |
-	spacing _ self boxExtent x + 2.
-
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-	
-! !
 
 !LayoutDemo3b methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:14'!
 buildMorphicWindow
@@ -906,6 +907,21 @@ createButtonBar
 	fixedWidth: 70
 	! !
 
+!LayoutDemo3b methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:52:54'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+	| topLeft spacing |
+	topLeft := (self labelHeight + borderWidth - Theme current titleBarButtonsExtent / 2) ceiling asPoint.
+	spacing := Theme current titleBarButtonsExtent x *13//10.
+	self addMorph: self createCloseButton position: topLeft.
+	"self addMorph: self createCollapseButton position: spacing@0 + topLeft.
+	self addMorph: self createExpandButton position: spacing*2@0 + topLeft.
+	self addMorph: self createMenuButton position: spacing*3@0 + topLeft"
+
+! !
+
 !LayoutDemo3b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
 initialExtent
 	
@@ -917,21 +933,6 @@ initialize
 
 	super initialize.
 	self buildMorphicWindow.! !
-
-!LayoutDemo3b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:06'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      | spacing box |
-	spacing _ self boxExtent x + 2.
-
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
 
 !LayoutDemo3c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:14'!
 buildMorphicWindow
@@ -977,6 +978,21 @@ createButtonBar
 	fixedWidth: 70
 	! !
 
+!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:54:07'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+ 	| topLeft spacing |
+	topLeft := (self labelHeight + borderWidth - Theme current titleBarButtonsExtent / 2) ceiling asPoint.
+	spacing := Theme current titleBarButtonsExtent x *13//10.
+	self addMorph: self createCloseButton position: topLeft.
+	"self addMorph: self createCollapseButton position: spacing@0 + topLeft.
+	self addMorph: self createExpandButton position: spacing*2@0 + topLeft.
+	self addMorph: self createMenuButton position: spacing*3@0 + topLeft"
+
+! !
+
 !LayoutDemo3c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
 initialExtent
 	
@@ -988,21 +1004,6 @@ initialize
 
 	super initialize.
 	self buildMorphicWindow.! !
-
-!LayoutDemo3c methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:06'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      | spacing box |
-	spacing _ self boxExtent x + 2.
-
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
 
 !LayoutDemo3c class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 22:32'!
 open
@@ -1022,22 +1023,6 @@ self layoutMorph addMorphUseAll: contentArea.
 self openInWorld
 
 ! !
-
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:37'!
-contentString1
-	^'hello1'! !
-
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
-contentString2
-	^'hello2'! !
-
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
-contentString3
-	^'hello3'! !
-
-!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
-contentString4
-	^'hello4'! !
 
 !LayoutDemo3d methodsFor: 'GUI building' stamp: 'hjh 2/12/2013 15:39'!
 createButtonBar
@@ -1068,18 +1053,6 @@ createButtonBar
 	fixedWidth: 70
 	! !
 
-!LayoutDemo3d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo3d methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
 !LayoutDemo3d methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:07'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
@@ -1092,6 +1065,34 @@ initializeLabelArea
 	self addMorphFront: box.
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:37'!
+contentString1
+	^'hello1'! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
+contentString2
+	^'hello2'! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
+contentString3
+	^'hello3'! !
+
+!LayoutDemo3d methodsFor: 'content' stamp: 'hjh 2/12/2013 15:38'!
+contentString4
+	^'hello4'! !
+
+!LayoutDemo3d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo3d methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
 
 !LayoutDemo3d class methodsFor: 'as yet unclassified' stamp: 'hjh 2/11/2013 22:32'!
 open
@@ -1112,25 +1113,6 @@ self layoutMorph addMorphUseAll: contentArea.
 self openInWorld
 
 ! !
-
-!LayoutDemo3e methodsFor: 'content' stamp: 'hh 12/7/2013 22:08'!
-contentString1
-	^ 'This is the red content area.
-
-   You may edit this text and 
-   when you press another button it will be  saved.'! !
-
-!LayoutDemo3e methodsFor: 'content' stamp: 'hh 12/7/2013 22:08'!
-contentString2
-	^ 'green'! !
-
-!LayoutDemo3e methodsFor: 'content' stamp: 'hh 12/7/2013 22:08'!
-contentString3
-	^ 'blue'! !
-
-!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 3/4/2013 10:26'!
-contentString4
-	^ 'yellow...'! !
 
 !LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 09:40'!
 createButtonBar
@@ -1167,6 +1149,39 @@ createButtonBar
 	fixedWidth: 70
 	! !
 
+!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:56:53'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+  	| topLeft spacing |
+	topLeft := (self labelHeight + borderWidth - Theme current titleBarButtonsExtent / 2) ceiling asPoint.
+	spacing := Theme current titleBarButtonsExtent x *13//10.
+	self addMorph: self createCloseButton position: topLeft.
+	"self addMorph: self createCollapseButton position: spacing@0 + topLeft.
+	self addMorph: self createExpandButton position: spacing*2@0 + topLeft.
+	self addMorph: self createMenuButton position: spacing*3@0 + topLeft"
+! !
+
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 2/27/2025 20:57:16'!
+contentString1
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 2/27/2025 20:57:17'!
+contentString2
+	^ 'green'! !
+
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 2/27/2025 20:57:18'!
+contentString3
+	^ 'blue'! !
+
+!LayoutDemo3e methodsFor: 'content' stamp: 'hjh 2/27/2025 20:57:13'!
+contentString4
+	^ 'yellow...'! !
+
 !LayoutDemo3e methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:29'!
 display: aContentSelector
 
@@ -1177,32 +1192,6 @@ display: aContentSelector
 	self layoutMorph addMorphUseAll: 
 		(contentArea := self textModelMorphforSelector:  currentContentStringSelector)
 	! !
-
-!LayoutDemo3e methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo3e methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
-!LayoutDemo3e methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:08'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      | spacing box |
-	spacing _ self boxExtent x + 2.
-
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-! !
 
 !LayoutDemo3e methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:35'!
 removeOldContent
@@ -1231,6 +1220,18 @@ textModelMorphforSelector: aContentSelector
 	^TextModelMorph withText: (self perform: aContentSelector)
 	! !
 
+!LayoutDemo3e methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo3e methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
 !LayoutDemo3e methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:43'!
 titleString
 
@@ -1251,39 +1252,6 @@ self layoutMorph addMorphUseAll: contentArea.
 self openInWorld
 
 ! !
-
-!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
-contentString1
-	^ 'This is the red content area.
-
-   You may edit this text and 
-   when you press another button it will be  saved.'! !
-
-!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
-contentString2
-	^ 'green'! !
-
-!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
-contentString3
-	^ 'blue'! !
-
-!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
-contentString4
-	^ 'yellow'! !
-
-!LayoutDemo3f methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
-contentString5
-	^ 'This is the red content area.
-
-   You may edit this text and 
-   when you press another button it will be  saved.'! !
-
-!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 1/31/2013 12:42'!
-contentString6
-	^ 'This is the red content area.
-
-   You may edit this text and 
-   when you press another button it will be  saved.'! !
 
 !LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:15'!
 createButtonBarFromSpec: aButtonCollectionSpec
@@ -1323,6 +1291,52 @@ customButtonSpecs
 defaultButtonWidth
 	^70! !
 
+!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 20:57:47'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+  	| topLeft spacing |
+	topLeft := (self labelHeight + borderWidth - Theme current titleBarButtonsExtent / 2) ceiling asPoint.
+	spacing := Theme current titleBarButtonsExtent x *13//10.
+	self addMorph: self createCloseButton position: topLeft.
+	"self addMorph: self createCollapseButton position: spacing@0 + topLeft.
+	self addMorph: self createExpandButton position: spacing*2@0 + topLeft.
+	self addMorph: self createMenuButton position: spacing*3@0 + topLeft"! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/27/2025 21:00:47'!
+contentString1
+	^ 'This is the red content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/27/2025 21:00:55'!
+contentString2
+	^ 'green'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/27/2025 21:00:54'!
+contentString3
+	^ 'blue'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/27/2025 21:00:52'!
+contentString4
+	^ 'yellow'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/27/2025 21:00:49'!
+contentString5
+	^ 'This is the orange content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
+!LayoutDemo3f methodsFor: 'content' stamp: 'hjh 2/27/2025 21:00:51'!
+contentString6
+	^ 'This is the magenta content area.
+
+   You may edit this text and 
+   when you press another button it will be  saved.'! !
+
 !LayoutDemo3f methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:29'!
 display: aContentSelector
 
@@ -1333,31 +1347,6 @@ display: aContentSelector
 	self layoutMorph addMorphUseAll: 
 		(contentArea := self textModelMorphforSelector:  currentContentStringSelector)
 	! !
-
-!LayoutDemo3f methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo3f methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
-!LayoutDemo3f methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:08'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      | spacing box |
-	spacing _ self boxExtent x + 2.
-
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.! !
 
 !LayoutDemo3f methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:35'!
 removeOldContent
@@ -1386,6 +1375,18 @@ textModelMorphforSelector: aContentSelector
 	^TextModelMorph withText: (self perform: aContentSelector)
 	! !
 
+!LayoutDemo3f methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo3f methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
 !LayoutDemo3f methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:43'!
 titleString
 
@@ -1396,7 +1397,7 @@ open
 
 	^self new openInWorld! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 2/27/2025 21:01:13'!
 contentString1
 	^ 'This is the red content area.
 
@@ -1406,7 +1407,7 @@ contentString1
 
 '! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 2/27/2025 21:00:13'!
 contentString2
 	^ 'green area
 
@@ -1418,27 +1419,26 @@ https://help.github.com/articles/interactive-rebase
 
  git rebase --interactive'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 2/27/2025 21:00:12'!
 contentString3
 	^ 'blue notes area...'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 2/27/2025 21:01:22'!
 contentString4
 	^ 'yellow notes area'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 2/27/2025 21:01:19'!
 contentString5
-	^ 'This is the red content area.
+	^ 'This is the orange content area.
 
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hh 12/7/2013 22:09'!
+!LayoutDemo3fNotes methodsFor: 'content' stamp: 'hjh 2/27/2025 21:01:18'!
 contentString6
-	^ 'content area.
+	^ 'magenta content area.
 
-   You may edit this text and 
-   when you press another button it will be  saved.'! !
+ '! !
 
 !LayoutDemo3fNotes methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:44'!
 titleString
@@ -1546,6 +1546,21 @@ addMorph: (PluggableButtonMorph
 			model: [ contentArea color: Color yellow] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
+!LayoutDemo4 methodsFor: 'GUI building' stamp: 'hjh 2/27/2025 21:01:50'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+  	| topLeft spacing |
+	topLeft := (self labelHeight + borderWidth - Theme current titleBarButtonsExtent / 2) ceiling asPoint.
+	spacing := Theme current titleBarButtonsExtent x *13//10.
+	self addMorph: self createCloseButton position: topLeft.
+	"self addMorph: self createCollapseButton position: spacing@0 + topLeft.
+	self addMorph: self createExpandButton position: spacing*2@0 + topLeft.
+	self addMorph: self createMenuButton position: spacing*3@0 + topLeft"
+
+! !
+
 !LayoutDemo4 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:32'!
 initialExtent
 	
@@ -1558,26 +1573,11 @@ initialize
 	super initialize.
 	self buildMorphicWindow.! !
 
-!LayoutDemo4 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:10'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      | spacing box |
-	spacing _ self boxExtent x + 2.
-
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
-
-!LayoutDemo4 methodsFor: 'page creation' stamp: 'hjh 1/31/2013 04:49'!
+!LayoutDemo4 methodsFor: 'page creation' stamp: 'hjh 2/27/2025 21:02:14'!
 makeContentArea
 
 
-      ^contentArea := RectangleLikeMorph new color: Color green.! !
+      ^contentArea := ColoredBoxMorph new color: Color green.! !
 
 !LayoutDemo4 class methodsFor: 'as yet unclassified' stamp: 'hjh 3/4/2013 10:28'!
 open
@@ -1618,18 +1618,6 @@ addMorph: (PluggableButtonMorph
 			model: [ contentArea color: Color yellow] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo4b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:32'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo4b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
 !LayoutDemo4b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:10'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
@@ -1643,6 +1631,18 @@ initializeLabelArea
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.
 ! !
+
+!LayoutDemo4b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:32'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo4b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
 
 !LayoutDemo4b methodsFor: 'page creation' stamp: 'hjh 1/31/2013 05:09'!
 makePages
@@ -1681,6 +1681,32 @@ bringPageToFront: aPageName
 
 ! !
 
+!LayoutDemo4c methodsFor: 'pages' stamp: 'hjh 1/31/2013 07:06'!
+makeContentArea
+
+ 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
+
+	"morphs are added on top of each other"
+
+      contentArea addMorph: ((DragAndDropAreaMorph new color: Color red;
+								setProperty: #name toValue: #red) morphExtent: 430@250).
+								
+	contentArea addMorph: ((DragAndDropAreaMorph new color: Color green;
+								setProperty: #name toValue: #green)  morphExtent: 420@240).
+								
+	contentArea addMorph: ((DragAndDropAreaMorph new color: Color blue;
+								setProperty: #name toValue: #blue)  morphExtent: 410@230).
+	
+	contentArea addMorph: ((DragAndDropAreaMorph new color: Color yellow;
+							     setProperty: #name toValue: #yellow)  morphExtent: 400@220).
+	
+	
+	
+	^ contentArea
+
+
+    ! !
+
 !LayoutDemo4c methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 07:05'!
 buildMorphicWindow
 
@@ -1715,18 +1741,6 @@ addMorph: (PluggableButtonMorph
 			model: [ self bringPageToFront: #yellow] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo4c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo4c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
 !LayoutDemo4c methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:11'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
@@ -1742,31 +1756,17 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo4c methodsFor: 'pages' stamp: 'hjh 1/31/2013 07:06'!
-makeContentArea
-
- 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
-
-	"morphs are added on top of each other"
-
-      contentArea addMorph: ((DragAndDropAreaMorph new color: Color red;
-								setProperty: #name toValue: #red) morphExtent: 430@250).
-								
-	contentArea addMorph: ((DragAndDropAreaMorph new color: Color green;
-								setProperty: #name toValue: #green)  morphExtent: 420@240).
-								
-	contentArea addMorph: ((DragAndDropAreaMorph new color: Color blue;
-								setProperty: #name toValue: #blue)  morphExtent: 410@230).
-	
-	contentArea addMorph: ((DragAndDropAreaMorph new color: Color yellow;
-							     setProperty: #name toValue: #yellow)  morphExtent: 400@220).
+!LayoutDemo4c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
+initialExtent
 	
 	
-	
-	^ contentArea
+	^ 480 @ 360! !
 
+!LayoutDemo4c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
 
-    ! !
+	super initialize.
+	self buildMorphicWindow.! !
 
 !LayoutDemo4c class methodsFor: 'as yet unclassified' stamp: 'hjh 3/4/2013 10:31'!
 open
@@ -1809,25 +1809,6 @@ addMorph: (PluggableButtonMorph
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo5 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:18'!
-displayPage: pageNumber
-	| page |
-	"self adjustButtonsForPage: pageNumber."
-	page := pages at: pageNumber.
-	page show! !
-
-!LayoutDemo5 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:35'!
-hideCurrentPage
-	| page |
-	page := pages at: currentPage.
-	page hide! !
-
-!LayoutDemo5 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
 !LayoutDemo5 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:11'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
@@ -1842,6 +1823,42 @@ initializeLabelArea
 	box morphExtent: self boxExtent.
 
 ! !
+
+!LayoutDemo5 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:18'!
+displayPage: pageNumber
+	| page |
+	"self adjustButtonsForPage: pageNumber."
+	page := pages at: pageNumber.
+	page show! !
+
+!LayoutDemo5 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:35'!
+hideCurrentPage
+	| page |
+	page := pages at: currentPage.
+	page hide! !
+
+!LayoutDemo5 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+nextPage
+	self hideCurrentPage.
+	currentPage := currentPage + 1.
+	self displayPage: currentPage! !
+
+!LayoutDemo5 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+showPage: aNumber.
+	self hideCurrentPage.
+	currentPage := aNumber.
+	self displayPage: currentPage! !
+
+!LayoutDemo5 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
+
+	super initialize.
+	self buildMorphicWindow.! !
+
+!LayoutDemo5 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
+titleString
+
+	^self class name ! !
 
 !LayoutDemo5 methodsFor: 'page creation' stamp: 'hjh 1/16/2013 14:04'!
 makePages
@@ -1860,23 +1877,6 @@ makePages
 	
 	^contentArea
 	! !
-
-!LayoutDemo5 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
-nextPage
-	self hideCurrentPage.
-	currentPage := currentPage + 1.
-	self displayPage: currentPage! !
-
-!LayoutDemo5 methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
-showPage: aNumber.
-	self hideCurrentPage.
-	currentPage := aNumber.
-	self displayPage: currentPage! !
-
-!LayoutDemo5 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
-titleString
-
-	^self class name ! !
 
 !LayoutDemo5b methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
 buildMorphicWindow
@@ -1913,6 +1913,20 @@ addMorph: (PluggableButtonMorph
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
+!LayoutDemo5b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:12'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+      | spacing box |
+	spacing _ self boxExtent x + 2.
+
+	box _ self createCloseBox.
+	self addMorphFront: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+! !
+
 !LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
 displayPage: pageNumber
 	| page |
@@ -1928,6 +1942,18 @@ hideCurrentPage
       contentArea removeMorph: page.
 ! !
 
+!LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+nextPage
+	self hideCurrentPage.
+	currentPage := currentPage + 1.
+	self displayPage: currentPage! !
+
+!LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+showPage: aNumber.
+	self hideCurrentPage.
+	currentPage := aNumber.
+	self displayPage: currentPage! !
+
 !LayoutDemo5b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
 initialExtent
 	
@@ -1941,19 +1967,10 @@ initialize
 	
 	self buildMorphicWindow.! !
 
-!LayoutDemo5b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:12'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      | spacing box |
-	spacing _ self boxExtent x + 2.
+!LayoutDemo5b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
+titleString
 
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-! !
+	^self class name ! !
 
 !LayoutDemo5b methodsFor: 'page creation' stamp: 'hjh 1/16/2013 14:15'!
 makePages
@@ -1971,23 +1988,6 @@ makePages
 	
 	^r
 	! !
-
-!LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
-nextPage
-	self hideCurrentPage.
-	currentPage := currentPage + 1.
-	self displayPage: currentPage! !
-
-!LayoutDemo5b methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
-showPage: aNumber.
-	self hideCurrentPage.
-	currentPage := aNumber.
-	self displayPage: currentPage! !
-
-!LayoutDemo5b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
-titleString
-
-	^self class name ! !
 
 !LayoutDemo5c methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
 buildMorphicWindow
@@ -2024,6 +2024,21 @@ addMorph: (PluggableButtonMorph
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
+!LayoutDemo5c methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:12'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+      | spacing box |
+	spacing _ self boxExtent x + 2.
+
+	box _ self createCloseBox.
+	self addMorphFront: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
 !LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
 displayPage: pageNumber
 	| page |
@@ -2039,6 +2054,18 @@ hideCurrentPage
       contentArea removeMorph: page.
 ! !
 
+!LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+nextPage
+	self hideCurrentPage.
+	currentPage := currentPage + 1.
+	self displayPage: currentPage! !
+
+!LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
+showPage: aNumber.
+	self hideCurrentPage.
+	currentPage := aNumber.
+	self displayPage: currentPage! !
+
 !LayoutDemo5c methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
 initialExtent
 	
@@ -2051,20 +2078,10 @@ initialize
 
 	self buildMorphicWindow.! !
 
-!LayoutDemo5c methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:12'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      | spacing box |
-	spacing _ self boxExtent x + 2.
+!LayoutDemo5c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
+titleString
 
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
+	^self class name ! !
 
 !LayoutDemo5c methodsFor: 'page creation' stamp: 'hjh 2/10/2013 16:40'!
 makePages
@@ -2092,23 +2109,6 @@ makePages
 	
 	^r
 	! !
-
-!LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
-nextPage
-	self hideCurrentPage.
-	currentPage := currentPage + 1.
-	self displayPage: currentPage! !
-
-!LayoutDemo5c methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
-showPage: aNumber.
-	self hideCurrentPage.
-	currentPage := aNumber.
-	self displayPage: currentPage! !
-
-!LayoutDemo5c methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
-titleString
-
-	^self class name ! !
 
 !LayoutDemo5d methodsFor: 'GUI building' stamp: 'hjh 1/16/2013 14:12'!
 buildMorphicWindow
@@ -2144,6 +2144,18 @@ addMorph: (PluggableButtonMorph
 addMorph: (PluggableButtonMorph 
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
+
+!LayoutDemo5d methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:14'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+      |  box |
+	
+	box _ self createCloseBox.
+	self addMorphFront: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo5d methodsFor: 'page creation' stamp: 'hjh 2/10/2013 16:40'!
 createPage1
@@ -2189,45 +2201,6 @@ page3 addMorph: (EllipseMorph new morphPosition: 89@20; morphWidth: 50; morphHei
 
 ^page3! !
 
-!LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
-displayPage: pageNumber
-	| page |
-	"self adjustButtonsForPage: pageNumber."
-	page := pages at: pageNumber.
-	contentArea addMorphUseAll: page.
-	contentArea layoutSubmorphs! !
-
-!LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
-hideCurrentPage
-	| page |
-	page := pages at: currentPage.
-      contentArea removeMorph: page.
-! !
-
-!LayoutDemo5d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo5d methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
-initialize
-	super initialize.
-
-	self buildMorphicWindow.! !
-
-!LayoutDemo5d methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:14'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      |  box |
-	
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.! !
-
 !LayoutDemo5d methodsFor: 'page creation' stamp: 'hjh 1/16/2013 15:12'!
 makePages
 	| p  |
@@ -2245,6 +2218,21 @@ makePages
 	^p
 	! !
 
+!LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
+displayPage: pageNumber
+	| page |
+	"self adjustButtonsForPage: pageNumber."
+	page := pages at: pageNumber.
+	contentArea addMorphUseAll: page.
+	contentArea layoutSubmorphs! !
+
+!LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
+hideCurrentPage
+	| page |
+	page := pages at: currentPage.
+      contentArea removeMorph: page.
+! !
+
 !LayoutDemo5d methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 nextPage
 	self hideCurrentPage.
@@ -2256,6 +2244,18 @@ showPage: aNumber.
 	self hideCurrentPage.
 	currentPage := aNumber.
 	self displayPage: currentPage! !
+
+!LayoutDemo5d methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:40'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo5d methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
+initialize
+	super initialize.
+
+	self buildMorphicWindow.! !
 
 !LayoutDemo5d methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
 titleString
@@ -2296,6 +2296,18 @@ addMorph: (PluggableButtonMorph
 addMorph: (PluggableButtonMorph 
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
+
+!LayoutDemo5e methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:14'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+      |  box |
+	
+	box _ self createCloseBox.
+	self addMorphFront: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo5e methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 createPage1
@@ -2351,45 +2363,6 @@ page3 _ LayoutMorph newRow color: Color gray; morphWidth: 400; morphHeight:300.
 
 ^page3! !
 
-!LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
-displayPage: pageNumber
-	| page |
-	"self adjustButtonsForPage: pageNumber."
-	page := pages at: pageNumber.
-	contentArea addMorphUseAll: page.
-	contentArea layoutSubmorphs! !
-
-!LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
-hideCurrentPage
-	| page |
-	page := pages at: currentPage.
-      contentArea removeMorph: page.
-! !
-
-!LayoutDemo5e methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo5e methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
-initialize
-	super initialize.
-
-	self buildMorphicWindow.! !
-
-!LayoutDemo5e methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:14'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      |  box |
-	
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.! !
-
 !LayoutDemo5e methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 makePages
 	| p  |
@@ -2407,6 +2380,21 @@ makePages
 	^p
 	! !
 
+!LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
+displayPage: pageNumber
+	| page |
+	"self adjustButtonsForPage: pageNumber."
+	page := pages at: pageNumber.
+	contentArea addMorphUseAll: page.
+	contentArea layoutSubmorphs! !
+
+!LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
+hideCurrentPage
+	| page |
+	page := pages at: currentPage.
+      contentArea removeMorph: page.
+! !
+
 !LayoutDemo5e methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 nextPage
 	self hideCurrentPage.
@@ -2418,6 +2406,18 @@ showPage: aNumber.
 	self hideCurrentPage.
 	currentPage := aNumber.
 	self displayPage: currentPage! !
+
+!LayoutDemo5e methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo5e methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
+initialize
+	super initialize.
+
+	self buildMorphicWindow.! !
 
 !LayoutDemo5e methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
 titleString
@@ -2458,6 +2458,18 @@ addMorph: (PluggableButtonMorph
 addMorph: (PluggableButtonMorph 
 			model: [ self showPage: 4] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
+
+!LayoutDemo5f methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:15'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+      |  box |
+	
+	box _ self createCloseBox.
+	self addMorphFront: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.! !
 
 !LayoutDemo5f methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 createPage1
@@ -2507,45 +2519,6 @@ page3 _ LayoutMorph newRow color: Color gray; morphWidth: 400; morphHeight:300.
 
 ^page3! !
 
-!LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
-displayPage: pageNumber
-	| page |
-	"self adjustButtonsForPage: pageNumber."
-	page := pages at: pageNumber.
-	contentArea addMorphUseAll: page.
-	contentArea layoutSubmorphs! !
-
-!LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
-hideCurrentPage
-	| page |
-	page := pages at: currentPage.
-      contentArea removeMorph: page.
-! !
-
-!LayoutDemo5f methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo5f methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
-initialize
-	super initialize.
-
-	self buildMorphicWindow.! !
-
-!LayoutDemo5f methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:15'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      |  box |
-	
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.! !
-
 !LayoutDemo5f methodsFor: 'page creation' stamp: 'hjh 1/29/2013 16:16'!
 makePages
 	| p  |
@@ -2563,6 +2536,21 @@ makePages
 	^p
 	! !
 
+!LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:13'!
+displayPage: pageNumber
+	| page |
+	"self adjustButtonsForPage: pageNumber."
+	page := pages at: pageNumber.
+	contentArea addMorphUseAll: page.
+	contentArea layoutSubmorphs! !
+
+!LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/16/2013 14:14'!
+hideCurrentPage
+	| page |
+	page := pages at: currentPage.
+      contentArea removeMorph: page.
+! !
+
 !LayoutDemo5f methodsFor: 'page display' stamp: 'hjh 1/12/2013 12:36'!
 nextPage
 	self hideCurrentPage.
@@ -2574,6 +2562,18 @@ showPage: aNumber.
 	self hideCurrentPage.
 	currentPage := aNumber.
 	self displayPage: currentPage! !
+
+!LayoutDemo5f methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:41'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo5f methodsFor: 'initialization' stamp: 'hjh 1/16/2013 14:24'!
+initialize
+	super initialize.
+
+	self buildMorphicWindow.! !
 
 !LayoutDemo5f methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:57'!
 titleString
@@ -2613,6 +2613,24 @@ bringPageToFront: aPageName
 
 ! !
 
+!LayoutDemo6 methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:14'!
+makeContentArea
+
+ 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
+
+	"morphs are added on top of each other"
+
+      self addPageTo: contentArea name: 'red'.
+      self addPageTo: contentArea name: 'green'.
+      self addPageTo: contentArea name: 'blue'.
+      self addPageTo: contentArea name: 'yellow'.
+								
+	
+	^ contentArea
+
+
+    ! !
+
 !LayoutDemo6 methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:25'!
 buildMorphicWindow
 
@@ -2647,18 +2665,6 @@ addMorph: (PluggableButtonMorph
 			model: [ self bringPageToFront: #yellow] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
 !LayoutDemo6 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:16'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
@@ -2673,23 +2679,17 @@ initializeLabelArea
 
 ! !
 
-!LayoutDemo6 methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:14'!
-makeContentArea
-
- 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
-
-	"morphs are added on top of each other"
-
-      self addPageTo: contentArea name: 'red'.
-      self addPageTo: contentArea name: 'green'.
-      self addPageTo: contentArea name: 'blue'.
-      self addPageTo: contentArea name: 'yellow'.
-								
+!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
+initialExtent
 	
-	^ contentArea
+	
+	^ 480 @ 360! !
 
+!LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
 
-    ! !
+	super initialize.
+	self buildMorphicWindow.! !
 
 !LayoutDemo6 methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:25'!
 titleString
@@ -2738,6 +2738,24 @@ bringPageToFront: aPageName
 
 ! !
 
+!LayoutDemo6b methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:14'!
+makeContentArea
+
+ 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
+
+	"morphs are added on top of each other"
+
+      self addPageTo: contentArea name: 'red'.
+      self addPageTo: contentArea name: 'green'.
+      self addPageTo: contentArea name: 'blue'.
+      self addPageTo: contentArea name: 'yellow'.
+								
+	
+	^ contentArea
+
+
+    ! !
+
 !LayoutDemo6b methodsFor: 'GUI building' stamp: 'hjh 2/10/2013 18:25'!
 buildMorphicWindow
 
@@ -2772,18 +2790,6 @@ addMorph: (PluggableButtonMorph
 			model: [ self bringPageToFront: #yellow] action: #value label: 'yellow') 
 	           fixedWidth: 70! !
 
-!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
-initialize
-
-	super initialize.
-	self buildMorphicWindow.! !
-
 !LayoutDemo6b methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:16'!
 initializeLabelArea
 	"Initialize the label area (titlebar) for the window.
@@ -2796,23 +2802,17 @@ initializeLabelArea
 	box morphPosition: 2@2.
 	box morphExtent: self boxExtent.! !
 
-!LayoutDemo6b methodsFor: 'pages' stamp: 'hjh 2/10/2013 17:14'!
-makeContentArea
-
- 	contentArea := RectangleLikeMorph new color: Color gray.  "This morph does not do layout control"
-
-	"morphs are added on top of each other"
-
-      self addPageTo: contentArea name: 'red'.
-      self addPageTo: contentArea name: 'green'.
-      self addPageTo: contentArea name: 'blue'.
-      self addPageTo: contentArea name: 'yellow'.
-								
+!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:33'!
+initialExtent
 	
-	^ contentArea
+	
+	^ 480 @ 360! !
 
+!LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 1/12/2013 11:18'!
+initialize
 
-    ! !
+	super initialize.
+	self buildMorphicWindow.! !
 
 !LayoutDemo6b methodsFor: 'initialization' stamp: 'hjh 2/10/2013 18:25'!
 titleString
@@ -2838,6 +2838,53 @@ self layoutMorph addMorphUseAll: contentArea.
 
 self openInWorld
 ! !
+
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 12:41'!
+customButtonSpecs
+	"Answer an array of elements of the label, selector and color"
+
+	^#(
+		('red'			#contentString1			     #lightRed)
+		('green'			#contentString2			     #lightGreen)
+		('blue'			#contentString3			     #lightBlue)
+		('yellow'		#contentString4		           #yellow)
+		('orange'		#contentString5		           #orange)
+		('magenta'		#contentString6		           #magenta)
+	)
+
+  
+! !
+
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:16'!
+defaultButtonWidth
+	^70! !
+
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:17'!
+initializeLabelArea
+	"Initialize the label area (titlebar) for the window.
+	This is a shorter version of inherited #initializeLabelArea.
+	We do not create the other controls"
+      |  box |
+	
+	box _ self createCloseBox.
+	self addMorphFront: box.
+	box morphPosition: 2@2.
+	box morphExtent: self boxExtent.
+
+! !
+
+!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 3/4/2013 09:50'!
+notesListMorph
+
+	
+ ^PluggableListMorph
+		model: self
+		listGetter: #notesList
+		indexGetter: #selectedNote
+		indexSetter: #selectedNote:
+		mainView: self
+		menuGetter: nil
+		keystrokeAction: nil! !
 
 !LayoutDemo7 methodsFor: 'content' stamp: 'hh 12/7/2013 22:17'!
 contentString1
@@ -2873,26 +2920,6 @@ contentString6
    You may edit this text and 
    when you press another button it will be  saved.'! !
 
-!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 12:41'!
-customButtonSpecs
-	"Answer an array of elements of the label, selector and color"
-
-	^#(
-		('red'			#contentString1			     #lightRed)
-		('green'			#contentString2			     #lightGreen)
-		('blue'			#contentString3			     #lightBlue)
-		('yellow'		#contentString4		           #yellow)
-		('orange'		#contentString5		           #orange)
-		('magenta'		#contentString6		           #magenta)
-	)
-
-  
-! !
-
-!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 1/31/2013 13:16'!
-defaultButtonWidth
-	^70! !
-
 !LayoutDemo7 methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:29'!
 display: aContentSelector
 
@@ -2903,65 +2930,6 @@ display: aContentSelector
 	self layoutMorph addMorphUseAll: 
 		(contentArea := self textModelMorphforSelector:  currentContentStringSelector)
 	! !
-
-!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
-initialExtent
-	
-	
-	^ 480 @ 360! !
-
-!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 2/12/2013 16:12'!
-initialize
-
-	super initialize.
-	self initializeNotesList.
-	self buildMorphicWindow.! !
-
-!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hh 12/7/2013 22:17'!
-initializeLabelArea
-	"Initialize the label area (titlebar) for the window.
-	This is a shorter version of inherited #initializeLabelArea.
-	We do not create the other controls"
-      |  box |
-	
-	box _ self createCloseBox.
-	self addMorphFront: box.
-	box morphPosition: 2@2.
-	box morphExtent: self boxExtent.
-
-! !
-
-!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 2/12/2013 16:13'!
-initializeNotesList
-
-notesList isNil ifTrue: [notesList := OrderedCollection new.
-							notesList add: #contentString1.
-							notesList add: #contentString2.
-							notesList add: #contentString3.
-							notesList add: #contentString4.
-							notesList add: #contentString5.
-							notesList add: #contentString6.
-							selectedNote := 1].	! !
-
-!LayoutDemo7 methodsFor: 'notes list' stamp: 'hjh 2/12/2013 16:12'!
-notesList
-						
-	^notesList
-	
-	! !
-
-!LayoutDemo7 methodsFor: 'GUI building' stamp: 'hjh 3/4/2013 09:50'!
-notesListMorph
-
-	
- ^PluggableListMorph
-		model: self
-		listGetter: #notesList
-		indexGetter: #selectedNote
-		indexSetter: #selectedNote:
-		mainView: self
-		menuGetter: nil
-		keystrokeAction: nil! !
 
 !LayoutDemo7 methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 09:35'!
 removeOldContent
@@ -2984,6 +2952,49 @@ removeOldContent
 			
    self layoutMorph removeMorph: contentArea.! !
 
+!LayoutDemo7 methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 08:37'!
+textModelMorphforSelector: aContentSelector
+
+	^TextModelMorph withText: (self perform: aContentSelector)
+	! !
+
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 06:30'!
+initialExtent
+	
+	
+	^ 480 @ 360! !
+
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 2/12/2013 16:12'!
+initialize
+
+	super initialize.
+	self initializeNotesList.
+	self buildMorphicWindow.! !
+
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 2/12/2013 16:13'!
+initializeNotesList
+
+notesList isNil ifTrue: [notesList := OrderedCollection new.
+							notesList add: #contentString1.
+							notesList add: #contentString2.
+							notesList add: #contentString3.
+							notesList add: #contentString4.
+							notesList add: #contentString5.
+							notesList add: #contentString6.
+							selectedNote := 1].	! !
+
+!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:43'!
+titleString
+
+	^ self className! !
+
+!LayoutDemo7 methodsFor: 'notes list' stamp: 'hjh 2/12/2013 16:12'!
+notesList
+						
+	^notesList
+	
+	! !
+
 !LayoutDemo7 methodsFor: 'notes list' stamp: 'hjh 2/12/2013 16:10'!
 selectedNote
 	^selectedNote! !
@@ -2994,17 +3005,6 @@ selectedNote: aSmallInteger
 	"display the selected note"
 	self display: (self notesList at: aSmallInteger).
 	self changed: #selectedNote.! !
-
-!LayoutDemo7 methodsFor: 'content manipulation' stamp: 'hjh 1/31/2013 08:37'!
-textModelMorphforSelector: aContentSelector
-
-	^TextModelMorph withText: (self perform: aContentSelector)
-	! !
-
-!LayoutDemo7 methodsFor: 'initialization' stamp: 'hjh 1/31/2013 10:43'!
-titleString
-
-	^ self className! !
 
 !LayoutDemo7 methodsFor: 'notes list' stamp: 'hjh 2/12/2013 16:31'!
 update: aSymbol
