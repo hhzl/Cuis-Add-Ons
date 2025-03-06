@@ -67,3 +67,41 @@ col morphExtent
 "(TextParagraphMorph contents: Utilities defaultTextEditorContents) openInWorld."
 "InnerTextMorphs"
 ````
+
+
+# Alphabet
+````Smalltalk
+column := LayoutMorph newColumn color: Color white.
+
+columnWidth := 480. 
+titleFontSize := 24. 
+textFontSize := FontFamily defaultPointSize * 3.
+
+column addMorph: (LabelMorph contents: 'Alphabet' font: (FontFamily defaultFamilyPointSize: titleFontSize)).
+
+alphabet := TextParagraphMorph contents: ('Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz' centered blue pointSize: textFontSize).
+alphabet color: Color white.
+alphabet borderWidth: 0.
+alphabet morphExtent: columnWidth@230.
+column addMorph: alphabet.
+
+column addMorph: (LabelMorph contents: 'Vowels' font: (FontFamily defaultFamilyPointSize: titleFontSize)).
+
+vowels := TextParagraphMorph contents: ('Aa Ee Ii Oo Uu' centered red pointSize: textFontSize).
+vowels color: Color white.
+vowels borderWidth: 0.
+vowels morphExtent: columnWidth@100.
+column addMorph: vowels.
+
+column addMorph: (LabelMorph contents: 'Consonants' font: (FontFamily defaultFamilyPointSize: titleFontSize)).
+
+consonants := TextParagraphMorph contents: ('Bb Cc Dd Ff Gg Hh Jj Kk Ll Mm Nn Pp Qq Rr Ss Tt Vv Ww Xx Yy Zz' centered black pointSize: textFontSize).
+consonants color: Color white.
+consonants borderWidth: 0.
+consonants morphExtent: columnWidth@200.
+column addMorph: consonants.
+
+column layoutSubmorphs.
+column openInHand
+
+````
