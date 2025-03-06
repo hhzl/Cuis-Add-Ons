@@ -101,7 +101,39 @@ consonants borderWidth: 0.
 consonants morphExtent: columnWidth@200.
 column addMorph: consonants.
 
-column layoutSubmorphs.
+"column layoutSubmorphs."
 column openInHand
 
+````
+
+# Morph - Export as PNG implementation
+Steps for implementation:
+
+Morph
+
+existing method:
+````Smalltalk
+addExportMenuItems: aMenu hand: aHandMorph
+	"Add export items to the menu"
+
+	aMenu ifNotNil: [
+		| aSubMenu |
+		aSubMenu := MenuMorph new defaultTarget: self.
+		aSubMenu add: 'BMP file' action: #exportAsBMP.
+		aSubMenu add: 'JPEG file' action: #exportAsJPEG.
+		aMenu add: 'export...' subMenu: aSubMenu]
+````
+Check if class Form implements #writePNGfileNamed:
+or class morph implements #exportAsPNG
+If yes add that to the submenu.
+
+
+
+New method for class Morph to implement in category '*Graphics-Files-Additional'
+````Smalltalk
+exportAsPNG
+	"Export the receiver's image as a PNG."
+	self request: 'Enter file name'
+		initialAnswer: (self printStringLimitedTo: 20),'.png'
+		do: [:aString| (self imageForm: 32) writePNGfileNamed: aString]
 ````
